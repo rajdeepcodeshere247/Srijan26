@@ -80,7 +80,7 @@ export default function NotificationsPage() {
 
   if (status === "loading") return <Loading />;
 
-  if (status === "authenticated") {
+  if (status === "unauthenticated") {
     return (
       <main className="full-bleed min-h-screen relative text-white overflow-hidden">
         <WavyGradient
