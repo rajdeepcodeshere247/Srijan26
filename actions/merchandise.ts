@@ -36,9 +36,9 @@ let cashfreeConfig: {
 } | null = null;
 
 try {
-    const clientId = process.env.CASHFREE_APP_ID; // Changed from reference to match .env
-    const clientSecret = process.env.CASHFREE_SECRET_KEY; // Changed from reference to match .env
-    const environment = process.env.CASHFREE_ENVIRONMENT || 'SANDBOX';
+    const clientId = process.env.CASHFREE_APP_ID;
+    const clientSecret = process.env.CASHFREE_SECRET_KEY;
+    const environment = process.env.CASHFREE_ENVIRONMENT || 'PRODUCTION';
 
     if (!clientId || !clientSecret) {
         throw new Error('Missing Cashfree credentials');

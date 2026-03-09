@@ -6,19 +6,14 @@ type ContactPerson = {
 
 const contacts: ContactPerson[] = [
   {
-    name: "Arjun Sen",
-    position: "Event Coordinator",
-    phone: "+91 98765 43210",
+    name: "Ahnik Purkait",
+    position: "Jadavpur Campus",
+    phone: "+91 8770 98463",
   },
   {
-    name: "Riya Mukherjee",
-    position: "Technical Head",
-    phone: "+91 91234 56789",
-  },
-  {
-    name: "Sayan Das",
-    position: "Sponsorship Lead",
-    phone: "+91 99887 66554",
+    name: "Rahul Sk.",
+    position: "Salt Lake Campus",
+    phone: "+91 96354 46867",
   },
 ];
 
