@@ -133,8 +133,7 @@ function FooterInner() {
               Located At
             </h4>
             <address className="text-white/80 text-base font-euclid not-italic leading-relaxed">
-              Jadavpur University Saltlake Campus, Kolkata, 700109
-              <br />
+              Jadavpur University Saltlake Campus, <br />Plot No. 8, Block-73, <br />Salt Lake Bypass, Sector-III, <br /> Salt Lake City, Kolkata - 700106
               <br />
               West Bengal, India
             </address>
