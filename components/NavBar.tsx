@@ -47,17 +47,17 @@ export default function NavBar() {
           label={link.label}
           isActive={activeTab === link.href}
           onClick={() => setActiveTab(link.href)}
-          className="hidden 2xl:flex"
+          className="hidden lg:flex"
         />
       ))}
       <LoginButton
-        className="hidden 2xl:flex"
+        className="hidden lg:flex"
         isActive={activeTab === '/login'}
         onClick={() => setActiveTab('/login')}
       />
 
       {/* Mobile/Tablet Menu */}
-      <div className="flex gap-6 2xl:hidden">
+      <div className="flex gap-6 lg:hidden">
         {/* Tablet Login Button */}
         <LoginButton
           className="hidden md:flex"
