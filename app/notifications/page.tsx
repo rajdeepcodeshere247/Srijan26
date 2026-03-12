@@ -38,6 +38,10 @@ export default function NotificationsPage() {
   // GSAP Animation Logic
   useGSAP(
     () => {
+      // FIX: Exit early if the container hasn't mounted yet. This prevents ScrollTrigger
+      // from crashing when trying to attach to a null element during route transitions.
+      if (!containerRef.current) return;
+
       // 1. Header Animations (Timeline ensures they play in sequence)
       const headerTl = gsap.timeline({ delay: 0.1 });
 
@@ -95,7 +99,9 @@ export default function NotificationsPage() {
       );
 
       // 2. Individual Notification Card Animations
-      const cards = gsap.utils.toArray<HTMLElement>(".notification-anim");
+      // FIX: Explicitly pass containerRef.current as the second argument so GSAP
+      // only queries elements inside this specific component instance.
+      const cards = gsap.utils.toArray<HTMLElement>(".notification-anim", containerRef.current);
 
       cards.forEach((card, i) => {
         const isEven = i % 2 === 0;
@@ -157,7 +163,7 @@ export default function NotificationsPage() {
         scaleX: 1,
         ease: "none",
         scrollTrigger: {
-          trigger: containerRef.current,
+          trigger: containerRef.current, // Safely uses the ref thanks to the guard at the top
           start: "top top",
           end: "bottom bottom",
           scrub: 0.3, // Ties animation smoothly to scrollbar
