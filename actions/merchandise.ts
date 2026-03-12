@@ -144,6 +144,10 @@ export async function createMerchandiseOrder(paymentData: {
 
         if (!response.ok) {
             const errorText = await response.text();
+            console.error(`Cashfree API Error ${response.status}:`, errorText);
+            if (errorText.toLowerCase().includes("customer_phone")) {
+                return { error: "Invalid or non-Indian phone number found. Phone number should be valid and contain no spaces in between (e.g. 987xxxxx10)." };
+            }
             throw new Error(`API Error ${response.status}: ${errorText}`);
         }
 

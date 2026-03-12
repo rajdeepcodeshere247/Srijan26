@@ -165,8 +165,10 @@ export default function MerchandisePage() {
         ...dataToSend,
       });
     } catch (err: any) {
-      setError(err.message);
-      toast.error(err.message);
+      console.error("Merchandise order error:", err);
+      const friendlyMsg = err.message || "Something went wrong. Please try again or contact support.";
+      setError(friendlyMsg);
+      toast.error(friendlyMsg);
     }
   };
 

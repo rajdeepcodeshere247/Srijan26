@@ -78,7 +78,12 @@ export function usePayment(config: PaymentConfig) {
             const result: OrderResponse = await res.json();
 
             if (!result.success || !result.data) {
-                throw new Error(result.error || "Failed to create order");
+                console.error("Create order error:", result.error);
+                const rawError = result.error || "";
+                if (rawError.toLowerCase().includes("customer_phone")) {
+                    throw new Error("Invalid or non-Indian phone number found. Phone number should be valid and contain no spaces in between (e.g. 987xxxxx10).");
+                }
+                throw new Error("We couldn't start your order. Please try again.");
             }
 
             const { orderId, paymentSessionId } = result.data;
@@ -97,7 +102,8 @@ export function usePayment(config: PaymentConfig) {
             const paymentResult = await cashfree.checkout(checkoutOptions);
 
             if (paymentResult.error) {
-                throw new Error(paymentResult.error.message || "Payment cancelled or failed");
+                console.error("Payment checkout error:", paymentResult.error);
+                throw new Error("Payment was cancelled or didn't go through. Please try again.");
             }
 
             // 4. Verify payment on backend
@@ -112,19 +118,36 @@ export function usePayment(config: PaymentConfig) {
 
                 if (verifyResult.success) {
                     toast.success("Payment successful!");
+
+                    // Save a local notification for the notifications page
+                    const newNotification = {
+                        id: `merch-${Date.now()}`,
+                        slug: "",
+                        title: "Order Confirmed",
+                        category: "Merchandise",
+                        color: "#4ade80",
+                        description: "Your shirt order has been confirmed and payment received. You will be notified about pickup details soon.",
+                        createdAt: new Date().toISOString(),
+                        isNew: true,
+                        link: "",
+                    };
+                    const existing = JSON.parse(localStorage.getItem("local_notifications") || "[]");
+                    localStorage.setItem("local_notifications", JSON.stringify([newNotification, ...existing]));
+
                     if (config.onSuccess) {
                         config.onSuccess(verifyResult);
                     } else {
                         router.push(config.successRedirect || "/dashboard");
                     }
                 } else {
-                    throw new Error(verifyResult.error || "Payment verification failed");
+                    console.error("Payment verification error:", verifyResult.error);
+                    throw new Error("We couldn't confirm your payment. Please check your bank or try again.");
                 }
             }
 
         } catch (err: any) {
             console.error("Payment Flow Error:", err);
-            toast.error(err.message || "Something went wrong during payment.");
+            toast.error(err.message || "Something went wrong. Please try again or contact support.");
             if (config.onError) config.onError(err);
         } finally {
             setIsLoading(false);
