@@ -757,31 +757,35 @@ const BUSINESS_EVENTS: Event[] = [
   },
 
 
-  /*
-  {
+ {
     id: "b6",
     slug: "pkv",
     title: "Pack-o-vation",
     category: "Business",
     color: "#FBEC1D",
-    description: "A national packaging innovation challenge. Online quiz followed by developing a comprehensive packaging solution with prototype elements.",
+    description: "A team-based competition aimed at inspiring innovative and sustainable packaging solutions. Participants integrate design, branding, and user experience into practical packaging improvements while considering environmental and market impacts.",
     format: "Offline",
     teamSize: "2-4",
-    rules: ["Packaging design", "Sustainability", "Prototype presentation"],
+    rules: [
+      "Round 1: Online objective-based quiz covering packaging materials, structural design, printing technologies, and industry trends.",
+      "Round 2: Develop a complete packaging solution based on a real-world challenge, including structural concepts, material selection, and a sustainability strategy.",
+      "Prototype: Teams must provide a physical model, mockup, or 3D visualization of their solution.",
+      "Final Presentation: A 4-5 minute pitch followed by a 2-3 minute Q&A and a live 'constraint-based defense' to test adaptability.",
+      "Evaluation: Judged on structural feasibility, branding impact, cost efficiency, and market viability."
+    ],
     lastDate: "TBA",
     prizePool: "₹ 7,000",
     link: "/register/pkv",
     driveLink: "https://drive.google.com/drive/folders/1cge9VZWypqascsE9O4D7F1WweLiz-Wzd",
-    image: "/images/events/business-default.jpg",
-    tags: ["Packaging", "Innovation"],
+    image: "/images/posters/pack-o-vation.webp",
+    tags: ["Packaging", "Innovation", "Sustainability"],
     status: "Open",
     coordinators: [
-      { name: "Soham Ghosh", contact: "62946 19087" },
-      { name: "Anshika Dutta", contact: "86173 17676" },
-      { name: "Soumyadeep", contact: "99036 38638" }
+      { name: "Soham Ghosh", contact: "6294619087" },
+      { name: "Anshika Dutta", contact: "8617317676" },
+      { name: "Soumyadeep Paul", contact: "9903638638" }
     ]
-  },
-  */
+},
 
 
   {
