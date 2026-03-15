@@ -1236,12 +1236,8 @@ const MISC_EVENTS: Event[] = [
     "Any participant not following safety rules will be disqualified.",
     "In case of any discrepancies, final decision will be made by the judge(s) and event staff."
   ],
-  lastDate: "TBA", // Note: Prelims are 10th April 2026
   prizePool: "₹ 6,000",
-  dates: {
-    prelims: "10th April 2026",
-    finals: "11th April 2026"
-  },
+  lastDate: "10th April 2026",
   link: "/register/climb-on",
   driveLink: "https://drive.google.com/file/d/16puhwNvBCQNYBOuygQZW6hHMppwHN2v7/view",
   image: "/images/posters/climb-on.webp",
