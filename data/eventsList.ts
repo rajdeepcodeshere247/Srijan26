@@ -78,31 +78,34 @@ const CODING_EVENTS: Event[] = [
   },
   */
 
-  /*
   {
-    id: "e4",
-    slug: "cypher3331",
-    title: "Cypher 3331",
-    category: "Coding",
-    color: "#FF3429",
-    description: "Dive into an exciting journey of brainstorming, ciphering, and Cryptography with no prior experience needed! Battle through 4 thrilling stages in prelims to secure your spot at the dream finals.",
-    format: "Offline",
-    teamSize: "3",
-    rules: ["Cryptography", "Ciphering", "4 Stages"],
-    lastDate: "TBA",
-    prizePool: "₹ 6,000",
-    link: "/register/cypher3331",
-    driveLink: "https://docs.google.com/document/d/1oNdtSB8Ze5rRkivSiycxvGtY0YXFaZOru0jz2NxMV9k/edit?tab=t.0",
-    image: "/images/events/coding-default.jpg",
-    tags: ["Crypto", "Puzzle"],
-    status: "Open",
-    coordinators: [
-      { name: "Supratim Chakraborty", contact: "9123378441" },
-      { name: "Mayukh Roy", contact: "9038929699" },
-      { name: "Sarin Sanyal", contact: "9432264022" }
-    ]
-  },
-  */
+  id: "e4",
+  slug: "cypher3331",
+  title: "Cypher 3331",
+  category: "Coding",
+  color: "#FF3429",
+  description: "Dive into an exciting journey of brainstorming and cryptography! Solve high-stakes puzzles in a 3-hour prelim session to secure your spot in the intense finals. No prior experience needed.",
+  format: "Offline",
+  teamSize: "3",
+  rules: [
+    "Prelims: A 3-hour Brainstorming Quiz designed to test participants' analytical and observational skills will be conducted on our own platform. Before the quiz, a short introductory session on cryptography and ciphering techniques will be provided, ensuring that no prior knowledge is required.",
+    "Finals: A more intense and challenging quiz session, designed to push participants further and test their mastery of the concepts learned.",
+    
+  ],
+  lastDate: "TBA",
+  prizePool: "₹ 6,000",
+  link: "/register/cypher3331",
+  driveLink: "https://docs.google.com/document/d/1oNdtSB8Ze5rRkivSiycxvGtY0YXFaZOru0jz2NxMV9k/edit?tab=t.0",
+  image: "/images/posters/cypher-3331.webp",
+  tags: ["Crypto", "Puzzle"],
+  status: "Open",
+  coordinators: [
+    { name: "Supratim Chakraborty", contact: "9123378441" },
+    { name: "Mayukh Roy", contact: "9038929699" },
+    { name: "Sarin Sanyal", contact: "9432264022" }
+  ]
+},
+
 
   {
     id: "e5",
@@ -110,73 +113,47 @@ const CODING_EVENTS: Event[] = [
     title: "Snap Syntax 3.0",
     category: "Coding",
     color: "#FF3429",
-    description:
-      "Snap Syntax evaluates participants' HTML, CSS, and React(Not Mandatory) skills by challenging them to recreate a given web page within 2 hours. Participants will be shown the website design for **1 minute**, after which they must **memorize it and build the best possible copy**, with brief glimpses provided during the challenge for refinement.",
+    description: "Recreate stunning web designs using just HTML, CSS (and maybe React). One glimpse, two hours, and your ability to turn memory into reality.",
+    format: "Offline",
+    teamSize: "2-4",
+    rules: ["Web Design", "Memory based", "HTML/CSS/React"],
+    lastDate: "TBA",
+    prizePool: "₹ 10,000",
+    link: "/register/ss3",
+    driveLink: "https://drive.google.com/file/d/1Py4J3qnGrU0SfUNiyPmlf8bXmlRw89vh/view?usp=drive_link",
     image: "/images/posters/snap-syntax.webp",
     tags: ["Web Dev", "Design"],
-    format: "Online",
-    teamSize: "2-4",
-    rules: [
-      "**Prelims Round:** Each team must submit their **best two** website designs in a single PDF. The PDF should include the **team name**, **team size**, and **names of all team members**, along with the **deployed** website links (Netlify/Vercel/GitHub Pages).",
-      "**Prelims Selection:** Top 20 teams will be qualified for the final round. **Result will be announced on 8th April.**",
-      "**Final Round Timing:** Final Round will be of **2 hrs.** at Jadavpur University Salt Lake Campus.",
-      "Only one laptop is allowed per team member.",
-      "Using external resources, ready-made templates, or help from others is strictly not allowed. However, participants may refer to documentation for syntax or use cases if needed.",
-      "Clicking the Photo of the page is strictly prohibited but the participants can draw the image of the website on paper.",
-      "The code must be pushed to a public GitHub repository named: **Srijan26_SnapSyntax_TeamName**",
-      "A Google Form will be shared where participants must submit the **GitHub repository link and the deployed website link** (whatever is completed).",
-    ],
-    scoring: [
-      "# Participants will be evaluated based on the following criteria:",
-      "**Accuracy (25%):** How closely your web page matches the original design (layout, elements, and details).",
-      "**Creativity (25%):** The innovative approaches and unique design elements integrated into the recreated web page.",
-      "**Efficiency (25%):** How well you manage the 2-hour time limit while keeping good quality.",
-      "**Code Quality (25%):** Clean, well-structured code following proper HTML and CSS practices.",
-    ],
-    lastDate: "TBA",
-    // prelimsDate: "Upto 6th April",
-    // finalsDate: "10th April",
-    prizePool: "₹ 10,000",
-    winnerPrize: "₹ 5,000",
-    runnersUpPrize: "₹ 3,000",
-    secondRunnersUpPrize: "₹ 2,000",
-    link: "/register/ss3",
-    driveLink:
-      "https://drive.google.com/file/d/1Py4J3qnGrU0SfUNiyPmlf8bXmlRw89vh/view?usp=drive_link",
-    coordinators: [
-      {
-        name: "Ayan Ghosh",
-        contact: "8167002490",
-      },
-      {
-        name: "Swapnaneel Ray",
-        contact: "7980515334",
-      },
-      {
-        name: "Anuska Nath",
-        contact: "9330129467",
-      },
-    ],
     status: "Open",
+    coordinators: [
+      { name: "Ayan Ghosh", contact: "8167002490" },
+      { name: "Swapnaneel Ray", contact: "7980515334" },
+      { name: "Anuska Nath", contact: "9330129467" }
+    ]
   },
 
-  /*
+
   {
     id: "e6",
     slug: "sv1",
     title: "System Vanguard",
     category: "Coding",
     color: "#FF3429",
-    description: "Multi-stage cybersecurity and AI challenge. Solve puzzles across domains like prompt injection, cryptography, reverse engineering, and web security.",
+    description: "A high-stakes Red-Teaming challenge. Navigate through layers of digital defense—from deciphering hidden messages to exploiting live network vulnerabilities and AI systems.",
     format: "Hybrid",
-    teamSize: "3",
-    rules: ["Cybersecurity", "AI", "Reverse Engineering"],
+    teamSize: "2-3",
+    rules: [
+      "1. Sequential Progression: This is a linear challenge. You cannot skip stages; the output of one level is the input for the next.",
+      "2. Tool Usage: Prelims require standard browser tools and metadata viewers; Finals allow and encourage professional security tools for reverse engineering and web analysis.",
+      "3. Ethical Hacking: Participants must adhere to ethical guidelines. The goal is to capture the flag, not to destroy the hosting infrastructure permanently.",
+      "4. Fair Play: Attacks on any infrastructure other than the specific IP/URL provided in the final round are strictly prohibited.",
+      "5. Collaboration: Inter-team collaboration is banned. You must rely solely on your registered team members."
+    ],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
     link: "/register/sv1",
     driveLink: "https://drive.google.com/file/d/110Ka-uixoGU94gnxm5OHZMCIKBlF6ljs/view?usp=sharing",
-    image: "/images/events/coding-default.jpg",
-    tags: ["Security", "AI", "Hacking"],
+    image: "/images/posters/system-vanguard.webp",
+    tags: ["Cybersecurity", "AI", "Blockchain", "Reverse Engineering"],
     status: "Open",
     coordinators: [
       { name: "Tanish Majumdar", contact: "7028912305" },
@@ -184,7 +161,6 @@ const CODING_EVENTS: Event[] = [
       { name: "Anirban Biswas", contact: "7718736188" }
     ]
   },
-  */
 
   /*
   {
@@ -212,76 +188,75 @@ const CODING_EVENTS: Event[] = [
   },
   */
 
+
   {
     id: "e8",
     slug: "h4g",
     title: "HackForge",
     category: "Coding",
     color: "#FF3429",
-    description:
-      "Get ready for **HackForge**, an **electrifying hybrid hackathon** designed to push the boundaries of innovation! Gather your squad and dive into an intense, **collaborative coding environment** where creativity meets cutting-edge technology. Whether you are building complex web apps, solving real-world problems, or architecting the next big thing, HackForge provides the ultimate platform to **develop your solution from scratch** and **pitch your groundbreaking ideas**. Bring your A-game, adapt on the fly, and forge the future!",
+    description: "An electrifying offline hackathon where creativity meets technology. Collaborate and bring groundbreaking ideas to life.",
+    format: "Hybrid",
+    teamSize: "4",
+    rules: ["Hackathon", "Innovation", "Project building"],
+    lastDate: "TBA",
+    prizePool: "₹ 10,000",
+    link: "/register/h4g",
+    driveLink: "https://docs.google.com/document/d/1hU4U0AAEY1ZECqtupltfj_OuLTto-oRVjA-vmrLVn14/edit?usp=sharing",
     image: "/images/posters/hackforge.webp",
     tags: ["Hackathon", "Dev"],
-    format: "Hybrid",
-    teamSize: "3-4",
-    rules: [
-      "The **Coding + Pitching Round** will begin precisely at **10:00 AM**. All team members must be present onsite at the scheduled time. Failure to do so will result in **disqualification**.",
-      "Participants are allowed to use **any technology stack** of their choice to develop their solution.",
-      "All GitHub commits must be made **only after the start of the onsite round**. Any prior commits will lead to **immediate disqualification**.",
-      "All submissions will be subjected to a **plagiarism check**. Any instance of code plagiarism or idea replication will lead to **disqualification** from the competition.",
-      "Code will be evaluated at **multiple timestamps**, so teams must **regularly push their progress** to the designated repository.",
-      "**Food and beverages** will be provided to all team members participating in the onsite round.",
-    ],
-    lastDate: "TBA",
-    prizePool: "₹ 8,500",
-    winnerPrize: "₹ 4,000",
-    runnersUpPrize: "₹ 2,500",
-    secondRunnersUpPrize: "₹ 2,000",
-    link: "/register/h4g",
-    driveLink:
-      "https://docs.google.com/document/d/1hU4U0AAEY1ZECqtupltfj_OuLTto-oRVjA-vmrLVn14/edit?usp=sharing",
-    coordinators: [
-      {
-        name: "Aritra Mondal",
-        contact: "7365911452",
-      },
-      {
-        name: "Dipan Mondal",
-        contact: "8250821406",
-      },
-      {
-        name: "Vivek Haldar",
-        contact: "9875495117",
-      },
-    ],
-    status: "Open",
-  },
-
-  /*
-  {
-    id: "e9",
-    slug: "uncode",
-    title: "Uncode",
-    category: "Coding",
-    color: "#FF3429",
-    description: "Reverse-engineering event. Figure out the logic behind given inputs and outputs, then write code that matches the hidden rules.",
-    format: "Hybrid",
-    teamSize: "1-2",
-    rules: ["Reverse Engineering", "Logic puzzles"],
-    lastDate: "TBA",
-    prizePool: "₹ 6,000",
-    link: "/register/uncode",
-    driveLink: "https://drive.google.com/file/d/1p5xzORf9OflUKbzXglhheJ-A-F53WZWF/view?usp=sharing",
-    image: "/images/events/coding-default.jpg",
-    tags: ["Logic", "Coding"],
     status: "Open",
     coordinators: [
-      { name: "Arka Dutta", contact: "9874756905" },
-      { name: "Abhirup Pal", contact: "8777083586" },
-      { name: "Aneek Bhattacharya", contact: "9609916398" }
+      { name: "Aritra Mondal", contact: "7365911452" },
+      { name: "Dipan Mondal", contact: "8250821406" },
+      { name: "Vivek Haldar", contact: "9875495117" }
     ]
   },
-  */
+
+
+  {
+  id: "e9",
+  slug: "uncode",
+  title: "Uncode",
+  category: "Coding",
+  color: "#FF3429",
+  description: "A **logic-based reverse engineering challenge** where participants analyze **input–output examples** to uncover the hidden algorithm behind them. Competitors must **deduce the underlying logic and implement code** that reproduces the correct outputs, testing their **analytical thinking, pattern recognition, and problem-solving skills**.",
+  image: "/images/posters/Uncode.webp",
+  tags: ["Logic", "Coding"],
+  format: "Hybrid",
+  teamSize: "1-2",
+  rules: [
+    "Participants must **analyze the provided inputs and outputs** to determine the hidden logic",
+    "Solutions may require **writing code or deducing algorithmic rules** that match the pattern",
+    "The competition consists of **two rounds with increasing difficulty**",
+    "Only **top performers from the first round** will advance to the final round",
+    "The **decision of the judges will be final**"
+  ],
+  eventFormat: [
+    "# Round 1: Online Qualifier",
+    "Participants will solve **input-output based logic puzzles**",
+    "Contestants must **identify the hidden transformation rules** governing the examples",
+    "Top participants will be **shortlisted for the offline final round**",
+    "# Round 2: Offline Finale",
+    "Shortlisted participants will compete **on-site during SRIJAN’26**",
+    "Participants will tackle **more complex puzzles and hidden logic problems**",
+    "Competitors must **produce code or logical solutions** matching the given patterns",
+    "Performance in this round will **determine the final winners**"
+  ],
+  lastDate: "TBA",
+  prizePool: "₹ 6,000",
+  winnerPrize: "₹3,000",
+  runnersUpPrize: "₹2,000",
+  secondRunnersUpPrize: "₹1,000",
+  link: "/register/Uncode",
+  driveLink: "https://drive.google.com/file/d/1p5xzORf9OflUKbzXglhheJ-A-F53WZWF/view?usp=sharing",
+  coordinators: [
+    { name: "Arka Dutta", contact: "9874756905" },
+    { name: "Abhirup Pal", contact: "8777083586" },
+    { name: "Aneek Bhattacharya", contact: "9609916398" }
+  ],
+  status: "Open"
+}
 
   /*
   {
@@ -337,62 +312,31 @@ const CODING_EVENTS: Event[] = [
 ];
 
 const ROBOTICS_EVENTS: Event[] = [
+
   {
     id: "r4",
     slug: "traffiq",
     title: "TraffIQ",
     category: "Circuits and Robotics",
     color: "#1DDBFF",
-    description:
-      "What if a car could see, think, and decide? **TRAFFIQ** challenges participants to build an **Artificial Intelligence model** capable of navigating a vehicle autonomously using **real-time camera input**. There is no remote control and no manual override—just vision, intelligence, and decision-making. **We provide the car, and you build the brain!** This is an electrifying challenge where **computer vision meets control systems** and machine learning meets motion. If you believe your robot can think, adapt, and conquer, this is your arena.",
-    image: "/images/posters/traffiq.webp",
-    tags: ["AI", "CV", "Robotics"],
-    format: "Online Prelims & Offline Finals",
+    description: "AI-based autonomous vehicle competition. Develop the software brain of a self-driving car using real-time camera input on provided hardware.",
+    format: "Offline",
     teamSize: "2-5",
-    rules: [
-      "The vehicle platform (**Raspberry Pi 4B 8GB with Pi Cam V2**) will be **provided by the organizers**. Teams must **not modify the hardware**; only software/AI-based control is permitted.",
-      "The system must operate **fully autonomously** once started. Manual override during the run results in a **penalty or disqualification**.",
-      "Teams are strictly prohibited from using **pre-mapped coordinates, fixed path scripts, or hardcoded navigation**. Navigation must be based purely on **real-time visual input**.",
-      "**No internet access** or **external communication** (WiFi, Bluetooth, SSH, remote desktop) is permitted during the live run.",
-      "The AI system must include a **safe-stop mechanism** that halts the vehicle in case of a model crash, unexpected behavior, or loss of visual input.",
-      "Teams must use their **own developed models** or properly credited open-source frameworks. **Plagiarism will result in immediate disqualification**.",
-      "Each team must be prepared to **briefly explain their AI model architecture** and decision-making pipeline to the judges upon request.",
-    ],
-    scoring: [
-      "**Total Score** = (Sum of Reward Points) - (Sum of Penalty Points).",
-      "**Reward Points:** Successful completion of the course (**300 points**), Time score (**600 - Time in seconds**), plus bonuses for obstacles, checkpoints, distance covered, and path optimization efficiency.",
-      "**Penalty Points:** Collision with an obstacle (**-25 points**), Boundary violation (**-20 points**), Human intervention (Max 3 allowed, **-50 points each**).",
-      "**Disqualification:** Hard coding navigation specific to the arena will result in immediate disqualification.",
-    ],
+    rules: ["AI", "Computer Vision", "Autonomous Vehicle"],
     lastDate: "TBA",
     prizePool: "₹ 6,500",
-    winnerPrize: "₹ 3,000",
-    runnersUpPrize: "₹ 2,000",
-    secondRunnersUpPrize: "₹ 1,000",
-    andMore: true,
-    prizeDetails: [
-      "**1st Prize** - ₹ 3000",
-      "**2nd Prize** - ₹ 2000",
-      "**3rd Prize** - ₹ 1000",
-      "**Innovation Prize** - ₹ 500",
-      "**Finalists** will receive Certificates of Merit.",
-      "**All participants** will receive Participation e-Certificates.",
-    ],
     link: "/register/traffiq",
-    driveLink:
-      "https://drive.google.com/drive/folders/1w6ObIiuupOY-Mlh-vM0K8bcHmoNqpvIy?usp=sharing",
-    coordinators: [
-      {
-        name: "Rhitambhar Choudhury",
-        contact: "6289848840",
-      },
-      {
-        name: "Aayush Konar",
-        contact: "9972095077",
-      },
-    ],
+    driveLink: "https://drive.google.com/drive/folders/1w6ObIiuupOY-Mlh-vM0K8bcHmoNqpvIy?usp=sharing",
+    image: "/images/posters/traffiq.webp",
+    tags: ["AI", "CV", "Robotics"],
     status: "Open",
+    coordinators: [
+      { name: "Rhitambhar Choudhury", contact: "6289848840" },
+      { name: "Aayush Konar", contact: "9972095077" }
+    ]
   },
+
+
 
   {
     id: "r5",
@@ -400,65 +344,24 @@ const ROBOTICS_EVENTS: Event[] = [
     title: "Death Race",
     category: "Circuits and Robotics",
     color: "#1DDBFF",
-    description:
-      "Welcome to **Death Race 2026**, where engineering meets raw survival! Designed for a world beyond limits, this flagship event challenges innovators to build machines that can endure **extreme conditions**, brutal obstacles, and relentless competition. Hosted by **Team XLR8**, participants must push speed, control, and design to the breaking point—because in this wasteland, only the **strongest machines prevail**.",
-    image: "/images/posters/death-race.webp",
-    tags: ["Racing", "Robotics", "Combat"],
+    description: "Engineering meets raw survival. Push your skills by building and racing robotic vehicles through demanding tracks with brutal obstacles.",
     format: "Offline",
     teamSize: "1-4",
-    rules: [
-      "The vehicle must be **fully wireless** and fit within a **30cm x 30cm x 30cm** box. A 5% tolerance is allowed.",
-      "The maximum weight of the bot must not exceed **5 kg** (excluding the battery).",
-      "The maximum voltage at any point must not exceed **24V**. Only **electric power** is permitted.",
-      "Bots must have a **clear and accessible power switch** for emergency shutdowns.",
-      "Damage to the track or hazardous behavior will lead to **immediate disqualification**.",
-      "Teams are allowed to use **multiple batteries** for replacement, but the bot must be powered by a single onboard source during the run.",
-      "**Pre-registration and technical inspection** are mandatory before the race starts.",
-    ],
-    scoring: [
-      "# **The scoring system focuses on speed, endurance, and hazard navigation.**",
-      "**Completion Points:** awarded for crossing checkpoints and finishing the track.",
-      "**Time Bonus:** Points are inversely proportional to the time taken to complete the run.",
-      "**Hazard Penalty:** Deductions for getting stuck, requiring manual resets, or hitting boundary walls.",
-      "**Design Bonus:** Extra points may be awarded for **innovation** and **structural integrity** during technical inspection.",
-    ],
+    rules: ["Racing bot", "Obstacle course", "Speed and Control"],
     lastDate: "TBA",
-    // "prelimsDate": "9th - 10th April 2026",
-    // "finalsDate": "12th April 2026",
     prizePool: "₹ 35,000",
-    winnerPrize: "₹ 12,000",
-    runnersUpPrize: "₹ 9,000",
-    secondRunnersUpPrize: "₹ 6,000",
-    andMore: true,
-    prizeDetails: [
-      "# **Total Prize Pool Worth ₹ 35,000!!!**",
-      "**1st Prize** - Worth ₹ 12,000",
-      "**2nd Prize** - Worth ₹ 9,000",
-      "**3rd Prize** - Worth ₹ 6,000",
-      "**Lowest Cost Bot** - Worth ₹ 2,000",
-      "**Most Innovative Design** - Worth ₹ 2,000",
-      "**People's Choice Award** - Worth ₹ 2,000",
-      "**The Hulk (Strongest Bot)** - Worth ₹ 2,000",
-    ],
     link: "/register/death_race",
-    driveLink:
-      "https://drive.google.com/file/d/1aYHvLPbTDPQ-kPY46HQuVXCj6PHR_hF-/view?usp=sharing",
-    coordinators: [
-      {
-        name: "Subhabrata Nath",
-        contact: "7001506536",
-      },
-      {
-        name: "Debaditya Chaudhuri",
-        contact: "9051977751",
-      },
-      {
-        name: "Ruchir Saha",
-        contact: "7047505834",
-      },
-    ],
+    driveLink: "https://drive.google.com/file/d/1aYHvLPbTDPQ-kPY46HQuVXCj6PHR_hF-/view?usp=sharing",
+    image: "/images/posters/death-race.webp",
+    tags: ["Racing", "Combat"],
     status: "Open",
+    coordinators: [
+      { name: "Subhabrata Nath", contact: "7001506536" },
+      { name: "Debaditya Chaudhuri", contact: "9051977751" },
+      { name: "Ruchir Saha", contact: "7047505834" }
+    ]
   },
+
 
   /*
   {
@@ -538,57 +441,33 @@ const ROBOTICS_EVENTS: Event[] = [
   },
   */
 
+
+
   {
     id: "r11",
     slug: "thunderbolts",
     title: "THUNDERBOLTS VOLTEDGED",
     category: "Circuits and Robotics",
     color: "#1DDBFF",
-    description:
-      "A **three-stage electronics challenge** where teams must use **electronics knowledge, circuit building, and quick problem-solving** to progress through increasingly difficult rounds. Work together to decode signals, construct working circuits, and ultimately **retrieve the captured asset “Bob” in the shortest time possible**.",
-    image: "/images/posters/voltedged.webp",
-    tags: ["Power", "Electronics"],
+    description: "A three-stage electronics challenge that will put your hands, mind, and technical knowledge to the ultimate test. Power up and step in.",
     format: "Offline",
     teamSize: "3-4",
-    rules: [
-      "One laptop per team is **mandatory**",
-      "**Basic Arduino and electronic circuit knowledge** is required",
-      "All decisions made by judges are **final and non-negotiable**",
-    ],
-    eventFormat: [
-      "# Round 1: The Containment Chamber",
-      "⏱ **45 Minutes**",
-      "Solve five **electronics-based riddles**",
-      "Each correct answer unlocks a circuit component",
-      "Use the components to build a **working circuit**",
-      "Only the **first 10 teams** advance",
-      "# Round 2: Signal Intercept",
-      "⏱ **1 Hour 15 Minutes**",
-      "Hands-on **circuit-building round**",
-      "Construct circuits to decode a **binary encoded message**",
-      "The output reveals Bob’s next location",
-      "Only the **first 6 teams** advance",
-      "# Round 3: Into the Void",
-      "⏱ **1 Hour**",
-      "Advanced **circuit-building challenge**",
-      "Related preparation topics will be shared beforehand",
-      "**Speed and accuracy** determine the winner",
-    ],
+    rules: ["Electronics", "Instinct", "Adaptability"],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
-    winnerPrize: "₹3,000",
-    runnersUpPrize: "₹2,000",
-    secondRunnersUpPrize: "₹1,000",
     link: "/register/thunderbolts_voltedged",
-    driveLink:
-      "https://drive.google.com/file/d/1BIF35JH9Syj4HA664kCs3n41LKcWcTyc/view?usp=sharing",
+    driveLink: "https://drive.google.com/file/d/1BIF35JH9Syj4HA664kCs3n41LKcWcTyc/view?usp=sharing",
+    image: "/images/posters/voltedged.webp",
+    tags: ["Power", "Electronics"],
+    status: "Open",
     coordinators: [
       { name: "Asmita Rakshit", contact: "8240132920" },
       { name: "Debarpan Ghosh", contact: "7003120954" },
-      { name: "Niladri Saha", contact: "7439160736" },
-    ],
-    status: "Open",
+      { name: "Niladri Saha", contact: "7439160736" }
+    ]
   },
+
+
 
   {
     id: "r12",
@@ -596,70 +475,23 @@ const ROBOTICS_EVENTS: Event[] = [
     title: "SKYSPRINT",
     category: "Circuits and Robotics",
     color: "#1DDBFF",
-    description:
-      "A **glider design and flight challenge** where teams build a **hand-launched glider from scratch** and compete to achieve the **maximum flight distance, longest glide time, and highest landing precision**. The event tests **aerodynamic design, engineering creativity, and flight stability** through multiple competitive rounds.",
-    image: "/images/posters/skysprint.webp",
-    tags: ["Aerospace", "Gliders"],
+    description: "Glider-building competition. Design and construct hand-launched aircraft from scratch. Focus on flight distance and airtime duration.",
     format: "Offline",
     teamSize: "2-3",
-    rules: [
-      "Teams must **design and build their glider from scratch**; kit-built aircraft or pre-made parts are not allowed",
-      "**RC components or external propulsion systems are strictly prohibited**",
-      "Gliders **cannot have wheels** and must slide to a stop on the ground",
-      "Maximum **wingspan: 80 cm**",
-      "Maximum **body length: 80 cm (nose to tail)**",
-      "Only **lightweight materials such as balsa wood or foam** are allowed",
-      "**Metallic materials or high-density components are prohibited**",
-      "Only **lightweight adhesives such as glue or tape** may be used",
-      "Folded paper airplane style bodies are **not allowed**",
-      "Each glider will undergo a **technical inspection before competition**",
-      "Any violation of rules or misconduct may result in **immediate disqualification**",
-      "The **decision of the event coordinators will be final**",
-    ],
-    scoring: [
-      "# Distance Round Scoring",
-      "Score = **Glide Distance (meters)**",
-      "Each team receives **two attempts**, best distance counted",
-      "# Air Time Round Scoring",
-      "Score = **Glide Time (seconds)**",
-      "Each team receives **two attempts**, best time counted",
-      "# Overall Score Calculation",
-      "Total Score = **(0.30 × Distance Score) + (0.60 × Time Score) + (0.10 × Design Score)**",
-      "# Finals Target Scoring",
-      "Bullseye (within **0.5 m**) = **10 points**",
-      "First ring (within **0.8 m**) = **9 points**",
-      "Second ring (within **1 m**) = **8 points**",
-      "Outside 1 m = **7 points**",
-    ],
-    eventFormat: [
-      "# Round 1: Design Showcase",
-      "Teams submit a **technical report (PDF or PPT)** explaining glider dimensions, materials, and design features",
-      "Structural or **aerodynamic innovations must be highlighted**",
-      "# Round 2: Javelin Throw Round",
-      "Teams launch their glider in a **javelin-style motion** to achieve maximum glide distance",
-      "Ballistic or **shot-put style throws are prohibited**",
-      "# Round 3: Stay in the Air",
-      "Teams attempt to achieve the **maximum glide time**",
-      "# Finals: Bulls Eye Round",
-      "Gliders must land as **close as possible to the center target**",
-      "Each team receives **three attempts**, total points determine the score",
-      "# Tiebreaker",
-      "Each team receives **one attempt**, the glider landing closest to the center wins",
-    ],
+    rules: ["Glider building", "Hand-launched", "Precision landing"],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
-    winnerPrize: "₹3,000",
-    runnersUpPrize: "₹2,000",
-    secondRunnersUpPrize: "₹1,000",
     link: "/register/sks",
-    driveLink:
-      "https://drive.google.com/drive/folders/1E6wrjSiNy5Eo7_AGc3ZiLNiUPVaO5kKq?usp=sharing",
+    driveLink: "https://drive.google.com/drive/folders/1E6wrjSiNy5Eo7_AGc3ZiLNiUPVaO5kKq?usp=sharing",
+    image: "/images/posters/skysprint.webp",
+    tags: ["Aerospace", "Gliders"],
+    status: "Open",
     coordinators: [
       { name: "Priyanshu Kumar", contact: "6297445609" },
-      { name: "Subhojit Roy", contact: "7003312027" },
-    ],
-    status: "Open",
+      { name: "Subhojit Roy", contact: "7003312027" }
+    ]
   },
+
 
   /*
   {
@@ -762,168 +594,88 @@ const ROBOTICS_EVENTS: Event[] = [
   },
   */
 
+
   {
     id: "r17",
     slug: "iotbw",
     title: "IoT BIDWARS",
     category: "Circuits and Robotics",
     color: "#1DDBFF",
-    description:
-      "A **strategy-driven electronics competition** where teams compete through a **technical quiz, a digital component auction, and an IoT circuit-building challenge**. Participants must plan carefully, bid for components using limited virtual currency, and design **fully functional IoT systems capable of real-time cloud data transmission**.",
-    image: "/images/posters/iot-bidwars.webp",
-    tags: ["IoT", "Electronics"],
+    description: "Unite strategy and smart circuitry. Intense online quiz followed by a high-stakes digital auction to secure components for live IoT Blitz Circuit making.",
     format: "Hybrid",
     teamSize: "2-3",
-    rules: [
-      "The event will be conducted over **two days**",
-      "The competition consists of **three rounds**",
-      "The **preliminary quiz round will be conducted online**",
-      "The **auction and circuit-building rounds will be conducted offline**",
-      "All decisions taken by the **judges will be final and binding**",
-    ],
-    scoring: [
-      "# Final Evaluation",
-      "Final Score = **50% (Bid-n-Build Round) + 50% (Uplink Round)**",
-      "The team with the **highest combined score** will be declared the winner",
-      "In case of a tie, **total execution time will be considered**",
-    ],
-    eventFormat: [
-      "# Round 1: Preliminary Quiz (Online)",
-      "Teams answer **multiple choice questions (MCQs)** within a time limit",
-      "Questions cover **Boolean Logic, Mathematical Reasoning, and Electronics Fundamentals**",
-      "Teams are **shortlisted based on performance**",
-      "In case of a tie, **submission time determines ranking**",
-      "# Round 2: Bid-n-Build (Offline)",
-      "Shortlisted teams receive **three problem statements**",
-      "Each team gets a **fixed amount of virtual currency**",
-      "Teams **bid in a digital auction** to acquire electronics components",
-      "Using purchased components, teams must **build the required circuit**",
-      "Evaluation is based on **accuracy, component efficiency, completion time, and implementation quality**",
-      "# Round 3: Uplink (Offline)",
-      "Teams receive a **microcontroller and sensor kit**",
-      "Objective is to **interface sensors and upload real-time data to the cloud**",
-      "Evaluation is based on **working hardware setup, cloud transmission, accuracy, stability, and execution time**",
-    ],
+    rules: ["IoT", "Circuit making", "Auction"],
     lastDate: "TBA",
     prizePool: "₹ 15,000",
-    winnerPrize: "₹7,000",
-    runnersUpPrize: "₹5,000",
-    secondRunnersUpPrize: "₹3,000",
-    andMore: true,
-    prizeDetails: [
-      "# Additional Rewards",
-      "**Certificates will be awarded to all finalists**",
-    ],
     link: "/register/iotbw",
-    driveLink:
-      "https://drive.google.com/file/d/1HUvVMDuUvPMb7iKrsSEi11_nErO7P1Qv/view?usp=sharing",
+    driveLink: "https://drive.google.com/file/d/1HUvVMDuUvPMb7iKrsSEi11_nErO7P1Qv/view?usp=sharing",
+    image: "/images/posters/iot-bidwars.webp",
+    tags: ["IoT", "Electronics"],
+    status: "Open",
     coordinators: [
       { name: "Tuhin Roy", contact: "7980143323" },
       { name: "Aryan Singh", contact: "7644030018" },
-      { name: "MD Tajuddin", contact: "8768589099" },
-    ],
-    status: "Open",
+      { name: "MD Tajuddin", contact: "8768589099" }
+    ]
   },
 
   {
-    id: "r18",
-    slug: "lord-of-the-ring",
-    title: "Lord of the Ring",
-    category: "Circuits and Robotics",
-    color: "#1DDBFF",
-    description:
-      "The **ultimate Robo Sumo competition** where engineering skill meets tactical combat. Teams design powerful robots and battle inside the arena across **wired and wireless categories**, competing in intense elimination matches where strategy, control, and mechanical precision determine victory.",
-    image: "/images/posters/lord-of-the-ring.webp",
-    tags: ["Robo Sumo", "Combat", "Mechatronics"],
-    format: "Offline",
-    teamSize: "3-5",
-    rules: [
-      "Team size must be **3–5 members per team**",
-      "Competition includes **Wired and Wireless robot categories**",
-      "Robots must fit within **30 cm × 30 cm × 15 cm dimensions**",
-      "Maximum robot weight: **2.5 kg**",
-      "Minimum ground clearance: **7 mm**",
-      "Maximum wheel diameter: **6 cm**",
-      "Allowed drive systems include **high-torque PM brushed DC motors with standard gearboxes**",
-      "**BLDC motors, stepper motors, and industrial servos are prohibited**",
-      "**Planetary gearboxes and cycloidal drives are not allowed**",
-      "**Mecanum wheels, omni wheels, sticky tires, and suction systems are banned**",
-      "Robots must implement the **20A Automotive Blade Fuse safety rule**",
-      "Entering the arena intentionally before the match may result in **penalty points**",
-      "For wired bots, **220V power supply will be provided**",
-      "The **decision of judges is final in case of disputes**",
-    ],
-    scoring: [
-      "# Arena Scoring System",
-      "+2 Points: **Moving the opponent into the green danger zone**",
-      "+5 Points: **Complete displacement by pushing the opponent out of the arena**",
-      "# Tie Breaker",
-      "If both robots exit the arena, the robot that **leaves later receives the advantage based on sector position**",
-      "# Penalties",
-      "Entering the arena intentionally before the start results in **negative points**",
-    ],
-    eventFormat: [
-      "# Match Structure",
-      "Matches follow an **elimination format**",
-      "Each match consists of **3 rounds of 1 minute each**",
-      "The robot that **wins 2 rounds first wins the match**",
-      "# Categories",
-      "Competition includes **Wired and Wireless categories with separate rewards**",
-    ],
-    lastDate: "TBA",
-    prizePool: "₹ 12,000",
-    winnerPrize: "₹3,000",
-    runnersUpPrize: "₹2,000",
-    secondRunnersUpPrize: "₹1,000",
-    andMore: true,
-    prizeDetails: [
-      "# **Wired Category**",
-      "1st Prize — ₹3000",
-      "2nd Prize — ₹2000",
-      "3rd Prize — ₹1000",
-      "# **Wireless Category**",
-      "1st Prize — ₹3000",
-      "2nd Prize — ₹2000",
-      "3rd Prize — ₹1000",
-    ],
-    link: "/register/lotr",
-    driveLink:
-      "https://drive.google.com/file/d/1dLb_yYxSeimMhUlxXUcjTMDxmqVxTHC-/view?usp=sharing",
-    coordinators: [
+    id: "r18", 
+    slug: "lord-of-the-ring",
+    title: "Lord of the Ring",
+    category: "Circuits and Robotics",
+    color: "#1DDBFF",
+    description: "The pinnacle of robotic competition where engineering brilliance meets tactical mastery in the exhilarating Robo Sumo arena! Navigate through wired and wireless categories in electrifying elimination rounds.",
+    format: "Offline",
+    teamSize: "3-5",
+    rules: ["Team Size: 3 - 5 members per team.",
+      "Categories: Wired and Wireless (Distinct rewards for each).",
+      "Format: Elimination rounds. Losing means leaving.",
+      "Match Duration: 3 rounds, 1 minute each.",
+      "Victory: The first robot to win 2 rounds wins the match. Winners are determined based on strategic moves.",
+      "Judges: Decisions regarding task completion, movement precision, and strategic execution rest with club judges."],
+    lastDate: "April 10, 2026", 
+    prizePool: "₹ 12,000", 
+    link: "/register/lotr",
+    driveLink: "https://drive.google.com/file/d/1dLb_yYxSeimMhUlxXUcjTMDxmqVxTHC-/view?usp=sharing", 
+    image: "/images/posters/lord-of-the-ring.webp",
+    tags: ["Robo Sumo", "Combat", "Mechatronics"],
+    status: "Open",
+    coordinators: [
       { name: "Tuhin Roy", contact: "7980143323" },
       { name: "Soham Saha", contact: "8918140410" },
-      { name: "Arnab Karmakar", contact: "9883415630" },
-    ],
-    status: "Open",
-  },
+      { name: "Arnab Karmakar", contact: "9883415630" }]
+  }
+
+
 ];
 
 const BUSINESS_EVENTS: Event[] = [
+
   {
     id: "b1",
     slug: "indx",
     title: "INDUSTRIX",
     category: "Business",
     color: "#FBEC1D",
-    description:
-      "Lead a manufacturing startup in a real-time simulation, balancing supply chains and marketing to dominate a live market. Negotiate and bid for components in the Auction Round.",
+    description: "Lead a manufacturing startup in a real-time simulation, balancing supply chains and marketing to dominate a live market. Negotiate and bid for components in the Auction Round.",
     format: "Offline",
     teamSize: "4",
     rules: ["Startup simulation", "Supply chain management", "Auction round"],
     lastDate: "TBA",
     prizePool: "₹ 12,000",
     link: "/register/indx",
-    driveLink:
-      "https://drive.google.com/file/d/18BNV4vZCQkevl9Jy7sPsW4GQgwU3xTFA/view?usp=sharing",
+    driveLink: "https://drive.google.com/file/d/18BNV4vZCQkevl9Jy7sPsW4GQgwU3xTFA/view?usp=sharing",
     image: "/images/posters/industrix.webp",
     tags: ["Manufacturing", "Startup", "Economics"],
     status: "Open",
     coordinators: [
       { name: "Prathiman Mandal", contact: "7477333883" },
       { name: "Ratul Ray", contact: "6376143364" },
-      { name: "Sarbajit Mukherjee", contact: "8478045750" },
-    ],
+      { name: "Sarbajit Mukherjee", contact: "8478045750" }
+    ]
   },
+
 
   /*
   {
@@ -951,31 +703,32 @@ const BUSINESS_EVENTS: Event[] = [
   },
   */
 
+
   {
     id: "b3",
     slug: "ace-the-case",
     title: "Ace The Case",
     category: "Business",
     color: "#FBEC1D",
-    description:
-      "Analyze real-world challenges, develop innovative solutions, and showcase your strategic acumen in this case study competition.",
+    description: "Analyze real-world challenges, develop innovative solutions, and showcase your strategic acumen in this case study competition.",
     format: "Offline",
     teamSize: "2-4",
     rules: ["Problem solving", "Analytical thinking", "Strategy"],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
     link: "/register/ace-the-case",
-    driveLink:
-      "https://drive.google.com/drive/folders/1IrQNz5vWwU1kHmqnHVfl6U_eWELPX_xP",
+    driveLink: "https://drive.google.com/drive/folders/1IrQNz5vWwU1kHmqnHVfl6U_eWELPX_xP",
     image: "/images/posters/ace-the-case.webp",
     tags: ["Entrepreneurship", "Case Study"],
     status: "Open",
     coordinators: [
       { name: "Neelavra Das", contact: "8100027187" },
       { name: "Debraj Chakraborty", contact: "6291580386" },
-      { name: "Dipayan Sardar", contact: "9733817692" },
-    ],
+      { name: "Dipayan Sardar", contact: "9733817692" }
+    ]
   },
+
+
 
   {
     id: "b4",
@@ -983,25 +736,25 @@ const BUSINESS_EVENTS: Event[] = [
     title: "Biznez Plan",
     category: "Business",
     color: "#FBEC1D",
-    description:
-      "Unleash your entrepreneurial spirit! Transform innovative ideas into industry-ready solutions and pitch your vision to the world.",
+    description: "Unleash your entrepreneurial spirit! Transform innovative ideas into industry-ready solutions and pitch your vision to the world.",
     format: "Offline",
     teamSize: "2-4",
     rules: ["Business plan", "Pitching", "Innovation"],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
     link: "/register/biznez-plan",
-    driveLink:
-      "https://drive.google.com/file/d/1AKKhlGl-UrkmMKUisxbnghnFW9oET98d/view?usp=sharing",
+    driveLink: "https://drive.google.com/file/d/1AKKhlGl-UrkmMKUisxbnghnFW9oET98d/view?usp=sharing",
     image: "/images/posters/biznez-plan.webp",
     tags: ["Startup", "Pitching"],
     status: "Open",
     coordinators: [
       { name: "Pranjal Deb", contact: "6290622851" },
       { name: "Anshika Dutta", contact: "8617317676" },
-      { name: "Adrija Das", contact: "7980466251" },
-    ],
+      { name: "Adrija Das", contact: "7980466251" }
+    ]
   },
+
+
 
   {
     id: "b5",
@@ -1009,34 +762,32 @@ const BUSINESS_EVENTS: Event[] = [
     title: "StratEdgeX",
     category: "Business",
     color: "#FBEC1D",
-    description:
-      "The ultimate strategy challenge. Optimize a product according to market needs, balancing quality and cost, and present your winning strategy.",
+    description: "The ultimate strategy challenge. Optimize a product according to market needs, balancing quality and cost, and present your winning strategy.",
     format: "Offline",
     teamSize: "1-4",
     rules: ["Product optimization", "Analysis", "Presentation"],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
     link: "/register/stratedgex",
-    driveLink:
-      "https://drive.google.com/file/d/1-oQYdX5PlPLPbLLoKvMThOEyWw9jbolg/view?usp=drive_link",
+    driveLink: "https://drive.google.com/file/d/1-oQYdX5PlPLPbLLoKvMThOEyWw9jbolg/view?usp=drive_link",
     image: "/images/posters/stratedgex.webp",
     tags: ["Strategy", "Marketing"],
     status: "Open",
     coordinators: [
       { name: "Avik Kapri", contact: "8293553705" },
       { name: "Souranil Sen", contact: "8768492610" },
-      { name: "Md Arsh Ansari", contact: "7003184131" },
-    ],
+      { name: "Md Arsh Ansari", contact: "7003184131" }
+    ]
   },
 
-  {
+
+ {
     id: "b6",
     slug: "pkv",
     title: "Pack-o-vation",
     category: "Business",
     color: "#FBEC1D",
-    description:
-      "A team-based competition aimed at inspiring innovative and sustainable packaging solutions. Participants integrate design, branding, and user experience into practical packaging improvements while considering environmental and market impacts.",
+    description: "A team-based competition aimed at inspiring innovative and sustainable packaging solutions. Participants integrate design, branding, and user experience into practical packaging improvements while considering environmental and market impacts.",
     format: "Offline",
     teamSize: "2-4",
     rules: [
@@ -1044,22 +795,22 @@ const BUSINESS_EVENTS: Event[] = [
       "Round 2: Develop a complete packaging solution based on a real-world challenge, including structural concepts, material selection, and a sustainability strategy.",
       "Prototype: Teams must provide a physical model, mockup, or 3D visualization of their solution.",
       "Final Presentation: A 4-5 minute pitch followed by a 2-3 minute Q&A and a live 'constraint-based defense' to test adaptability.",
-      "Evaluation: Judged on structural feasibility, branding impact, cost efficiency, and market viability.",
+      "Evaluation: Judged on structural feasibility, branding impact, cost efficiency, and market viability."
     ],
     lastDate: "TBA",
     prizePool: "₹ 7,000",
     link: "/register/pkv",
-    driveLink:
-      "https://drive.google.com/drive/folders/1cge9VZWypqascsE9O4D7F1WweLiz-Wzd",
+    driveLink: "https://drive.google.com/drive/folders/1cge9VZWypqascsE9O4D7F1WweLiz-Wzd",
     image: "/images/posters/pack-o-vation.webp",
     tags: ["Packaging", "Innovation", "Sustainability"],
     status: "Open",
     coordinators: [
       { name: "Soham Ghosh", contact: "6294619087" },
       { name: "Anshika Dutta", contact: "8617317676" },
-      { name: "Pranjal Deb", contact: "6290622851" },
-    ],
-  },
+      { name: "Pranjal Deb", contact: "6290622851" }
+    ]
+},
+
 
   {
     id: "b7",
@@ -1067,8 +818,7 @@ const BUSINESS_EVENTS: Event[] = [
     title: "CAPITAL CLASH",
     category: "Business",
     color: "#FBEC1D",
-    description:
-      "Stock market case study challenge. Conduct fundamental and technical analysis of selected stocks and present your investment reasoning.",
+    description: "Stock market case study challenge. Conduct fundamental and technical analysis of selected stocks and present your investment reasoning.",
     format: "Hybrid",
     teamSize: "2-4",
     rules: ["PPT submission", "Stock analysis", "Presentation"],
@@ -1082,9 +832,11 @@ const BUSINESS_EVENTS: Event[] = [
     coordinators: [
       { name: "Ujjwal kumar", contact: "9110985538" },
       { name: "Riya Gupta", contact: "6291133504" },
-      { name: "Shubham sharma", contact: "9560134006" },
-    ],
+      { name: "Shubham sharma", contact: "9560134006" }
+    ]
   },
+
+
 
   {
     id: "b8",
@@ -1092,24 +844,23 @@ const BUSINESS_EVENTS: Event[] = [
     title: "Beat the Market",
     category: "Business",
     color: "#FBEC1D",
-    description:
-      "A 5-day mock trading competition conducted in real-time corresponding to stock market hours. Test your trading strategies with virtual money.",
+    description: "A 5-day mock trading competition conducted in real-time corresponding to stock market hours. Test your trading strategies with virtual money.",
     format: "Online",
     teamSize: "Individual",
     rules: ["Mock trading", "Real-time market", "5-day duration"],
     lastDate: "TBA",
     prizePool: "₹ 8,000",
     link: "/register/btm",
-    driveLink:
-      "https://drive.google.com/drive/folders/1PFqp6rzenivpK_zRG07pAwSNhpta6F6V?usp=sharing",
+    driveLink: "https://drive.google.com/drive/folders/1PFqp6rzenivpK_zRG07pAwSNhpta6F6V?usp=sharing",
     image: "/images/posters/beat-the-market.webp",
     tags: ["Trading", "Finance"],
     status: "Open",
     coordinators: [
       { name: "Vedant Murarka", contact: "8240600570" },
-      { name: "Dabita Biswas", contact: "9432161974" },
-    ],
-  },
+      { name: "Dabita Biswas", contact: "9432161974" }
+    ]
+  }
+
 ];
 
 const BRAINSTORMING_EVENTS: Event[] = [
@@ -1168,24 +919,22 @@ const BRAINSTORMING_EVENTS: Event[] = [
     title: "XSTREAM",
     category: "Brainstorming",
     color: "#1DDBFF",
-    description:
-      "Technical design challenge to fabricate a car model optimized for aerodynamic performance. Tested inside a custom-built wind tunnel.",
+    description: "Technical design challenge to fabricate a car model optimized for aerodynamic performance. Tested inside a custom-built wind tunnel.",
     format: "Offline",
     teamSize: "1-4",
     rules: ["Aerodynamic design", "Car model", "Wind tunnel test"],
     lastDate: "TBA",
     prizePool: "₹ 10,000",
     link: "/register/XSTREAM",
-    driveLink:
-      "https://drive.google.com/file/d/1IREzcdYRhvOZxxT50c1YUvedJxFkGdUB/view?usp=drivesdk",
+    driveLink: "https://drive.google.com/file/d/1IREzcdYRhvOZxxT50c1YUvedJxFkGdUB/view?usp=drivesdk",
     image: "/images/posters/xstream.webp",
     tags: ["Aerodynamics", "Design"],
     status: "Open",
     coordinators: [
       { name: "Soham Bhattacharya", contact: "7439542892" },
       { name: "Hiranmoy Mahato", contact: "7501767765" },
-      { name: "Saikat Dutta", contact: "9733225497" },
-    ],
+      { name: "Saikat Dutta", contact: "9733225497" }
+    ]
   },
 ];
 
@@ -1265,30 +1014,30 @@ const ESPORTS_EVENTS: Event[] = [
   },
   */
 
+
   {
     id: "e-sp4",
     slug: "clash-royale",
     title: "CLASH ROYALE",
     category: "Esports",
     color: "#FC422D",
-    description:
-      "Electrifying Clash Royale action in an intense tournament. Deploy strategies, counter decks, and execute perfect plays in real time.",
+    description: "Electrifying Clash Royale action in an intense tournament. Deploy strategies, counter decks, and execute perfect plays in real time.",
     format: "Offline",
     teamSize: "Individual",
     rules: ["Real-time strategy", "Deck building", "Tactical mastery"],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
     link: "/register/cr",
-    driveLink:
-      "https://drive.google.com/file/d/1Bwvj0wWAJ_LLiWdlMcbEp2w0S-AT8NiI/view?usp=sharing",
+    driveLink: "https://drive.google.com/file/d/1Bwvj0wWAJ_LLiWdlMcbEp2w0S-AT8NiI/view?usp=sharing",
     image: "/images/posters/clash-royale.webp",
     tags: ["Mobile", "Strategy"],
     status: "Open",
     coordinators: [
       { name: "RANIT GORAI", contact: "7866069561" },
-      { name: "ANSH KUMAR SINGH", contact: "9775756073" },
-    ],
+      { name: "ANSH KUMAR SINGH", contact: "9775756073" }
+    ]
   },
+
 
   /*
   {
@@ -1442,6 +1191,7 @@ const MISC_EVENTS: Event[] = [
     ]
   },
   */
+
   /*
   {
     id: "m2",
@@ -1466,31 +1216,44 @@ const MISC_EVENTS: Event[] = [
     ]
   },
   */
-  /*
+
   {
-    id: "m3",
-    slug: "clo",
-    title: "Climb On",
-    category: "Misc",
-    color: "#D21C2D",
-    description: "Rise above and Climb On! Join us at the artificial climbing wall for adventure and excitement. Perfect for both seasoned climbers and first-timers.",
-    format: "Offline",
-    teamSize: "Individual",
-    rules: ["Wall climbing", "Safety first", "Fun and Sport"],
-    lastDate: "TBA",
-    prizePool: "₹ 6,000",
-    link: "/register/climb-on",
-    driveLink: "https://drive.google.com/file/d/16puhwNvBCQNYBOuygQZW6hHMppwHN2v7/view?usp=sharing",
-    image: "/images/events/misc-default.jpg",
-    tags: ["Climbing", "Sport", "Adventure"],
-    status: "Open",
-    coordinators: [
-      { name: "Binit Oraon", contact: "9831269904" },
-      { name: "Sayan Mondal", contact: "9088558538" },
-      { name: "Disha Ghosh", contact: "9531614183" }
-    ]
+  id: "m3",
+  slug: "climb-on",
+  title: "Climb On",
+  category: "Misc",
+  color: "#D21C2D",
+  description: "Rise above and Climb On! Join us at the artificial climbing wall for adventure and excitement. Perfect for both seasoned climbers and first-timers.",
+  format: "Offline",
+  teamSize: "Individual",
+  rules: [
+    "The competition consists of two rounds - Prelims and Final.",
+    "Participants must qualify in the prelims first to advance to the final round.",
+    "Each participant will get only one chance per round to climb.",
+    "All safety gears will be provided at the event place.",
+    "Points are provided based on the highest hold touched or reached.",
+    "The participants with the top three highest scores in the final round will be declared winners.",
+    "Any participant not following safety rules will be disqualified.",
+    "In case of any discrepancies, final decision will be made by the judge(s) and event staff."
+  ],
+  lastDate: "TBA", // Note: Prelims are 10th April 2026
+  prizePool: "₹ 6,000",
+  dates: {
+    prelims: "10th April 2026",
+    finals: "11th April 2026"
   },
-  */
+  link: "/register/climb-on",
+  driveLink: "https://drive.google.com/file/d/16puhwNvBCQNYBOuygQZW6hHMppwHN2v7/view",
+  image: "/images/posters/climb-on.webp",
+  tags: ["Climbing", "Sport", "Adventure"],
+  status: "Open",
+  coordinators: [
+    { name: "Binit Oraon", contact: "9831269904" },
+    { name: "Sayan Mondal", contact: "9088558538" },
+    { name: "Disha Ghosh", contact: "9531614183" }
+  ]
+}
+
   /*
   {
     id: "m4",
@@ -1516,6 +1279,7 @@ const MISC_EVENTS: Event[] = [
     ]
   },
   */
+
   /*
   {
     id: "m5",
@@ -1540,6 +1304,7 @@ const MISC_EVENTS: Event[] = [
     ]
   },
   */
+
   /*
   {
     id: "m6",
@@ -1565,6 +1330,7 @@ const MISC_EVENTS: Event[] = [
     ]
   },
   */
+
   /*
   {
     id: "m7",
@@ -1590,6 +1356,7 @@ const MISC_EVENTS: Event[] = [
     ]
   },
   */
+
   /*
   {
     id: "m8",
@@ -1622,5 +1389,5 @@ export const EVENTS_DATA: Event[] = [
   ...BUSINESS_EVENTS,
   ...BRAINSTORMING_EVENTS,
   ...ESPORTS_EVENTS,
-  ...MISC_EVENTS,
+  ...MISC_EVENTS
 ];
