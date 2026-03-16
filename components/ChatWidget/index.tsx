@@ -23,6 +23,7 @@ export default function ChatWidget() {
 
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isEventPage = pathname.startsWith("/events/");
 
   useEffect(() => {
     const update = () => {
@@ -285,7 +286,7 @@ export default function ChatWidget() {
 
         {/* Toggle button row */}
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          {!isOpen && (
+          {!isOpen && !isEventPage && (
             <div style={{ background: "linear-gradient(135deg, rgba(240,148,0,0.15), rgba(235,216,125,0.1))", border: "1px solid rgba(235,216,125,0.2)", borderRadius: 10, padding: "7px 12px", color: "rgba(255,255,255,0.85)", fontSize: 12, backdropFilter: "blur(8px)", position: "relative", whiteSpace: "nowrap" }}>
               <span style={{ color: "#ebd87d", fontWeight: 700 }}>Doubts?</span>{" "}
               I&apos;m here to help!
