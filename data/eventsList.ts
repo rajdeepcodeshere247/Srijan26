@@ -791,7 +791,7 @@ const BUSINESS_EVENTS: Event[] = [
     prizePool: "₹ 12,000",
     link: "/register/indx",
     driveLink:
-      "https://drive.google.com/file/d/18BNV4vZCQkevl9Jy7sPsW4GQgwU3xTFA/view?usp=sharing",
+      "https://drive.google.com/file/d/1j0BUcd4z4HtRY--D_ZiKYbl5vz4ks14L/view?usp=sharing",
     image: "/images/posters/industrix.webp",
     tags: ["Manufacturing", "Startup", "Economics"],
     status: "Open",
