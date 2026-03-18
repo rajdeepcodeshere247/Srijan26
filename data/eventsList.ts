@@ -1377,31 +1377,68 @@ const ESPORTS_EVENTS: Event[] = [
 ];
 
 const MISC_EVENTS: Event[] = [
-  /*
   {
-    id: "m1",
-    slug: "mathemagician",
-    title: "Math-E-Magician",
-    category: "Misc",
-    color: "#D21C2D",
-    description: "Step into a world where mathematics is played as a strategic game. Team up, think fast, and challenge sharp young minds through multiple competitive levels.",
-    format: "Hybrid",
-    teamSize: "2",
-    rules: ["Mathematical strategy", "Creative thinking", "Multiple levels"],
-    lastDate: "TBA",
-    prizePool: "₹ 6,000",
-    link: "/register/mathemagician",
-    driveLink: "https://drive.google.com/file/d/15yQbreiwKAD4K42ECZC6XOO2qT-Klaf2/view?usp=sharing",
-    image: "/images/posters/misc-default.webp",
-    tags: ["Maths", "Logic"],
-    status: "Open",
-    coordinators: [
-      { name: "Sayan Das", contact: "9432646056" },
-      { name: "Gourav Roy", contact: "6291497375" },
-      { name: "Sayanaditya Das", contact: "7679500949" }
-    ]
-  },
-  */
+  id: "m1",
+  slug: "mathemagician",
+  title: "Math-E-Magician",
+  category: "Misc",
+  color: "#D21C2D",
+  description: "A **multi-round mathematics competition** that tests participants through **MCQs, subjective problem solving, and viva-based evaluation**. Teams must demonstrate **analytical thinking, conceptual clarity, and problem-solving skills** across progressively challenging rounds to emerge victorious.",
+  image: "/images/posters/math-e-magician.webp",
+  tags: ["Maths", "Logic"],
+  format: "Hybrid",
+  teamSize: "2",
+  rules: [
+    "Each team can have a **maximum of 2 members**",
+    "The event consists of **3 rounds with eliminations after each stage**",
+    "Round 1 may be conducted **both online and offline**, while later rounds are primarily offline",
+    "Use of **internet, mobile phones, and calculators is strictly prohibited**",
+    "Participants may use **notes, books, and cheat sheets (offline mode only)**",
+    "Any form of **cheating or malpractice will lead to disqualification**",
+    "The **decision of judges will be final and binding**"
+  ],
+  scoring: [
+    "# Round 1 Marking Scheme",
+    "+3 marks for each **correct answer**",
+    "-1 mark for each **incorrect answer**",
+    "Maximum score: **30 marks**",
+    "# Round 2 Evaluation",
+    "Based on **conceptual understanding and problem-solving approach** during viva",
+    "Maximum score: **10 marks**",
+    "# Round 3 Evaluation",
+    "Based on **solutions to question sets and explanation quality**",
+    "Maximum score: **10 marks**"
+  ],
+  eventFormat: [
+    "# Round 1: Objective Test",
+    "MCQ-based questions covering **10+2 and introductory undergraduate mathematics**",
+    "6 sets of papers, each containing **2 passages with 5 questions each**",
+    "Conducted in **pen-and-paper or online mode (CodeChef platform)**",
+    "Duration: **1.5 hours per slot**",
+    "# Round 2: Viva Round",
+    "Shortlisted teams face a **viva with professors**",
+    "Questions based on **selected topics or open mathematical problems**",
+    "Duration: **30 minutes per team**",
+    "# Round 3: Final Viva",
+    "Teams solve and explain **advanced problem sets**",
+    "Evaluation based on **approach, accuracy, and clarity of explanation**",
+    "Duration: **30 minutes per team**"
+  ],
+  lastDate: "TBA",
+  prizePool: "₹ 6,000",
+  winnerPrize: "₹2,000",
+  runnersUpPrize: "₹1,500",
+  secondRunnersUpPrize: "₹1,000",
+  andMore: true,
+  link: "/register/mathemagician",
+  driveLink: "https://drive.google.com/file/d/15yQbreiwKAD4K42ECZC6XOO2qT-Klaf2/view?usp=sharing",
+  coordinators: [
+    { name: "Sayan Das", contact: "9432646056" },
+    { name: "Gourav Roy", contact: "6291497375" },
+    { name: "Sayanaditya Das", contact: "7679500949" }
+  ],
+  status: "Open"
+},
 
   /*
   {
