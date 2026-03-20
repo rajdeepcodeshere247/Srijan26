@@ -133,6 +133,11 @@ export function SuperAdminDashboard({ user }: SuperAdminDashboardProps) {
     const [loadingEvents, setLoadingEvents] = useState(false);
     const [activeTab, setActiveTab] = useState<string>("users");
     const [clearingCache, setClearingCache] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     useEffect(() => {
         fetchUsers();
@@ -229,7 +234,7 @@ export function SuperAdminDashboard({ user }: SuperAdminDashboardProps) {
 
     async function handleLiveEventSubmit() {
         if (!newEventRound || !newEventLocation) return;
-        
+
         let eventName = "";
         let eventSlug = newEventSlug;
 
@@ -511,10 +516,10 @@ export function SuperAdminDashboard({ user }: SuperAdminDashboardProps) {
                             <h1 className="text-xl font-semibold text-slate-900">SuperAdmin Dashboard</h1>
                         </div>
                         <div className="flex items-center gap-3">
-                            <Button 
-                                variant="outline" 
-                                size="sm" 
-                                onClick={handleClearCache} 
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={handleClearCache}
                                 disabled={clearingCache}
                                 className="text-red-600 border-red-200 hover:bg-red-50 hover:text-red-700"
                             >
@@ -530,506 +535,508 @@ export function SuperAdminDashboard({ user }: SuperAdminDashboardProps) {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <Tabs defaultValue="users" value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-                    <TabsList className="bg-slate-100 p-1 rounded-lg">
-                        <TabsTrigger value="users" className="data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm">Users</TabsTrigger>
-                        <TabsTrigger value="merchandise" className="data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm">Merchandise</TabsTrigger>
-                        <TabsTrigger value="live-events" className="data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm">Live Events</TabsTrigger>
-                        <TabsTrigger value="manage-admins" className="data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm">Manage Admins</TabsTrigger>
-                    </TabsList>
+                {!isMounted ? null : (
+                    <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+                        <TabsList className="bg-slate-100 p-1 rounded-lg">
+                            <TabsTrigger value="users" className="data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm">Users</TabsTrigger>
+                            <TabsTrigger value="merchandise" className="data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm">Merchandise</TabsTrigger>
+                            <TabsTrigger value="live-events" className="data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm">Live Events</TabsTrigger>
+                            <TabsTrigger value="manage-admins" className="data-[state=active]:bg-white data-[state=active]:text-slate-900 data-[state=active]:shadow-sm">Manage Admins</TabsTrigger>
+                        </TabsList>
 
-                    <TabsContent value="users" className="space-y-4">
-                        <Card className="border-slate-200 shadow-sm">
-                            <CardHeader className="flex flex-row items-center justify-between">
-                                <div>
-                                    <CardTitle>All Users</CardTitle>
-                                    <CardDescription>Total registered users: {users.length}</CardDescription>
-                                </div>
-                                <Button onClick={exportUsers} className="bg-slate-900 hover:bg-slate-800 text-white">
-                                    <Download className="mr-2 h-4 w-4" /> Export CSV
-                                </Button>
-                            </CardHeader>
-                            <CardContent>
-                                {loadingUsers ? (
-                                    <div className="space-y-2">
-                                        <Skeleton className="h-8 w-full" />
-                                        <Skeleton className="h-8 w-full" />
-                                        <Skeleton className="h-8 w-full" />
-                                    </div>
-                                ) : (
-                                    <div className="rounded-md border border-slate-200 overflow-x-auto">
-                                        <Table>
-                                            <TableHeader>
-                                                <TableRow>
-                                                    <TableHead>Name</TableHead>
-                                                    <TableHead>Email</TableHead>
-                                                    <TableHead>Phone</TableHead>
-                                                    <TableHead>College</TableHead>
-                                                    <TableHead>Dept</TableHead>
-                                                    <TableHead>Year</TableHead>
-                                                    <TableHead>Verified</TableHead>
-                                                </TableRow>
-                                            </TableHeader>
-                                            <TableBody>
-                                                {users.map((u) => (
-                                                    <TableRow key={u.id}>
-                                                        <TableCell className="font-medium">{u.name}</TableCell>
-                                                        <TableCell>{u.email}</TableCell>
-                                                        <TableCell>{u.phone || "-"}</TableCell>
-                                                        <TableCell>{u.college || "-"}</TableCell>
-                                                        <TableCell>{u.department || "-"}</TableCell>
-                                                        <TableCell>{u.year || "-"}</TableCell>
-                                                        <TableCell>
-                                                            {u.emailVerified ? (
-                                                                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                                                            ) : (
-                                                                <XCircle className="h-4 w-4 text-amber-500" />
-                                                            )}
-                                                        </TableCell>
-                                                    </TableRow>
-                                                ))}
-                                            </TableBody>
-                                        </Table>
-                                    </div>
-                                )}
-                            </CardContent>
-                        </Card>
-                    </TabsContent>
-
-                    <TabsContent value="merchandise" className="space-y-4">
-                        <Card className="border-slate-200 shadow-sm">
-                            <CardHeader>
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <TabsContent value="users" className="space-y-4">
+                            <Card className="border-slate-200 shadow-sm">
+                                <CardHeader className="flex flex-row items-center justify-between">
                                     <div>
-                                        <CardTitle>Merchandise Orders</CardTitle>
-                                        <CardDescription>Total orders: {merchandise.length} | Showing: {filteredMerchandise.length}</CardDescription>
+                                        <CardTitle>All Users</CardTitle>
+                                        <CardDescription>Total registered users: {users.length}</CardDescription>
                                     </div>
-                                    <div className="flex items-center gap-2">
-                                        <Button onClick={exportMerchandise} className="bg-slate-900 hover:bg-slate-800 text-white">
-                                            <Download className="mr-2 h-4 w-4" /> Export CSV
-                                        </Button>
+                                    <Button onClick={exportUsers} className="bg-slate-900 hover:bg-slate-800 text-white">
+                                        <Download className="mr-2 h-4 w-4" /> Export CSV
+                                    </Button>
+                                </CardHeader>
+                                <CardContent>
+                                    {loadingUsers ? (
+                                        <div className="space-y-2">
+                                            <Skeleton className="h-8 w-full" />
+                                            <Skeleton className="h-8 w-full" />
+                                            <Skeleton className="h-8 w-full" />
+                                        </div>
+                                    ) : (
+                                        <div className="rounded-md border border-slate-200 overflow-x-auto">
+                                            <Table>
+                                                <TableHeader>
+                                                    <TableRow>
+                                                        <TableHead>Name</TableHead>
+                                                        <TableHead>Email</TableHead>
+                                                        <TableHead>Phone</TableHead>
+                                                        <TableHead>College</TableHead>
+                                                        <TableHead>Dept</TableHead>
+                                                        <TableHead>Year</TableHead>
+                                                        <TableHead>Verified</TableHead>
+                                                    </TableRow>
+                                                </TableHeader>
+                                                <TableBody>
+                                                    {users.map((u) => (
+                                                        <TableRow key={u.id}>
+                                                            <TableCell className="font-medium">{u.name}</TableCell>
+                                                            <TableCell>{u.email}</TableCell>
+                                                            <TableCell>{u.phone || "-"}</TableCell>
+                                                            <TableCell>{u.college || "-"}</TableCell>
+                                                            <TableCell>{u.department || "-"}</TableCell>
+                                                            <TableCell>{u.year || "-"}</TableCell>
+                                                            <TableCell>
+                                                                {u.emailVerified ? (
+                                                                    <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                                                                ) : (
+                                                                    <XCircle className="h-4 w-4 text-amber-500" />
+                                                                )}
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        </div>
+                                    )}
+                                </CardContent>
+                            </Card>
+                        </TabsContent>
+
+                        <TabsContent value="merchandise" className="space-y-4">
+                            <Card className="border-slate-200 shadow-sm">
+                                <CardHeader>
+                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                        <div>
+                                            <CardTitle>Merchandise Orders</CardTitle>
+                                            <CardDescription>Total orders: {merchandise.length} | Showing: {filteredMerchandise.length}</CardDescription>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <Button onClick={exportMerchandise} className="bg-slate-900 hover:bg-slate-800 text-white">
+                                                <Download className="mr-2 h-4 w-4" /> Export CSV
+                                            </Button>
+                                        </div>
                                     </div>
-                                </div>
-                                {/* Filters */}
-                                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-                                    <div className="flex gap-2 col-span-2">
-                                        <Select value={yearFilterOperator} onValueChange={(v: "gt" | "lt") => setYearFilterOperator(v)}>
-                                            <SelectTrigger className="w-[140px] bg-white text-slate-900 border-slate-200">
-                                                <SelectValue />
+                                    {/* Filters */}
+                                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+                                        <div className="flex gap-2 col-span-2">
+                                            <Select value={yearFilterOperator} onValueChange={(v: "gt" | "lt") => setYearFilterOperator(v)}>
+                                                <SelectTrigger className="w-[140px] bg-white text-slate-900 border-slate-200">
+                                                    <SelectValue />
+                                                </SelectTrigger>
+                                                <SelectContent className="bg-white border-slate-200 text-slate-900">
+                                                    <SelectItem value="gt" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Greater Than</SelectItem>
+                                                    <SelectItem value="lt" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Less Than</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                            <Input
+                                                placeholder="Year (e.g. 2026)"
+                                                value={yearFilterValue}
+                                                onChange={(e) => setYearFilterValue(e.target.value)}
+                                                className="flex-1 bg-white text-slate-900 border-slate-200 placeholder:text-slate-400"
+                                            />
+                                        </div>
+
+                                        <Select value={merchCampusFilter} onValueChange={setMerchCampusFilter}>
+                                            <SelectTrigger className="bg-white text-slate-900 border-slate-200">
+                                                <SelectValue placeholder="Filter by Campus" />
                                             </SelectTrigger>
                                             <SelectContent className="bg-white border-slate-200 text-slate-900">
-                                                <SelectItem value="gt" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Greater Than</SelectItem>
-                                                <SelectItem value="lt" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Less Than</SelectItem>
+                                                <SelectItem value="all" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">All Campuses</SelectItem>
+                                                <SelectItem value="JADAVPUR" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Jadavpur</SelectItem>
+                                                <SelectItem value="SALT_LAKE" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Salt Lake</SelectItem>
                                             </SelectContent>
                                         </Select>
-                                        <Input
-                                            placeholder="Year (e.g. 2026)"
-                                            value={yearFilterValue}
-                                            onChange={(e) => setYearFilterValue(e.target.value)}
-                                            className="flex-1 bg-white text-slate-900 border-slate-200 placeholder:text-slate-400"
-                                        />
+
+                                        <Select value={merchColorFilter} onValueChange={setMerchColorFilter}>
+                                            <SelectTrigger className="bg-white text-slate-900 border-slate-200">
+                                                <SelectValue placeholder="Filter by Color" />
+                                            </SelectTrigger>
+                                            <SelectContent className="bg-white border-slate-200 text-slate-900">
+                                                <SelectItem value="all" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">All Colors</SelectItem>
+                                                <SelectItem value="BLACK" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Black</SelectItem>
+                                                <SelectItem value="WHITE" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">White</SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+                                </CardHeader>
+                                <CardContent>
+                                    {loadingMerch ? (
+                                        <div className="space-y-2">
+                                            <Skeleton className="h-8 w-full" />
+                                            <Skeleton className="h-8 w-full" />
+                                            <Skeleton className="h-8 w-full" />
+                                        </div>
+                                    ) : (
+                                        <div className="rounded-md border border-slate-200 overflow-x-auto">
+                                            <Table>
+                                                <TableHeader>
+                                                    <TableRow>
+                                                        <TableHead>Order ID</TableHead>
+                                                        <TableHead>User</TableHead>
+                                                        <TableHead>Email</TableHead>
+                                                        <TableHead>Phone</TableHead>
+                                                        <TableHead>Dept / Year</TableHead>
+                                                        <TableHead>Size</TableHead>
+                                                        <TableHead>Color</TableHead>
+                                                        <TableHead>Campus</TableHead>
+                                                        <TableHead>Custom Text</TableHead>
+                                                    </TableRow>
+                                                </TableHeader>
+                                                <TableBody>
+                                                    {filteredMerchandise.length === 0 ? (
+                                                        <TableRow>
+                                                            <TableCell colSpan={9} className="text-center py-8 text-slate-500">
+                                                                No orders found matching filters.
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ) : (
+                                                        filteredMerchandise.map((m) => (
+                                                            <TableRow key={m.id}>
+                                                                <TableCell className="font-mono text-xs">{m.id.slice(-6)}</TableCell>
+                                                                <TableCell className="font-medium">{m.user.name}</TableCell>
+                                                                <TableCell>{m.user.email}</TableCell>
+                                                                <TableCell>{m.user.phone || "-"}</TableCell>
+                                                                <TableCell>{m.user.department || "-"} / {m.user.year || "-"}</TableCell>
+                                                                <TableCell>{m.size || "-"}</TableCell>
+                                                                <TableCell>
+                                                                    {m.color === "BLACK" && <Badge className="bg-black text-white hover:bg-black">Black</Badge>}
+                                                                    {m.color === "WHITE" && <Badge className="bg-slate-100 text-slate-900 border border-slate-300 hover:bg-slate-100">White</Badge>}
+                                                                </TableCell>
+                                                                <TableCell>{m.preferredCampus}</TableCell>
+                                                                <TableCell className="italic text-slate-600">{m.customText || "-"}</TableCell>
+                                                            </TableRow>
+                                                        ))
+                                                    )}
+                                                </TableBody>
+                                            </Table>
+                                        </div>
+                                    )}
+                                </CardContent>
+                            </Card>
+                        </TabsContent>
+
+                        <TabsContent value="live-events" className="space-y-4">
+                            <Card className="border-slate-200 shadow-sm">
+                                <CardHeader className="flex flex-row items-center justify-between">
+                                    <div>
+                                        <CardTitle>Manage Live Events</CardTitle>
+                                        <CardDescription>Events added here will be displayed on the homepage ticker.</CardDescription>
+                                    </div>
+                                    {activeTab === "live-events" && (
+                                        <div className="flex items-center gap-2">
+                                            <EditEventDetails slug={newEventSlug || liveEvents[0]?.slug} label="Create Event" />
+                                            <EditEventDetails slug={newEventSlug || liveEvents[0]?.slug} />
+                                        </div>
+                                    )}
+                                </CardHeader>
+                                <CardContent className="space-y-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end bg-slate-50 p-4 rounded-lg border border-slate-200">
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium">Select Event</label>
+                                            {newEventRound === "Workshop" ? (
+                                                <Input
+                                                    placeholder="Enter Workshop Name"
+                                                    value={manualEventName}
+                                                    onChange={(e) => setManualEventName(e.target.value)}
+                                                    className="bg-white text-slate-900 border-slate-200 placeholder:text-slate-400"
+                                                />
+                                            ) : (
+                                                <Popover open={liveEventSearchOpen} onOpenChange={setLiveEventSearchOpen}>
+                                                    <PopoverTrigger asChild>
+                                                        <Button
+                                                            variant="outline"
+                                                            role="combobox"
+                                                            className="w-full justify-between bg-white text-slate-900 border-slate-200 hover:bg-slate-50"
+                                                        >
+                                                            {newEventSlug
+                                                                ? EVENTS_DATA.find((e) => e.slug === newEventSlug)?.title
+                                                                : "Choose Event..."}
+                                                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                                        </Button>
+                                                    </PopoverTrigger>
+                                                    <PopoverContent className="w-full p-0 bg-white border-slate-200">
+                                                        <Command className="bg-white">
+                                                            <CommandInput placeholder="Search event..." className="border-none focus:ring-0" />
+                                                            <CommandList>
+                                                                <CommandEmpty>No event found.</CommandEmpty>
+                                                                <CommandGroup className="max-h-60 overflow-y-auto">
+                                                                    {EVENTS_DATA.map((e) => {
+                                                                        const slug = e.slug;
+                                                                        return (
+                                                                            <CommandItem
+                                                                                key={slug}
+                                                                                value={`${e.title} ${slug}`}
+                                                                                onSelect={() => {
+                                                                                    setNewEventSlug(slug);
+                                                                                    setLiveEventSearchOpen(false);
+                                                                                }}
+                                                                                className="text-slate-900 hover:bg-slate-100 cursor-pointer"
+                                                                            >
+                                                                                <Check
+                                                                                    className={cn(
+                                                                                        "mr-2 h-4 w-4",
+                                                                                        newEventSlug === slug ? "opacity-100" : "opacity-0"
+                                                                                    )}
+                                                                                />
+                                                                                {e.title}
+                                                                            </CommandItem>
+                                                                        );
+                                                                    })}
+                                                                </CommandGroup>
+                                                            </CommandList>
+                                                        </Command>
+                                                    </PopoverContent>
+                                                </Popover>
+                                            )}
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium">Round</label>
+                                            <Select value={newEventRound} onValueChange={setNewEventRound}>
+                                                <SelectTrigger className="bg-white text-slate-900 border-slate-200">
+                                                    <SelectValue placeholder="Round/Stage" />
+                                                </SelectTrigger>
+                                                <SelectContent className="bg-white border-slate-200 text-slate-900">
+                                                    <SelectItem value="Prelims" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Prelims</SelectItem>
+                                                    <SelectItem value="Finals" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Finals</SelectItem>
+                                                    <SelectItem value="Workshop" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Workshop</SelectItem>
+                                                    <SelectItem value="Medal Ceremony" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Medal Ceremony</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-medium">Location</label>
+                                            <Input
+                                                placeholder="e.g. Exam Hall"
+                                                value={newEventLocation}
+                                                onChange={(e) => setNewEventLocation(e.target.value)}
+                                                className="bg-white text-slate-900 border-slate-200 placeholder:text-slate-400"
+                                            />
+                                        </div>
+                                        <Button
+                                            onClick={handleLiveEventSubmit}
+                                            disabled={(!newEventSlug && newEventRound !== "Workshop") || (newEventRound === "Workshop" && !manualEventName) || !newEventRound || !newEventLocation}
+                                            className="bg-slate-900 hover:bg-slate-800 text-white min-w-[120px]"
+                                        >
+                                            <Radio className="mr-2 h-4 w-4" />
+                                            {editingEventId ? "Update Event" : "Set Live"}
+                                        </Button>
+                                        {editingEventId && (
+                                            <Button
+                                                variant="outline"
+                                                onClick={resetLiveEventForm}
+                                                className="min-w-[80px] bg-white text-slate-900 border-slate-200 hover:bg-slate-100"
+                                            >
+                                                Cancel
+                                            </Button>
+                                        )}
                                     </div>
 
-                                    <Select value={merchCampusFilter} onValueChange={setMerchCampusFilter}>
-                                        <SelectTrigger className="bg-white text-slate-900 border-slate-200">
-                                            <SelectValue placeholder="Filter by Campus" />
-                                        </SelectTrigger>
-                                        <SelectContent className="bg-white border-slate-200 text-slate-900">
-                                            <SelectItem value="all" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">All Campuses</SelectItem>
-                                            <SelectItem value="JADAVPUR" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Jadavpur</SelectItem>
-                                            <SelectItem value="SALT_LAKE" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Salt Lake</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-
-                                    <Select value={merchColorFilter} onValueChange={setMerchColorFilter}>
-                                        <SelectTrigger className="bg-white text-slate-900 border-slate-200">
-                                            <SelectValue placeholder="Filter by Color" />
-                                        </SelectTrigger>
-                                        <SelectContent className="bg-white border-slate-200 text-slate-900">
-                                            <SelectItem value="all" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">All Colors</SelectItem>
-                                            <SelectItem value="BLACK" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Black</SelectItem>
-                                            <SelectItem value="WHITE" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">White</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-                            </CardHeader>
-                            <CardContent>
-                                {loadingMerch ? (
-                                    <div className="space-y-2">
-                                        <Skeleton className="h-8 w-full" />
-                                        <Skeleton className="h-8 w-full" />
-                                        <Skeleton className="h-8 w-full" />
-                                    </div>
-                                ) : (
-                                    <div className="rounded-md border border-slate-200 overflow-x-auto">
+                                    <div className="rounded-md border border-slate-200 overflow-hidden">
                                         <Table>
                                             <TableHeader>
-                                                <TableRow>
-                                                    <TableHead>Order ID</TableHead>
-                                                    <TableHead>User</TableHead>
-                                                    <TableHead>Email</TableHead>
-                                                    <TableHead>Phone</TableHead>
-                                                    <TableHead>Dept / Year</TableHead>
-                                                    <TableHead>Size</TableHead>
-                                                    <TableHead>Color</TableHead>
-                                                    <TableHead>Campus</TableHead>
-                                                    <TableHead>Custom Text</TableHead>
+                                                <TableRow className="bg-slate-50">
+                                                    <TableHead>Event Name</TableHead>
+                                                    <TableHead>Round</TableHead>
+                                                    <TableHead>Location</TableHead>
+                                                    <TableHead className="text-right">Action</TableHead>
                                                 </TableRow>
                                             </TableHeader>
                                             <TableBody>
-                                                {filteredMerchandise.length === 0 ? (
+                                                {loadingLiveEvents ? (
                                                     <TableRow>
-                                                        <TableCell colSpan={9} className="text-center py-8 text-slate-500">
-                                                            No orders found matching filters.
+                                                        <TableCell colSpan={4} className="h-24 text-center">Loading...</TableCell>
+                                                    </TableRow>
+                                                ) : liveEvents.length === 0 ? (
+                                                    <TableRow>
+                                                        <TableCell colSpan={4} className="h-24 text-center text-slate-500">
+                                                            No live events currently active.
                                                         </TableCell>
                                                     </TableRow>
                                                 ) : (
-                                                    filteredMerchandise.map((m) => (
-                                                        <TableRow key={m.id}>
-                                                            <TableCell className="font-mono text-xs">{m.id.slice(-6)}</TableCell>
-                                                            <TableCell className="font-medium">{m.user.name}</TableCell>
-                                                            <TableCell>{m.user.email}</TableCell>
-                                                            <TableCell>{m.user.phone || "-"}</TableCell>
-                                                            <TableCell>{m.user.department || "-"} / {m.user.year || "-"}</TableCell>
-                                                            <TableCell>{m.size || "-"}</TableCell>
-                                                            <TableCell>
-                                                                {m.color === "BLACK" && <Badge className="bg-black text-white hover:bg-black">Black</Badge>}
-                                                                {m.color === "WHITE" && <Badge className="bg-slate-100 text-slate-900 border border-slate-300 hover:bg-slate-100">White</Badge>}
+                                                    liveEvents.map((event) => (
+                                                        <TableRow key={event.id}>
+                                                            <TableCell className="font-medium text-slate-900">{event.name}</TableCell>
+                                                            <TableCell>{event.round}</TableCell>
+                                                            <TableCell>{event.location}</TableCell>
+                                                            <TableCell className="text-right flex justify-end gap-2">
+                                                                <Button
+                                                                    variant="outline"
+                                                                    size="sm"
+                                                                    onClick={() => startEditing(event)}
+                                                                    className="h-8 bg-white text-slate-900 border-slate-200 hover:bg-slate-100"
+                                                                >
+                                                                    Edit
+                                                                </Button>
+                                                                <Button
+                                                                    variant="ghost"
+                                                                    size="sm"
+                                                                    onClick={() => deleteLiveEvent(event.id)}
+                                                                    className="text-red-500 hover:text-red-700 hover:bg-red-50 h-8"
+                                                                >
+                                                                    <Trash2 className="h-4 w-4" />
+                                                                </Button>
                                                             </TableCell>
-                                                            <TableCell>{m.preferredCampus}</TableCell>
-                                                            <TableCell className="italic text-slate-600">{m.customText || "-"}</TableCell>
                                                         </TableRow>
                                                     ))
                                                 )}
                                             </TableBody>
                                         </Table>
                                     </div>
-                                )}
-                            </CardContent>
-                        </Card>
-                    </TabsContent>
+                                </CardContent>
+                            </Card>
+                        </TabsContent>
 
-                    <TabsContent value="live-events" className="space-y-4">
-                        <Card className="border-slate-200 shadow-sm">
-                            <CardHeader className="flex flex-row items-center justify-between">
-                                <div>
-                                    <CardTitle>Manage Live Events</CardTitle>
-                                    <CardDescription>Events added here will be displayed on the homepage ticker.</CardDescription>
-                                </div>
-                                {activeTab === "live-events" && (
-                                    <div className="flex items-center gap-2">
-                                        <EditEventDetails slug={newEventSlug || liveEvents[0]?.slug} label="Create Event" />
-                                        <EditEventDetails slug={newEventSlug || liveEvents[0]?.slug} />
-                                    </div>
-                                )}
-                            </CardHeader>
-                            <CardContent className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end bg-slate-50 p-4 rounded-lg border border-slate-200">
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-medium">Select Event</label>
-                                        {newEventRound === "Workshop" ? (
-                                            <Input
-                                                placeholder="Enter Workshop Name"
-                                                value={manualEventName}
-                                                onChange={(e) => setManualEventName(e.target.value)}
-                                                className="bg-white text-slate-900 border-slate-200 placeholder:text-slate-400"
-                                            />
-                                        ) : (
-                                            <Popover open={liveEventSearchOpen} onOpenChange={setLiveEventSearchOpen}>
-                                                <PopoverTrigger asChild>
-                                                    <Button
-                                                        variant="outline"
-                                                        role="combobox"
-                                                        className="w-full justify-between bg-white text-slate-900 border-slate-200 hover:bg-slate-50"
-                                                    >
-                                                        {newEventSlug
-                                                            ? EVENTS_DATA.find((e) => e.slug === newEventSlug)?.title
-                                                            : "Choose Event..."}
-                                                        <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                                                    </Button>
-                                                </PopoverTrigger>
-                                                <PopoverContent className="w-full p-0 bg-white border-slate-200">
-                                                    <Command className="bg-white">
-                                                        <CommandInput placeholder="Search event..." className="border-none focus:ring-0" />
-                                                        <CommandList>
-                                                            <CommandEmpty>No event found.</CommandEmpty>
-                                                            <CommandGroup className="max-h-60 overflow-y-auto">
-                                                                {EVENTS_DATA.map((e) => {
-                                                                    const slug = e.slug;
-                                                                    return (
+                        <TabsContent value="manage-admins" className="space-y-4">
+                            <Card className="border-slate-200 shadow-sm">
+                                <CardHeader>
+                                    <CardTitle>Manage Event Admins</CardTitle>
+                                    <CardDescription>Assign or remove admins for specific events. Max 3 admins per event.</CardDescription>
+                                </CardHeader>
+                                <CardContent className="space-y-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        {/* Left Side: Select Event and Search User */}
+                                        <div className="space-y-6">
+                                            <div className="space-y-2">
+                                                <label className="text-sm font-medium">Select Event</label>
+                                                <Popover open={eventSearchOpen} onOpenChange={setEventSearchOpen}>
+                                                    <PopoverTrigger asChild>
+                                                        <Button
+                                                            variant="outline"
+                                                            role="combobox"
+                                                            aria-expanded={eventSearchOpen}
+                                                            className="w-full justify-between bg-white text-slate-900 border-slate-200 hover:bg-slate-50"
+                                                        >
+                                                            {selectedEventId
+                                                                ? dbEvents.find((event) => event.id === selectedEventId)?.name
+                                                                : "Select event..."}
+                                                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                                        </Button>
+                                                    </PopoverTrigger>
+                                                    <PopoverContent className="w-full p-0 bg-white border-slate-200">
+                                                        <Command className="bg-white">
+                                                            <CommandInput placeholder="Search event..." className="border-none focus:ring-0" />
+                                                            <CommandList>
+                                                                <CommandEmpty>No event found.</CommandEmpty>
+                                                                <CommandGroup>
+                                                                    {dbEvents.map((event) => (
                                                                         <CommandItem
-                                                                            key={slug}
-                                                                            value={`${e.title} ${slug}`}
+                                                                            key={event.id}
+                                                                            value={`${event.name} ${event.slug}`}
                                                                             onSelect={() => {
-                                                                                setNewEventSlug(slug);
-                                                                                setLiveEventSearchOpen(false);
+                                                                                setSelectedEventId(event.id);
+                                                                                setEventSearchOpen(false);
                                                                             }}
                                                                             className="text-slate-900 hover:bg-slate-100 cursor-pointer"
                                                                         >
                                                                             <Check
                                                                                 className={cn(
                                                                                     "mr-2 h-4 w-4",
-                                                                                    newEventSlug === slug ? "opacity-100" : "opacity-0"
+                                                                                    selectedEventId === event.id ? "opacity-100" : "opacity-0"
                                                                                 )}
                                                                             />
-                                                                            {e.title}
+                                                                            {event.name}
+                                                                            <span className="ml-2 text-xs text-slate-400">({event.slug})</span>
                                                                         </CommandItem>
-                                                                    );
-                                                                })}
-                                                            </CommandGroup>
-                                                        </CommandList>
-                                                    </Command>
-                                                </PopoverContent>
-                                            </Popover>
-                                        )}
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-medium">Round</label>
-                                        <Select value={newEventRound} onValueChange={setNewEventRound}>
-                                            <SelectTrigger className="bg-white text-slate-900 border-slate-200">
-                                                <SelectValue placeholder="Round/Stage" />
-                                            </SelectTrigger>
-                                            <SelectContent className="bg-white border-slate-200 text-slate-900">
-                                                <SelectItem value="Prelims" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Prelims</SelectItem>
-                                                <SelectItem value="Finals" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Finals</SelectItem>
-                                                <SelectItem value="Workshop" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Workshop</SelectItem>
-                                                <SelectItem value="Medal Ceremony" className="text-slate-900 focus:bg-slate-100 focus:text-slate-900">Medal Ceremony</SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-medium">Location</label>
-                                        <Input
-                                            placeholder="e.g. Exam Hall"
-                                            value={newEventLocation}
-                                            onChange={(e) => setNewEventLocation(e.target.value)}
-                                            className="bg-white text-slate-900 border-slate-200 placeholder:text-slate-400"
-                                        />
-                                    </div>
-                                    <Button
-                                        onClick={handleLiveEventSubmit}
-                                        disabled={(!newEventSlug && newEventRound !== "Workshop") || (newEventRound === "Workshop" && !manualEventName) || !newEventRound || !newEventLocation}
-                                        className="bg-slate-900 hover:bg-slate-800 text-white min-w-[120px]"
-                                    >
-                                        <Radio className="mr-2 h-4 w-4" />
-                                        {editingEventId ? "Update Event" : "Set Live"}
-                                    </Button>
-                                    {editingEventId && (
-                                        <Button
-                                            variant="outline"
-                                            onClick={resetLiveEventForm}
-                                            className="min-w-[80px] bg-white text-slate-900 border-slate-200 hover:bg-slate-100"
-                                        >
-                                            Cancel
-                                        </Button>
-                                    )}
-                                </div>
+                                                                    ))}
+                                                                </CommandGroup>
+                                                            </CommandList>
+                                                        </Command>
+                                                    </PopoverContent>
+                                                </Popover>
+                                            </div>
 
-                                <div className="rounded-md border border-slate-200 overflow-hidden">
-                                    <Table>
-                                        <TableHeader>
-                                            <TableRow className="bg-slate-50">
-                                                <TableHead>Event Name</TableHead>
-                                                <TableHead>Round</TableHead>
-                                                <TableHead>Location</TableHead>
-                                                <TableHead className="text-right">Action</TableHead>
-                                            </TableRow>
-                                        </TableHeader>
-                                        <TableBody>
-                                            {loadingLiveEvents ? (
-                                                <TableRow>
-                                                    <TableCell colSpan={4} className="h-24 text-center">Loading...</TableCell>
-                                                </TableRow>
-                                            ) : liveEvents.length === 0 ? (
-                                                <TableRow>
-                                                    <TableCell colSpan={4} className="h-24 text-center text-slate-500">
-                                                        No live events currently active.
-                                                    </TableCell>
-                                                </TableRow>
-                                            ) : (
-                                                liveEvents.map((event) => (
-                                                    <TableRow key={event.id}>
-                                                        <TableCell className="font-medium text-slate-900">{event.name}</TableCell>
-                                                        <TableCell>{event.round}</TableCell>
-                                                        <TableCell>{event.location}</TableCell>
-                                                        <TableCell className="text-right flex justify-end gap-2">
-                                                            <Button
-                                                                variant="outline"
-                                                                size="sm"
-                                                                onClick={() => startEditing(event)}
-                                                                className="h-8 bg-white text-slate-900 border-slate-200 hover:bg-slate-100"
-                                                            >
-                                                                Edit
-                                                            </Button>
-                                                            <Button
-                                                                variant="ghost"
-                                                                size="sm"
-                                                                onClick={() => deleteLiveEvent(event.id)}
-                                                                className="text-red-500 hover:text-red-700 hover:bg-red-50 h-8"
-                                                            >
-                                                                <Trash2 className="h-4 w-4" />
-                                                            </Button>
-                                                        </TableCell>
-                                                    </TableRow>
-                                                ))
-                                            )}
-                                        </TableBody>
-                                    </Table>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </TabsContent>
-
-                    <TabsContent value="manage-admins" className="space-y-4">
-                        <Card className="border-slate-200 shadow-sm">
-                            <CardHeader>
-                                <CardTitle>Manage Event Admins</CardTitle>
-                                <CardDescription>Assign or remove admins for specific events. Max 3 admins per event.</CardDescription>
-                            </CardHeader>
-                            <CardContent className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    {/* Left Side: Select Event and Search User */}
-                                    <div className="space-y-6">
-                                        <div className="space-y-2">
-                                            <label className="text-sm font-medium">Select Event</label>
-                                            <Popover open={eventSearchOpen} onOpenChange={setEventSearchOpen}>
-                                                <PopoverTrigger asChild>
-                                                    <Button
-                                                        variant="outline"
-                                                        role="combobox"
-                                                        aria-expanded={eventSearchOpen}
-                                                        className="w-full justify-between bg-white text-slate-900 border-slate-200 hover:bg-slate-50"
-                                                    >
-                                                        {selectedEventId
-                                                            ? dbEvents.find((event) => event.id === selectedEventId)?.name
-                                                            : "Select event..."}
-                                                        <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                                                    </Button>
-                                                </PopoverTrigger>
-                                                <PopoverContent className="w-full p-0 bg-white border-slate-200">
-                                                    <Command className="bg-white">
-                                                        <CommandInput placeholder="Search event..." className="border-none focus:ring-0" />
-                                                        <CommandList>
-                                                            <CommandEmpty>No event found.</CommandEmpty>
-                                                            <CommandGroup>
-                                                                {dbEvents.map((event) => (
-                                                                    <CommandItem
-                                                                        key={event.id}
-                                                                        value={`${event.name} ${event.slug}`}
-                                                                        onSelect={() => {
-                                                                            setSelectedEventId(event.id);
-                                                                            setEventSearchOpen(false);
-                                                                        }}
-                                                                        className="text-slate-900 hover:bg-slate-100 cursor-pointer"
+                                            {selectedEventId && (
+                                                <div className="space-y-2">
+                                                    <label className="text-sm font-medium">Search User (by email)</label>
+                                                    <div className="relative">
+                                                        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" />
+                                                        <Input
+                                                            placeholder="Type at least 3 characters..."
+                                                            className="pl-9 bg-white text-slate-900 border-slate-200"
+                                                            value={userSearchQuery}
+                                                            onChange={(e) => setUserSearchQuery(e.target.value)}
+                                                        />
+                                                    </div>
+                                                    {searchingUsers && <p className="text-xs text-slate-400">Searching...</p>}
+                                                    {searchedUsers.length > 0 && (
+                                                        <div className="mt-2 border border-slate-200 rounded-md bg-white divide-y divide-slate-100 overflow-hidden shadow-sm">
+                                                            {searchedUsers.map((u) => (
+                                                                <div key={u.id} className="p-3 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                                                                    <div>
+                                                                        <p className="text-sm font-medium text-slate-900">{u.name}</p>
+                                                                        <p className="text-xs text-slate-500">{u.email}</p>
+                                                                    </div>
+                                                                    <Button
+                                                                        size="sm"
+                                                                        className="bg-slate-900 text-white hover:bg-slate-800 h-8"
+                                                                        onClick={() => handleAddAdmin(u.id)}
+                                                                        disabled={eventAdmins.some(ea => ea.id === u.id) || eventAdmins.length >= 3}
                                                                     >
-                                                                        <Check
-                                                                            className={cn(
-                                                                                "mr-2 h-4 w-4",
-                                                                                selectedEventId === event.id ? "opacity-100" : "opacity-0"
-                                                                            )}
-                                                                        />
-                                                                        {event.name}
-                                                                        <span className="ml-2 text-xs text-slate-400">({event.slug})</span>
-                                                                    </CommandItem>
-                                                                ))}
-                                                            </CommandGroup>
-                                                        </CommandList>
-                                                    </Command>
-                                                </PopoverContent>
-                                            </Popover>
+                                                                        {eventAdmins.some(ea => ea.id === u.id) ? "Already Admin" : "Add Admin"}
+                                                                    </Button>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
                                         </div>
 
-                                        {selectedEventId && (
-                                            <div className="space-y-2">
-                                                <label className="text-sm font-medium">Search User (by email)</label>
-                                                <div className="relative">
-                                                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" />
-                                                    <Input
-                                                        placeholder="Type at least 3 characters..."
-                                                        className="pl-9 bg-white text-slate-900 border-slate-200"
-                                                        value={userSearchQuery}
-                                                        onChange={(e) => setUserSearchQuery(e.target.value)}
-                                                    />
-                                                </div>
-                                                {searchingUsers && <p className="text-xs text-slate-400">Searching...</p>}
-                                                {searchedUsers.length > 0 && (
-                                                    <div className="mt-2 border border-slate-200 rounded-md bg-white divide-y divide-slate-100 overflow-hidden shadow-sm">
-                                                        {searchedUsers.map((u) => (
-                                                            <div key={u.id} className="p-3 flex items-center justify-between hover:bg-slate-50 transition-colors">
-                                                                <div>
-                                                                    <p className="text-sm font-medium text-slate-900">{u.name}</p>
-                                                                    <p className="text-xs text-slate-500">{u.email}</p>
+                                        {/* Right Side: Current Admins */}
+                                        <div className="space-y-4">
+                                            <div className="flex items-center gap-2 pb-2">
+                                                <ShieldCheck className="h-5 w-5 text-slate-900" />
+                                                <h3 className="font-semibold text-slate-900">
+                                                    Current Admins {selectedEventId && `(${eventAdmins.length}/3)`}
+                                                </h3>
+                                            </div>
+                                            <div className="rounded-md border border-slate-200 min-h-[200px] bg-slate-50/50">
+                                                {!selectedEventId ? (
+                                                    <div className="h-full flex items-center justify-center text-slate-400 text-sm p-4 text-center">
+                                                        Please select an event to view and manage admins.
+                                                    </div>
+                                                ) : loadingAdmins ? (
+                                                    <div className="p-4 space-y-3">
+                                                        <Skeleton className="h-12 w-full" />
+                                                        <Skeleton className="h-12 w-full" />
+                                                    </div>
+                                                ) : eventAdmins.length === 0 ? (
+                                                    <div className="h-full flex items-center justify-center text-slate-400 text-sm p-4 text-center italic">
+                                                        No admins assigned to this event yet.
+                                                    </div>
+                                                ) : (
+                                                    <div className="divide-y divide-slate-100 bg-white">
+                                                        {eventAdmins.map((admin) => (
+                                                            <div key={admin.id} className="p-4 flex items-center justify-between">
+                                                                <div className="flex items-center gap-3">
+                                                                    <div className="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-xs">
+                                                                        {admin.name.charAt(0)}
+                                                                    </div>
+                                                                    <div>
+                                                                        <p className="text-sm font-medium text-slate-900">{admin.name}</p>
+                                                                        <p className="text-xs text-slate-500">{admin.email}</p>
+                                                                    </div>
                                                                 </div>
                                                                 <Button
+                                                                    variant="ghost"
                                                                     size="sm"
-                                                                    className="bg-slate-900 text-white hover:bg-slate-800 h-8"
-                                                                    onClick={() => handleAddAdmin(u.id)}
-                                                                    disabled={eventAdmins.some(ea => ea.id === u.id) || eventAdmins.length >= 3}
+                                                                    className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                                                                    onClick={() => handleRemoveAdmin(admin.id)}
                                                                 >
-                                                                    {eventAdmins.some(ea => ea.id === u.id) ? "Already Admin" : "Add Admin"}
+                                                                    <Trash2 className="h-4 w-4" />
                                                                 </Button>
                                                             </div>
                                                         ))}
                                                     </div>
                                                 )}
                                             </div>
-                                        )}
-                                    </div>
-
-                                    {/* Right Side: Current Admins */}
-                                    <div className="space-y-4">
-                                        <div className="flex items-center gap-2 pb-2">
-                                            <ShieldCheck className="h-5 w-5 text-slate-900" />
-                                            <h3 className="font-semibold text-slate-900">
-                                                Current Admins {selectedEventId && `(${eventAdmins.length}/3)`}
-                                            </h3>
-                                        </div>
-                                        <div className="rounded-md border border-slate-200 min-h-[200px] bg-slate-50/50">
-                                            {!selectedEventId ? (
-                                                <div className="h-full flex items-center justify-center text-slate-400 text-sm p-4 text-center">
-                                                    Please select an event to view and manage admins.
-                                                </div>
-                                            ) : loadingAdmins ? (
-                                                <div className="p-4 space-y-3">
-                                                    <Skeleton className="h-12 w-full" />
-                                                    <Skeleton className="h-12 w-full" />
-                                                </div>
-                                            ) : eventAdmins.length === 0 ? (
-                                                <div className="h-full flex items-center justify-center text-slate-400 text-sm p-4 text-center italic">
-                                                    No admins assigned to this event yet.
-                                                </div>
-                                            ) : (
-                                                <div className="divide-y divide-slate-100 bg-white">
-                                                    {eventAdmins.map((admin) => (
-                                                        <div key={admin.id} className="p-4 flex items-center justify-between">
-                                                            <div className="flex items-center gap-3">
-                                                                <div className="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold text-xs">
-                                                                    {admin.name.charAt(0)}
-                                                                </div>
-                                                                <div>
-                                                                    <p className="text-sm font-medium text-slate-900">{admin.name}</p>
-                                                                    <p className="text-xs text-slate-500">{admin.email}</p>
-                                                                </div>
-                                                            </div>
-                                                            <Button
-                                                                variant="ghost"
-                                                                size="sm"
-                                                                className="text-red-500 hover:text-red-700 hover:bg-red-50"
-                                                                onClick={() => handleRemoveAdmin(admin.id)}
-                                                            >
-                                                                <Trash2 className="h-4 w-4" />
-                                                            </Button>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            )}
                                         </div>
                                     </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </TabsContent>
-                </Tabs>
+                                </CardContent>
+                            </Card>
+                        </TabsContent>
+                    </Tabs>
+                )}
             </div>
         </div>
     );
