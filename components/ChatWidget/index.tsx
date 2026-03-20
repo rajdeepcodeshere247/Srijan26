@@ -287,7 +287,7 @@ export default function ChatWidget({ initialOpen = false }: { initialOpen?: bool
           <button
             onClick={() => setIsOpen((o) => !o)}
             className={((!isOpen ? "srijan-glow " : "") + "srijan-toggle-size")}
-            style={{ borderRadius: "50%", border: "2px solid rgba(235,216,125,0.4)", overflow: "hidden", cursor: "pointer", background: "#160505", padding: 0, transition: "transform 0.2s, border-color 0.2s" }}
+            style={{ flexShrink: 0, borderRadius: "50%", border: "2px solid rgba(235,216,125,0.4)", overflow: "hidden", cursor: "pointer", background: "#160505", padding: 0, transition: "transform 0.2s, border-color 0.2s" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.1)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "#ebd87d"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(235,216,125,0.4)"; }}
             aria-label="Toggle chat"

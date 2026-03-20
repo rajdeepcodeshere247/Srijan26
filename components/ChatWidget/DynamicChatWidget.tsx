@@ -60,11 +60,12 @@ export default function DynamicChatWidget() {
         fontFamily: "var(--font-euclid), sans-serif",
       }}
     >
-      {/* Teaser bubble */}
-      <div
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(240,148,0,0.15), rgba(235,216,125,0.1))",
+      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        {/* Teaser bubble */}
+        <div
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(240,148,0,0.15), rgba(235,216,125,0.1))",
           border: "1px solid rgba(235,216,125,0.2)",
           borderRadius: 10,
           padding: "7px 12px",
@@ -100,6 +101,7 @@ export default function DynamicChatWidget() {
         aria-label="Open Kalpana AI chat"
         className="srijan-placeholder-toggle"
         style={{
+          flexShrink: 0,
           width: 58,
           height: 58,
           borderRadius: "50%",
@@ -126,6 +128,7 @@ export default function DynamicChatWidget() {
           }}
         />
       </button>
+      </div>
 
       <style>{`
         @keyframes srijan-pulse-glow {
