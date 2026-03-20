@@ -21,6 +21,7 @@ export function NavLink({ href, label, isActive, onClick, className }: NavLinkPr
   return (
     <MotionLink
       href={href}
+      prefetch={false}
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

@@ -43,6 +43,7 @@ const RegisterButton: React.FC<RegisterButtonProps> = ({ status, link, isCard })
   return (
     <Link
       href={link}
+      prefetch={false}
       onClick={handleRegisterClick}
       prefetch={false}
       style={desktopClipStyle}

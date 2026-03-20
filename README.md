@@ -1,28 +1,63 @@
-## Project Setup
+# Srijan '26
 
-1. Create a fork.
-2. Clone your fork.
-3. ``` cd srijan26 ```
-4. ``` npm i ```
-5. Copy the contents of .env.example, create a .env file and paste the contents there (make sure the env isn't being tracked by git).
-6. ``` npx prisma generate ```
-7. ``` npm run dev ```
-8. If working on the backend, run ``` docker-compose up -d ``` to start up a local instance of mongodb using docker.
-9. Run ``` npx prisma db push ``` to sync your schema with your database.
+## Running Locally
 
-- When you want to merge your changes, create a pull request to the ```dev``` branch of the repository.
+To get the project running on your local machine, follow these barebone steps:
 
-## Project Overview
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repo-link>
+   cd srijan26
+   ```
 
-- ```components``` has currently payments data, read the README in that file to know more
-- ```hooks``` has payment modular function that connects to cashfree service and is called by the _paymentSection.tsx_
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### Some development guidelines
+3. **Configure the environment:**
+   Copy `.env.example` to a new file named `.env`, and fill in your keys:
+   - `DATABASE_URL`: Add your MongoDB connection string.
+   - `AUTH_*`, `GOOGLE_AUTH_*`: Required for authentication testing.
+   - `SMTP_USER`, `SMTP_PASS` (Optional): To send functional emails locally.
+   - `CASHFREE_*` (Optional): For processing/verifying payments.
 
-- To access the database, import {prisma} from ["@/prisma/client"](/prisma/client.ts). Do not create a new Prisma Client instance for every file.
+4. **Sync Database Schema:**
+   *(Ensure you have an active MongoDB instance running; e.g. via `docker-compose up -d`)*
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
 
-- For protected components, you can use the checkAuthentication method from [AuthService](services/AuthService.ts).
+5. **Start the Development Server:**
+   ```bash
+   npm run dev
+   ```
+   *Your app will be live at http://localhost:3000.*
 
-- For critical operations (editing/deleting data, etc), use a Confirmation Dialog on the frontend. Check [this](hooks/useConfirmationDialog.tsx) page for usage instructions.
+---
 
-- For the background gradient effect, you can use [this](/components/Balls.tsx) component. And for the non-rectangular button design, [this](/components/Clickable.tsx).
+## Technical Architecture & Scaling Optimizations
+
+This codebase is specifically tuned for high traffic and optimal UX. Here's a summary of what's working under the hood:
+
+### ⚡ Edge Requests Optimization
+To dramatically prevent unnecessary edge function execution limits being hit from high traffic, we dynamically deferred `prefetch` on deep navbar links, event listing cards, and dashboard routes. This means Next.js won't spam edge servers predicting where a hovering cursor *might* click, saving costs and server strain.
+
+### 🌐 CDN Asset Serving (Vercel Blob)
+Large aesthetic assets—such as the massive background `webm` hero videos—are deployed remotely into Vercel Blob (CDN) rather than bulking the source code or main server memory, achieving lightning-fast progressive streaming universally.
+
+### 🖼️ Image / Media Caching
+All images utilize the framework's native `next/image` pipelines. Coupled with strict `Cache-Control` headers for API/event listings (that reload only via explicit Superadmin UI invalidation), repeat visitors load almost everything directly from instantaneous cache.
+
+### 🚀 Event Dynamic SEO (Next.js SSG)
+Event pages located at `/events/[slug]` maintain highly customized OpenGraph and Twitter SEO tags. However, instead of executing Server-Side Rendering (SSR) uniquely on every visit, the engine pre-builds all exact event pages at build time using `generateStaticParams()`. This results in perfectly generated HTML documents capable of scoring a 100 on Lighthouse instantaneously.
+
+### 🔐 Superadmin & Admin Privilege Management
+Robust manual intervention requires comprehensive Role-Based Access Control (RBAC):
+- **Admins:** Can view event metrics, manage subsets of registered users, or oversee specified event administration functionality.
+- **Superadmins:** Wield God-mode control over the platform. Features built specifically for this include:
+  - *Pending Orders Management:* Manually verifying or rejecting Cashfree operations that succeeded physically but failed to trigger webhook callbacks.
+  - *Cache Cleansing APIs:* Re-triggering Next.js cache bypasses straight from the dashboard.
+  - *Homepage Live Events:* Immediately dictating new banner/ticker events for the home route.
+  - *Admin Handover:* Delegating "Admin" database roles to other authenticated emails.

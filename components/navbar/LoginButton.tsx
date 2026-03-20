@@ -29,6 +29,7 @@ export function LoginButton({ className, isActive, onClick }: LoginButtonProps) 
   return (
     <MotionLink
       href={href}
+      prefetch={false}
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

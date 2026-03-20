@@ -269,6 +269,7 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
 
               <Link
                 href={`/events/${event.slug}`}
+                prefetch={false}
                 style={{ clipPath: CLIP_PATH }}
                 className="font-euclid text-xs uppercase font-bold flex items-center justify-center py-2 gap-2 rounded bg-white hover:bg-white/80 active:bg-gray-200 duration-150 transition-all text-black"
                 title="More Info"
