@@ -44,6 +44,7 @@ const RegisterButton: React.FC<RegisterButtonProps> = ({ status, link, isCard })
     <Link
       href={link}
       onClick={handleRegisterClick}
+      prefetch={false}
       style={desktopClipStyle}
       className={`text-white font-euclid uppercase font-bold tracking-wider transition-all duration-150 flex items-center justify-center gap-2 bg-red hover:bg-red-700 active:bg-red-800
         ${isCard
