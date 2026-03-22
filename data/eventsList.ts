@@ -77,7 +77,7 @@ const CODING_EVENTS: Event[] = [
       "Final rankings determine the winners",
     ],
     lastDate: "TBA",
-    prizePool: "TBD",
+    prizePool: "10,000",
     link: "/register/h42",
     driveLink:
       "https://drive.google.com/file/d/1WOEO91mqBPM8umnUz-oItd_6SMpwZ3Qm/view?usp=sharing",
@@ -126,7 +126,7 @@ const CODING_EVENTS: Event[] = [
       "Teams solve advanced challenges and reconstruct the narrative to identify the culprit",
     ],
     lastDate: "TBA",
-    prizePool: "TBD",
+    prizePool: "10,000",
     link: "/register/sherlocked",
     driveLink:
       "https://drive.google.com/file/d/1F4J8PDFqJRPXe4cvHb8S1DwjTTqTDvk0/view?usp=sharing",
@@ -822,7 +822,10 @@ const BUSINESS_EVENTS: Event[] = [
     teamSize: "4",
     rules: ["Startup simulation", "Supply chain management", "Auction round"],
     lastDate: "TBA",
-    prizePool: "₹ 12,000",
+    prizePool: "₹ 9,000",
+    winnerPrize: "₹4,000",
+    runnersUpPrize: "₹3,000",
+    secondRunnersUpPrize: "₹2,000",
     link: "/register/indx",
     driveLink:
       "https://drive.google.com/file/d/1j0BUcd4z4HtRY--D_ZiKYbl5vz4ks14L/view?usp=sharing",
