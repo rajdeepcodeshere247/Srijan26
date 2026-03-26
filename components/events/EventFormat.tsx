@@ -11,9 +11,10 @@ export default function EventFormat({ format, color, className }: Props) {
   // Safety check
   if (!format || format.length === 0) return null;
 
-  const renderWithBold = (text: string) => {
+  const renderFormattedText = (text: string) => {
     if (!text) return null;
-    const parts = text.split(/(\*\*.*?\*\*)/g);
+    
+    const parts = text.split(/(\*\*.*?\*\*|\[.*?\]\(.*?\))/g);
 
     return parts.map((part, i) => {
       if (part.startsWith("**") && part.endsWith("**")) {
@@ -23,6 +24,28 @@ export default function EventFormat({ format, color, className }: Props) {
           </strong>
         );
       }
+
+      // Handle Links [text](url)
+      if (part.startsWith("[") && part.endsWith(")")) {
+        const match = part.match(/\[(.*?)\]\((.*?)\)/);
+        if (match) {
+          const linkText = match[1];
+          const url = match[2];
+          return (
+            <a
+              key={i}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color }}
+              className="underline hover:opacity-80 transition-opacity font-semibold"
+            >
+              {linkText}
+            </a>
+          );
+        }
+      }
+
       return part;
     });
   };
@@ -41,8 +64,8 @@ export default function EventFormat({ format, color, className }: Props) {
 
             if (isHeading) {
               return (
-                <p key={index} className="leading-relaxed text-xl pb-1 mt-8">
-                  {renderWithBold(textToRender)}
+                <p key={index} className="leading-relaxed text-xl pb-1 mt-8 font-semibold">
+                  {renderFormattedText(textToRender)}
                 </p>
               );
             }
@@ -54,7 +77,7 @@ export default function EventFormat({ format, color, className }: Props) {
                   style={{ backgroundColor: color }}
                 />
                 <span className="leading-relaxed">
-                  {renderWithBold(textToRender)}
+                  {renderFormattedText(textToRender)}
                 </span>
               </div>
             );
