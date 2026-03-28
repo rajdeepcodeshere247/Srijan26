@@ -130,6 +130,7 @@ const CODING_EVENTS: Event[] = [
     link: "/register/sherlocked",
     driveLink:
       "https://drive.google.com/file/d/1F4J8PDFqJRPXe4cvHb8S1DwjTTqTDvk0/view?usp=sharing",
+    whatsappLink: "https://chat.whatsapp.com/HvCvUCw1yrfA4IHLeDrnrV",
     coordinators: [
       { name: "Subhayan Roy Chowdhury", contact: "6289955350" },
       { name: "Kaji Manirul Islam", contact: "7865060015" },
@@ -184,6 +185,7 @@ const CODING_EVENTS: Event[] = [
     link: "/register/ss3",
     driveLink:
       "https://drive.google.com/file/d/1Py4J3qnGrU0SfUNiyPmlf8bXmlRw89vh/view?usp=drive_link",
+    unstopLink: "https://unstop.com/competitions/snap-syntax-30-srijan-2026-jadavpur-university-kolkata-1658149",
     coordinators: [
       { name: "Ayan Ghosh", contact: "8167002490" },
       { name: "Swapnaneel Ray", contact: "7980515334" },
@@ -232,8 +234,8 @@ const CODING_EVENTS: Event[] = [
     driveLink:
       "https://drive.google.com/file/d/110Ka-uixoGU94gnxm5OHZMCIKBlF6ljs/view?usp=sharing",
     coordinators: [
-      { name: "Tanish Majumdar", contact: "7028912305" },
       { name: "Somnath Chattaraj", contact: "9382054930" },
+      { name: "Rishav Chowdhary", contact: "8276991374" },
       { name: "Anirban Biswas", contact: "7718736188" },
     ],
     status: "Open",
@@ -1583,7 +1585,7 @@ const MISC_EVENTS: Event[] = [
     tags: ["Debate", "Public Speaking"],
     status: "Open",
     coordinators: [
-      { name: "Anamitra Roy", contact: "9123781437" },
+      { name: "Harsh Verma", contact: "9749252757" },
       { name: "Souradip Raj Bose", contact: "9430152427" },
     ],
   },

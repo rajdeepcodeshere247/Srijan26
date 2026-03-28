@@ -116,6 +116,7 @@ const createTeam = withAuth(
     ) => {
         try {
             if (!event) return { ok: false, message: "Invalid event" };
+            if(!teamName) return {ok: false, message: "Team Name cannot be empty"};
             if (sessionUserId !== user.id)
                 throw new Error("Invalid session - id mismatch");
             const existingTeam = await prisma.team.findFirst({

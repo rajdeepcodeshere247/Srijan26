@@ -6,9 +6,9 @@ type ContactPerson = {
 
 const contacts: ContactPerson[] = [
   {
-    name: "Ahnik Purkait",
+    name: "Harsh Verma",
     position: "Jadavpur Campus",
-    phone: "+91 87770 98463",
+    phone: "+91 97492 52757",
   },
   {
     name: "Rahul Sk.",

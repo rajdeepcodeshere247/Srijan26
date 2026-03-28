@@ -128,7 +128,7 @@ function SignUpForm() {
             <h1 className="text-5xl font-semibold font-elnath text-yellow">
                 Sign Up
             </h1>
-            <div className="flex flex-col items-center gap-4 w-full">
+            <div className="flex flex-col items-center gap-4 w-9/10 sm:w-full">
                 <div className="flex flex-col items-center gap-2 w-full">
                     <input
                         type="text"

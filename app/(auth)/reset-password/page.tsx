@@ -107,7 +107,7 @@ function ResetPassword() {
         <div className="flex flex-col items-center justify-center gap-8 h-full min-h-[80vh]">
             <Balls />
             <h1 className="text-5xl font-semibold font-elnath text-yellow text-center">Reset your Password</h1>
-            <div className="flex flex-col items-center gap-2 relative w-full sm:w-1/3 2xl:w-1/4">
+            <div className="flex flex-col items-center gap-2 relative w-9/10 sm:w-1/3 2xl:w-1/4">
                 <div className="absolute top-1/2 -right-10 -translate-y-1/2">
                     <Tooltip message="Password must be at least 8 characters long and must contain at least 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character">
                         <p className="rounded-full bg-gray-300/40 px-2.5 py-1 text-xs">

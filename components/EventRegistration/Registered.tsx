@@ -7,6 +7,10 @@ import MemberControls from "./MemberControls";
 import LeaveTeam from "./LeaveTeam";
 import Balls from "../Balls";
 import PendingMemberControls from "./PendingMemberControls";
+import { EVENTS_DATA } from "@/data/eventsList";
+import Link from "next/link";
+import Image from "next/image";
+import WhatsappIcon from "../ui/whatsapp-icon";
 
 function Registered({
     user,
@@ -19,6 +23,7 @@ function Registered({
 }) {
     if (!team) return <NotRegistered user={user} event={event} />;
     const isTeamLead = team.leader === user.id;
+    const eventData = EVENTS_DATA.find((data) => data.slug === event.slug);
 
     let status: string;
     if (team.members.length === event.maxMembers) status = "Team full";
@@ -28,14 +33,27 @@ function Registered({
     return (
         <div className="flex flex-col items-center justify-center gap-6 h-full min-h-[80vh] py-6">
             <Balls />
-            <h1 className="text-4xl sm:text-5xl font-semibold font-elnath text-yellow mb-8 text-center">
+            <h1 className="text-4xl sm:text-5xl font-semibold font-elnath text-yellow text-center">
                 {event.name} Registration
             </h1>
+            {/* Unstop Link if needed */}
+            {eventData && eventData.unstopLink && (
+                <div className="mb-4 flex flex-col items-center w-full gap-y-3">
+                    <p className="text-sm sm:text-base w-4/5 text-center">Prelims will be held on Unstop, so registration on the platform is required.</p>
+                    <Link href={eventData.unstopLink} target="_blank">
+                        <Image
+                            src={"/Unstop-Logo-White-Small.png"}
+                            width={85}
+                            height={50}
+                            className="bg-blue-900 p-2 rounded-sm hover:bg-blue-800 transition-colors duration-200"
+                            alt="Unstop Logo"
+                        />
+                    </Link>
+                </div>
+            )}
             <div className="flex flex-col sm:flex-row w-full justify-around gap-y-12">
                 <div className="flex sm:w-2/3 flex-col items-center">
-                    <h4 className="text-lg font-bold">
-                        Team: {team?.name}
-                    </h4>
+                    <h4 className="text-lg font-bold">Team: {team?.name}</h4>
                     <h6 className="mb-2 text-yellow">Members</h6>
                     <div className="hidden sm:flex w-full sm:w-3/4 justify-between rounded-t-sm border-b border-gray-300/30 bg-gray-600/30 px-4 py-2 transition-colors duration-300">
                         <p>Name</p>
@@ -62,9 +80,11 @@ function Registered({
                             )}
                         </div>
                     ))}
-                    {(isTeamLead && team.pendingMembers.length !== 0) && (
+                    {isTeamLead && team.pendingMembers.length !== 0 && (
                         <>
-                            <h6 className="my-2 text-yellow">Pending Members</h6>
+                            <h6 className="my-2 text-yellow">
+                                Pending Members
+                            </h6>
                             <div className="hidden sm:flex w-full sm:w-3/4 justify-between rounded-t-sm border-b border-gray-300/30 bg-gray-600/30 px-4 py-2 transition-colors duration-300">
                                 <p>Name</p>
                                 <p>Email</p>
@@ -77,15 +97,17 @@ function Registered({
                                     <p className="sm:hidden">Name </p>
                                     <p>{member.name}</p>
                                     <p className="sm:hidden">Email</p>
-                                    <p className="justify-self-end">{member.email}</p>
+                                    <p className="justify-self-end">
+                                        {member.email}
+                                    </p>
                                     {isTeamLead && (
-                                            <PendingMemberControls
-                                                memberId={member.id!}
-                                                memberName={member.name}
-                                                teamId={team.id}
-                                                event={event}
-                                            />
-                                        )}
+                                        <PendingMemberControls
+                                            memberId={member.id!}
+                                            memberName={member.name}
+                                            teamId={team.id}
+                                            event={event}
+                                        />
+                                    )}
                                 </div>
                             ))}
                         </>
@@ -97,11 +119,25 @@ function Registered({
                     >
                         Status: {status}
                     </h3>
-                    {event.minMembers === event.maxMembers ? 
-                    (<p>Allowed Team Size: {event.minMembers} member(s)</p>) :
-                    (<p>Allowed Team Size: {event.minMembers} - {event.maxMembers} members</p>)
-                    }
+                    {event.minMembers === event.maxMembers ? (
+                        <p>Allowed Team Size: {event.minMembers} member(s)</p>
+                    ) : (
+                        <p>
+                            Allowed Team Size: {event.minMembers} -{" "}
+                            {event.maxMembers} members
+                        </p>
+                    )}
                     <p>Current Team Size: {team?.members.length}</p>
+                    {eventData && eventData.whatsappLink && (
+                        <Link
+                            href={eventData.whatsappLink}
+                            target="_blank"
+                            className="bg-green-600 hover:bg-green-500 transition-colors duration-200 text-white py-1 px-3 rounded-xs flex items-center gap-2"
+                        >
+                            <WhatsappIcon />
+                            Whatsapp Group
+                        </Link>
+                    )}
                     {isTeamLead ? (
                         <TeamControls team={team} event={event} />
                     ) : (

@@ -36,6 +36,10 @@ function NotRegistered({ user, event }: { user: SessionUser; event: Event }) {
     };
 
     const handleCreateTeam = (e: React.FormEvent) => {
+        if(!teamName){
+            toast.error("Team Name cannot be empty");
+            return;
+        }
         e.preventDefault();
         setLoading(true);
         createTeam(event, user, teamName)

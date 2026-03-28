@@ -52,6 +52,10 @@ export interface Event {
   driveLink?: string;
   pdfLink?: string;
   coordinators: Coordinator[];
+  
+  // post registration links
+  unstopLink?: string;
+  whatsappLink?: string;
 
   // --- State ---
   status: EventStatus;
