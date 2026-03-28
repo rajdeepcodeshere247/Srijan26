@@ -1,5 +1,5 @@
 import { unstable_cache, revalidateTag } from "next/cache";
-// import { prisma } from "@/prisma/client";
+import { prisma } from "@/prisma/client";
 
 export interface LiveEvent {
     id: string;
