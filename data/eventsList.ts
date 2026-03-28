@@ -99,7 +99,7 @@ const CODING_EVENTS: Event[] = [
     image: "/images/posters/sherlocked.webp",
     tags: ["CTF", "Security", "Mystery"],
     format: "Hybrid",
-    teamSize: "3",
+    teamSize: "2-3",
     rules: [
       "Teams must consist of **exactly 3 members**",
       "The competition is open to **undergraduate and postgraduate students**",
