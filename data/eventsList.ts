@@ -185,7 +185,8 @@ const CODING_EVENTS: Event[] = [
     link: "/register/ss3",
     driveLink:
       "https://drive.google.com/file/d/1Py4J3qnGrU0SfUNiyPmlf8bXmlRw89vh/view?usp=drive_link",
-    unstopLink: "https://unstop.com/competitions/snap-syntax-30-srijan-2026-jadavpur-university-kolkata-1658149",
+    unstopLink:
+      "https://unstop.com/competitions/snap-syntax-30-srijan-2026-jadavpur-university-kolkata-1658149",
     coordinators: [
       { name: "Ayan Ghosh", contact: "8167002490" },
       { name: "Swapnaneel Ray", contact: "7980515334" },
@@ -572,7 +573,8 @@ const ROBOTICS_EVENTS: Event[] = [
     title: "CONTROL-CRAFT",
     category: "Circuits and Robotics",
     color: "#1DDBFF",
-    description: "Synergy between mechanical design and human control. Pilot a manual robot through a complex course, performing pick-and-place tasks with dexterity.",
+    description:
+      "Synergy between mechanical design and human control. Pilot a manual robot through a complex course, performing pick-and-place tasks with dexterity.",
     format: "Offline",
     teamSize: "4",
     rules: [
@@ -585,20 +587,21 @@ const ROBOTICS_EVENTS: Event[] = [
       "Teams have to compete in this event by making its path through a specified track or arena.",
       "Participants are not supposed to use any readymade Lego components or readymade gripping mechanism. However, the participants are allowed to use ready-made gear assemblies.",
       "In the case of an electric power supply, the voltage between any two points should be less than or equal to 12V DC at all times during the run.",
-      "AC power supply will be provided if needed for wired bots."
+      "AC power supply will be provided if needed for wired bots.",
     ],
     lastDate: "TBA",
     prizePool: "N/A",
     link: "/register/CC",
-    driveLink: "https://drive.google.com/drive/folders/10zfK0vRqXm0nqB5xAQvYmXyKkoTLlxNR",
+    driveLink:
+      "https://drive.google.com/drive/folders/10zfK0vRqXm0nqB5xAQvYmXyKkoTLlxNR",
     image: "/images/posters/control-craft.webp",
     tags: ["Manual Bot", "Mechatronics"],
     status: "Open",
     coordinators: [
       { name: "Priyam Adhikary", contact: "8389916827" },
       { name: "Sarfaroz Gazi", contact: "9932225737" },
-      { name: "Shreyas Ray", contact: "6291516600" }
-    ]
+      { name: "Shreyas Ray", contact: "6291516600" },
+    ],
   },
 
   {
@@ -607,7 +610,8 @@ const ROBOTICS_EVENTS: Event[] = [
     title: "ROPE RUNNER",
     category: "Circuits and Robotics",
     color: "#1DDBFF",
-    description: "Challenge gravity! Design wheel-less robots to cling and crawl across a suspended rope. Demands speed, precision, and innovative gripping mechanisms.",
+    description:
+      "Challenge gravity! Design wheel-less robots to cling and crawl across a suspended rope. Demands speed, precision, and innovative gripping mechanisms.",
     format: "Offline",
     teamSize: "4",
     rules: [
@@ -628,20 +632,21 @@ const ROBOTICS_EVENTS: Event[] = [
       "Participants must follow all instructions from organizers and judges",
       "Judges' decisions are final and binding",
       "Misconduct or non-cooperation will result in penalties or disqualification",
-      "Organizers reserve the right to modify rules for safety or fairness"
+      "Organizers reserve the right to modify rules for safety or fairness",
     ],
     lastDate: "TBA",
     prizePool: "N/A",
     link: "/register/RR",
-    driveLink: "https://drive.google.com/drive/folders/1qxolD1GtNA98UhYNMXRCaaFjtsXnFTLc",
+    driveLink:
+      "https://drive.google.com/drive/folders/1qxolD1GtNA98UhYNMXRCaaFjtsXnFTLc",
     image: "/images/posters/rope-runner.webp",
     tags: ["Mechatronics", "Innovation"],
     status: "Open",
     coordinators: [
       { name: "Shreyash Ray", contact: "6291516600" },
       { name: "Rasoshree Ghosh", contact: "7439059081" },
-      { name: "Indrajit Bardhan", contact: "8583078019" }
-    ]
+      { name: "Indrajit Bardhan", contact: "8583078019" },
+    ],
   },
 
   {
@@ -700,7 +705,8 @@ const ROBOTICS_EVENTS: Event[] = [
     title: "Robosoccer",
     category: "Circuits and Robotics",
     color: "#1DDBFF",
-    description: "Where robotics and soccer merge! Watch cutting-edge bots battle it out in a dynamic, high-energy arena. Experience innovation and competitive spirit.",
+    description:
+      "Where robotics and soccer merge! Watch cutting-edge bots battle it out in a dynamic, high-energy arena. Experience innovation and competitive spirit.",
     format: "Offline",
     teamSize: "3-5",
     rules: [
@@ -711,20 +717,21 @@ const ROBOTICS_EVENTS: Event[] = [
       "Maintain discipline and decorum.",
       "Top teams qualify for finals.",
       "Final evaluation based on logic, accuracy, and speed.",
-      "Organizers may modify rules or schedule."
+      "Organizers may modify rules or schedule.",
     ],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
     link: "/register/rbs",
-    driveLink: "https://drive.google.com/file/d/10w3ZrrgQb6ivtEoj5gcCHaNoIcf8j96o/view?usp=drivesdk",
+    driveLink:
+      "https://drive.google.com/file/d/10w3ZrrgQb6ivtEoj5gcCHaNoIcf8j96o/view?usp=drivesdk",
     image: "/images/posters/rbs.webp",
     tags: ["Sports", "Robotics"],
     status: "Open",
     coordinators: [
       { name: "Sabyasachi Sen", contact: "9614618995" },
       { name: "Arka Dhar", contact: "7872980084" },
-      { name: "Sambit Mondal", contact: "8900237615" }
-    ]
+      { name: "Sambit Mondal", contact: "8900237615" },
+    ],
   },
 
   {
@@ -1080,7 +1087,8 @@ const BRAINSTORMING_EVENTS: Event[] = [
     title: "Cold Case",
     category: "Brainstorming",
     color: "#D21C2D",
-    description: "Two offline rounds presenting case studies. Provide the most accurate solution in the shortest possible time. Fastest and most accurate wins.",
+    description:
+      "Two offline rounds presenting case studies. Provide the most accurate solution in the shortest possible time. Fastest and most accurate wins.",
     format: "Offline",
     teamSize: "Individual",
     rules: [
@@ -1097,19 +1105,20 @@ const BRAINSTORMING_EVENTS: Event[] = [
       "Evaluation in the final round will be based on analytical thinking, correctness, clarity of explanation, and speed.",
       "Teams must maintain discipline and decorum throughout the event.",
       "Event coordinators reserve the right to modify rules or schedules if necessary.",
-      "Participants are responsible for keeping track of any updates or changes in the event schedule."
+      "Participants are responsible for keeping track of any updates or changes in the event schedule.",
     ],
     lastDate: "TBA",
     prizePool: "Prizes worth ₹3,000",
     link: "/register/cc",
-    driveLink: "https://docs.google.com/document/d/1_HZBnWYEEW9M6EFlxbaBr_4AKHD14MVR/edit?usp=drivesdk&ouid=113447570621361395808&rtpof=true&sd=true",
+    driveLink:
+      "https://docs.google.com/document/d/1_HZBnWYEEW9M6EFlxbaBr_4AKHD14MVR/edit?usp=drivesdk&ouid=113447570621361395808&rtpof=true&sd=true",
     image: "/images/posters/cc.webp",
     tags: ["Analysis", "Critical Thinking"],
     status: "Open",
     coordinators: [
       { name: "Sneha Ghosh", contact: "7596883862" },
-      { name: "Ankita Bhattacharya", contact: "7980006741" }
-    ]
+      { name: "Ankita Bhattacharya", contact: "7980006741" },
+    ],
   },
   {
     id: "br3",
@@ -1232,30 +1241,48 @@ const ESPORTS_EVENTS: Event[] = [
     ],
   },
 
-  /*
   {
     id: "e-sp2",
     slug: "arena-eafc",
     title: "NSG ARENA x EAFC",
     category: "Esports",
     color: "#FC422D",
-    description: "Dive into the heart of competition at NSG Arena with our 1v1 EAFC tournament. Show off your solo skills in a fast-paced football showdown.",
+    description:
+      "Step into the arena for an intense **1v1 EAFC knockout tournament** where individual skill, strategy, and composure decide the champion. With a total of **63 high-stakes matches**, players must consistently outperform their opponents in a **single-elimination format**, making every game a do-or-die battle.",
+    image: "/images/posters/arena-eafc.webp",
+    tags: ["EAFC", "Sports", "1v1"],
     format: "Offline",
     teamSize: "Individual",
-    rules: ["1v1", "EAFC", "Solo skills"],
+    rules: [
+      "This is a **1v1 solo competition** played on EAFC",
+      "The tournament follows a **single-elimination knockout format**",
+      "Each match result is **final and determines progression**",
+      "Players must be present **on time for their scheduled matches**",
+      "Any form of **unfair play or misconduct will lead to disqualification**",
+      "The **decision of the organizers will be final and binding**",
+    ],
+    eventFormat: [
+      "# Tournament Structure",
+      "The event consists of a total of **63 matches** played in a knockout format",
+      "Players compete in **1v1 matches**, with the winner advancing to the next round",
+      "Each round progressively eliminates players until the final showdown",
+      "# Match Format",
+      "All matches are played in a **knockout style** where losing results in elimination",
+      "Players must rely on **individual skill, strategy, and in-game decision making**",
+      "# Finals",
+      "The final match determines the **ultimate EAFC champion of the arena**",
+    ],
     lastDate: "TBA",
-    prizePool: "₹ 6,000",
+    prizePool: "TBA",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSdzGOL9YG6rEkw1GuuztRVfHOWkKtBshzXl9KhTUbj75Zjyfg/viewform?usp=dialog",
-    driveLink: "https://drive.google.com/file/d/1TReSFuOIX6tI7bc6ON1U99jIPFzKHliO/view?usp=sharing",
-    image: "/images/posters/esports-default.webp",
-    tags: ["EAFC", "Sports", "1v1"],
-    status: "Open",
+    driveLink:
+      "https://drive.google.com/file/d/1TReSFuOIX6tI7bc6ON1U99jIPFzKHliO/view?usp=sharing",
     coordinators: [
       { name: "RONIT SARKAR", contact: "6297195058" },
-      { name: "AMRIT TIWARI", contact: "7407007440" }
-    ]
+      { name: "AMRIT TIWARI", contact: "7407007440" },
+    ],
+    status: "Open",
   },
-  */
 
   {
     id: "e-sp3",
@@ -1292,13 +1319,13 @@ const ESPORTS_EVENTS: Event[] = [
     format: "Offline",
     teamSize: "Individual",
     rules: [
-    "Prelims on 10th April 2026. Complete knockout tournament of all players. Mega Draft 1v1 battles.",
-    "Only 1 round per matchup for the prelims.",
-    "Top 16 players will qualify for Finals which is on 11th April 2026.",
-    "Finals format - There will be knockout matchups, with each matchup having 3 rounds each. ROUND 1 will be Triple Draft, ROUND 2 will be Mirror Battle and ROUND 3 will be Classic 1v1 with personal decks. One who wins 2 rounds wins the matchup and advances to top 8 and then top 4 and so on.",
-    "Only the Final match of the top 2 players will have 5 rounds - ROUND 1: Triple Draft, ROUND 2: Mirror Battle, ROUND 3, 4, 5: Classic 1v1 battles with no repeated cards in the decks. You can use cards used in previous matchup but cannot reuse cards already used in another classic 1v1 match of the same matchup. One who wins 3 rounds wins the tournament.",
-    "Can use other's Clash Royale account, but cannot change accounts in the tournament. You have to play with the same account."
-  ],
+      "Prelims on 10th April 2026. Complete knockout tournament of all players. Mega Draft 1v1 battles.",
+      "Only 1 round per matchup for the prelims.",
+      "Top 16 players will qualify for Finals which is on 11th April 2026.",
+      "Finals format - There will be knockout matchups, with each matchup having 3 rounds each. ROUND 1 will be Triple Draft, ROUND 2 will be Mirror Battle and ROUND 3 will be Classic 1v1 with personal decks. One who wins 2 rounds wins the matchup and advances to top 8 and then top 4 and so on.",
+      "Only the Final match of the top 2 players will have 5 rounds - ROUND 1: Triple Draft, ROUND 2: Mirror Battle, ROUND 3, 4, 5: Classic 1v1 battles with no repeated cards in the decks. You can use cards used in previous matchup but cannot reuse cards already used in another classic 1v1 match of the same matchup. One who wins 3 rounds wins the tournament.",
+      "Can use other's Clash Royale account, but cannot change accounts in the tournament. You have to play with the same account.",
+    ],
     lastDate: "April 10, 2026",
     prizePool: "₹ 6,000",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSfomYpnp__btQSDbwzFtufI969vr6H67RjyZH6SVyX8eui4Gw/viewform?usp=publish-editor",
@@ -1312,30 +1339,49 @@ const ESPORTS_EVENTS: Event[] = [
       { name: "ANSH KUMAR SINGH", contact: "9775756073" },
     ],
   },
-  /*
+
   {
     id: "e-sp5",
     slug: "efootball",
     title: "EFOOTBALL",
     category: "Esports",
     color: "#FC422D",
-    description: "Step onto the digital pitch and showcase your football finesse in the PES Mobile 1v1 LAN Tournament! Across two thrilling days, players will face off in intense head-to-head matchups where every pass, tackle, and goal could decide their fate. It’s a clash of strategy, timing, and pure skill as competitors battle for glory and the championship crown. Whether it’s a last-minute screamer or a tactical masterclass, expect edge-of-the-seat action from kick-off to final whistle.",
+    description:
+      "Step onto the digital pitch in a **massive 1v1 knockout tournament** where skill, strategy, and composure define the champion. With a staggering **255-round elimination bracket**, players must consistently outperform opponents in high-pressure matches, making every game a **do-or-die battle for glory**.",
+    image: "/images/posters/arena-efootball.webp",
+    tags: ["Mobile", "Sports"],
     format: "Offline",
     teamSize: "Individual",
-    rules: ["1v1 LAN", "PES Mobile", "Timing and Skill"],
+    rules: [
+      "This is a **1v1 solo competition** played on PES Mobile",
+      "The tournament follows a **single-elimination knockout format**",
+      "Each match result is **final and determines progression**",
+      "Players must report **on time for their scheduled matches**",
+      "Any form of **unfair play or misconduct will lead to disqualification**",
+      "The **decision of the organizers will be final and binding**",
+    ],
+    eventFormat: [
+      "# Tournament Structure",
+      "The event consists of a total of **255 knockout rounds**",
+      "Players compete in **1v1 matches**, with winners advancing to the next stage",
+      "Each round eliminates players until only one champion remains",
+      "# Match Format",
+      "All matches are played in a **knockout format** where losing leads to elimination",
+      "Players must rely on **timing, strategy, and in-game decision making**",
+      "# Finals",
+      "The final match determines the **ultimate EFOOTBALL champion**",
+    ],
     lastDate: "TBA",
     prizePool: "TBA",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSePM5dLm5o_wwGaa2wTsqrtVwyXKKFNc_h5bkHRCcG5ZuFwfg/viewform?usp=publish-editor",
-    driveLink: "https://drive.google.com/file/d/1sfdP_U_6JrkP45KHo8Vq1Nf32d9VYYiJ/view?usp=sharing",
-    image: "/images/posters/efootball.webp",
-    tags: ["Mobile", "Sports"],
-    status: "Open",
+    driveLink:
+      "https://drive.google.com/file/d/1sfdP_U_6JrkP45KHo8Vq1Nf32d9VYYiJ/view?usp=sharing",
     coordinators: [
       { name: "SOUPARNA KUNDU", contact: "9800790972" },
-      { name: "SOUMAYAN NANDI", contact: "8017041628" }
-    ]
+      { name: "SOUMAYAN NANDI", contact: "8017041628" },
+    ],
+    status: "Open",
   },
-  */
 
   /*
   {
@@ -1445,7 +1491,8 @@ const MISC_EVENTS: Event[] = [
     title: "Math-E-Magician",
     category: "Misc",
     color: "#D21C2D",
-    description: "A **multi-round mathematics competition** that tests participants through **MCQs, subjective problem solving, and viva-based evaluation**. Teams must demonstrate **analytical thinking, conceptual clarity, and problem-solving skills** across progressively challenging rounds to emerge victorious.",
+    description:
+      "A **multi-round mathematics competition** that tests participants through **MCQs, subjective problem solving, and viva-based evaluation**. Teams must demonstrate **analytical thinking, conceptual clarity, and problem-solving skills** across progressively challenging rounds to emerge victorious.",
     image: "/images/posters/math-e-magician.webp",
     tags: ["Maths", "Logic"],
     format: "Hybrid",
@@ -1457,7 +1504,7 @@ const MISC_EVENTS: Event[] = [
       "Use of **internet, mobile phones, and calculators is strictly prohibited**",
       "Participants may use **notes, books, and cheat sheets (offline mode only)**",
       "Any form of **cheating or malpractice will lead to disqualification**",
-      "The **decision of judges will be final and binding**"
+      "The **decision of judges will be final and binding**",
     ],
     scoring: [
       "# Round 1 Marking Scheme",
@@ -1469,7 +1516,7 @@ const MISC_EVENTS: Event[] = [
       "Maximum score: **10 marks**",
       "# Round 3 Evaluation",
       "Based on **solutions to question sets and explanation quality**",
-      "Maximum score: **10 marks**"
+      "Maximum score: **10 marks**",
     ],
     eventFormat: [
       "# Round 1: Objective Test",
@@ -1484,7 +1531,7 @@ const MISC_EVENTS: Event[] = [
       "# Round 3: Final Viva",
       "Teams solve and explain **advanced problem sets**",
       "Evaluation based on **approach, accuracy, and clarity of explanation**",
-      "Duration: **30 minutes per team**"
+      "Duration: **30 minutes per team**",
     ],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
@@ -1493,43 +1540,44 @@ const MISC_EVENTS: Event[] = [
     // secondRunnersUpPrize: "₹1,000",
     // andMore: true,
     link: "/register/mathemagician",
-    driveLink: "https://drive.google.com/file/d/15yQbreiwKAD4K42ECZC6XOO2qT-Klaf2/view?usp=sharing",
+    driveLink:
+      "https://drive.google.com/file/d/15yQbreiwKAD4K42ECZC6XOO2qT-Klaf2/view?usp=sharing",
     coordinators: [
       { name: "Sayan Das", contact: "9432646056" },
       { name: "Gourav Roy", contact: "6291497375" },
-      { name: "Sayanaditya Das", contact: "7679500949" }
+      { name: "Sayanaditya Das", contact: "7679500949" },
     ],
-    status: "Open"
+    status: "Open",
   },
 
-  
   {
     id: "m2",
     slug: "vrexp",
     title: "VR EXPERIENCE ZONE",
     category: "Misc",
     color: "#D21C2D",
-    description: "Explore new worlds and step beyond reality. Slice through beats, explore space, or survive zombies in a whole new dimension of entertainment.",
+    description:
+      "Explore new worlds and step beyond reality. Slice through beats, explore space, or survive zombies in a whole new dimension of entertainment.",
     format: "Offline",
     teamSize: "Individual",
     rules: [
-    "This Srijan, immerse into the land of virtual reality as JUGS hosts a VR experience zone in the SMCC, Jadavpur University Salt Lake Campus.",
-    "Come with your friends, but take the journey alone as you experience the true meta and delve into a sphere of your conscious being.",
-    "The ultimate pitstop at JU Salt Lake for anyone looking to see what the future actually looks like."
-  ],
+      "This Srijan, immerse into the land of virtual reality as JUGS hosts a VR experience zone in the SMCC, Jadavpur University Salt Lake Campus.",
+      "Come with your friends, but take the journey alone as you experience the true meta and delve into a sphere of your conscious being.",
+      "The ultimate pitstop at JU Salt Lake for anyone looking to see what the future actually looks like.",
+    ],
     lastDate: "TBA",
     prizePool: "NA",
     link: "/register/vrexp",
-    driveLink: "https://drive.google.com/file/d/1EAHlbRESBUak-1jp8JkcGbgUExb1hqBQ/view?usp=sharing",
+    driveLink:
+      "https://drive.google.com/file/d/1EAHlbRESBUak-1jp8JkcGbgUExb1hqBQ/view?usp=sharing",
     image: "/images/posters/vrexp.webp",
     tags: ["VR", "Immersive experience", "Fun"],
     status: "Open",
     coordinators: [
       { name: "ANARGHA PAL", contact: "8777260367" },
-      { name: "SANGLAP DAS", contact: "9836468930" }
-    ]
+      { name: "SANGLAP DAS", contact: "9836468930" },
+    ],
   },
-  
 
   {
     id: "m3",
@@ -1596,7 +1644,8 @@ const MISC_EVENTS: Event[] = [
     title: "DANK JUNK",
     category: "Misc",
     color: "#D21C2D",
-    description: "No Mercy, Only Memes! A two-round meme war with Online Prelims and an Offline Grand Finale. Transform random images into the funniest memes live.",
+    description:
+      "No Mercy, Only Memes! A two-round meme war with Online Prelims and an Offline Grand Finale. Transform random images into the funniest memes live.",
     format: "Offline",
     teamSize: "Individual",
     rules: [
@@ -1609,20 +1658,21 @@ const MISC_EVENTS: Event[] = [
       "Limited time will be provided in finals",
       "Memes will be presented live",
       "Final results based on judges + audience voting",
-      "Participants must follow all event guidelines"
+      "Participants must follow all event guidelines",
     ],
     lastDate: "TBA",
     prizePool: "Prizes worth ₹3,000",
     link: "/register/djk",
-    driveLink: "https://drive.google.com/file/d/1t-APfXk932svAG2iYVcZ0nCrhGMYaKRT/view?usp=sharing",
+    driveLink:
+      "https://drive.google.com/file/d/1t-APfXk932svAG2iYVcZ0nCrhGMYaKRT/view?usp=sharing",
     image: "/images/posters/djk.webp",
     tags: ["Memes", "Creativity", "Humor"],
     status: "Open",
     coordinators: [
       { name: "Saksam Saraff", contact: "9831803379" },
       { name: "Prateek Kumar Sahoo", contact: "8334837118" },
-      { name: "Satadru Das", contact: "8240064430" }
-    ]
+      { name: "Satadru Das", contact: "8240064430" },
+    ],
   },
 
   {

@@ -21,6 +21,23 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+// Strips common markdown syntax (bold, italic, code, links, headings, etc.)
+// so raw markdown strings render as clean plain text.
+const stripMarkdown = (text: string): string =>
+  text
+    .replace(/\*\*(.+?)\*\*/g, "$1") // **bold**
+    .replace(/\*(.+?)\*/g, "$1")     // *italic*
+    .replace(/__(.+?)__/g, "$1")     // __bold__
+    .replace(/_(.+?)_/g, "$1")       // _italic_
+    .replace(/~~(.+?)~~/g, "$1")     // ~~strikethrough~~
+    .replace(/`(.+?)`/g, "$1")       // `inline code`
+    .replace(/\[(.+?)\]\(.+?\)/g, "$1") // [link](url)
+    .replace(/^#{1,6}\s+/gm, "")     // # headings
+    .replace(/^[-*+]\s+/gm, "")      // - list items
+    .replace(/^\d+\.\s+/gm, "")      // 1. ordered list
+    .replace(/^>\s+/gm, "")          // > blockquotes
+    .trim();
+
 interface EventCardProps {
   event: Event;
 }
@@ -217,7 +234,7 @@ const EventCard: React.FC<EventCardProps> = memo(({ event }) => {
           >
             <div className="flex">
               <p className="font-euclid text-gray-300 text-xs leading-relaxed line-clamp-2 pt-2">
-                {event.description}
+                {stripMarkdown(event.description)}
               </p>
             </div>
 

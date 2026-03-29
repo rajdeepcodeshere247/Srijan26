@@ -21,6 +21,23 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+// Strips common markdown syntax (bold, italic, code, links, headings, etc.)
+// so raw markdown strings render as clean plain text.
+const stripMarkdown = (text: string): string =>
+  text
+    .replace(/\*\*(.+?)\*\*/g, "$1") // **bold**
+    .replace(/\*(.+?)\*/g, "$1")     // *italic*
+    .replace(/__(.+?)__/g, "$1")     // __bold__
+    .replace(/_(.+?)_/g, "$1")       // _italic_
+    .replace(/~~(.+?)~~/g, "$1")     // ~~strikethrough~~
+    .replace(/`(.+?)`/g, "$1")       // `inline code`
+    .replace(/\[(.+?)\]\(.+?\)/g, "$1") // [link](url)
+    .replace(/^#{1,6}\s+/gm, "")     // # headings
+    .replace(/^[-*+]\s+/gm, "")      // - list items
+    .replace(/^\d+\.\s+/gm, "")      // 1. ordered list
+    .replace(/^>\s+/gm, "")          // > blockquotes
+    .trim();
+
 interface EventCardTouchProps {
   event: Event;
 }
@@ -45,8 +62,6 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
 
   // --- ANIMATION INITIALIZATION ---
   useGSAP(() => {
-    // 1. Setup the toggle timeline (Paused by default)
-    // We use autoAlpha for hiddenContent to handle visibility and opacity together cleanly
     touchTl.current = gsap
       .timeline({ paused: true })
       .set(imageRef.current, { filter: "brightness(1)" })
@@ -57,7 +72,7 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
           filter: "brightness(0.5)",
           duration: 0.5,
           ease: "power2.inOut",
-          force3D: true, // Hardware acceleration
+          force3D: true,
         },
         0,
       )
@@ -89,7 +104,6 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
         0,
       );
 
-    // 2. Setup Entry Animation using Intersection Observer
     if (entryLayerRef.current && containerRef.current) {
       const entryAnim = gsap.fromTo(
         entryLayerRef.current.children,
@@ -105,22 +119,18 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
         },
       );
 
-      // Intersection Observer
       const observer = new IntersectionObserver(
         (entries) => {
-          // If the card enters the viewport (even due to a filter layout shift)
           if (entries[0].isIntersecting) {
             entryAnim.play();
-            observer.disconnect(); // Disconnect so it only plays once
+            observer.disconnect();
           }
         },
-        { threshold: 0.3 }, // Triggers when 30% of the card is visible (similar to your top 70%)
+        { threshold: 0.3 },
       );
 
-      // Start observing the card container
       observer.observe(containerRef.current);
 
-      // Cleanup on unmount
       return () => observer.disconnect();
     }
   }, [event.slug]);
@@ -138,7 +148,6 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
   });
 
   return (
-    // block lg:hidden keeps it strictly for mobile
     <div 
       className="relative block lg:hidden"
       style={{ 
@@ -154,7 +163,7 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
           height: CARD_DIMENSIONS.h,
           clipPath:
             "polygon(37.2px 0%, 100% 0%, 100% calc(100% - 37.2px), calc(100% - 37.2px) 100%, 0% 100%, 0% 37.2px)",
-          touchAction: "pan-y", // Fixes mobile scrolling conflicts
+          touchAction: "pan-y",
         }}
         className="relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-[#121212] overflow-hidden cursor-pointer tap-highlight-transparent will-change-transform"
       >
@@ -178,10 +187,9 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
             fill
             className="w-full h-full object-cover object-top will-change-[transform,filter] backface-hidden"
           />
-          {/* Gradient Overlay */}
           <div
             ref={overlayRef}
-            className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent"
+            className="absolute inset-0 bg-linear-to-t from-0% via-40% to-100% from-black via-black/10 to-transparent"
           />
         </div>
 
@@ -231,7 +239,7 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
           >
             <div className="flex pointer-events-none">
               <p className="font-euclid text-gray-300 text-xs leading-relaxed line-clamp-2 pt-2">
-                {event.description}
+                {stripMarkdown(event.description)}
               </p>
             </div>
 
@@ -256,7 +264,6 @@ const EventCardTouch: React.FC<EventCardTouchProps> = memo(({ event }) => {
             </div>
 
             {/* Buttons Container */}
-            {/* e.stopPropagation() keeps the card open when clicking a button */}
             <div
               className="flex flex-col gap-2 pb-1 relative z-30"
               onClick={(e) => e.stopPropagation()}
