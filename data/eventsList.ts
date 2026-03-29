@@ -125,7 +125,9 @@ const CODING_EVENTS: Event[] = [
       "Duration: **2 hours**",
       "Teams solve advanced challenges and reconstruct the narrative to identify the culprit",
     ],
-    lastDate: "TBA",
+    lastDate: "6th April",
+    prelimsDate: "8th April",
+    finalsDate: "11th April",
     prizePool: "10,000",
     link: "/register/sherlocked",
     driveLink:
@@ -236,7 +238,7 @@ const CODING_EVENTS: Event[] = [
       "https://drive.google.com/file/d/110Ka-uixoGU94gnxm5OHZMCIKBlF6ljs/view?usp=sharing",
     coordinators: [
       { name: "Somnath Chattaraj", contact: "9382054930" },
-      { name: "Rishav Chowdhary", contact: "8276991374" },
+      { name: "Akash Das", contact: "7029990184" },
       { name: "Anirban Biswas", contact: "7718736188" },
     ],
     status: "Open",
