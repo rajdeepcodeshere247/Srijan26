@@ -29,7 +29,9 @@ const CODING_EVENTS: Event[] = [
       "Teams must **present their solution before a panel of judges**",
       "Final winners will be decided based on a combination of **simulation performance (60%) and technical presentation (40%)**",
     ],
-    lastDate: "TBA",
+    lastDate: "1st April",
+    prelimsDate: "2nd April - 8th April",
+    finalsDate: "11th April",
     prizePool: "10,000",
     link: "/register/epoch",
     driveLink:
@@ -77,7 +79,9 @@ const CODING_EVENTS: Event[] = [
       "Teams solve **more challenging algorithmic problems under time pressure**",
       "Final rankings determine the winners",
     ],
-    lastDate: "TBA",
+    lastDate: "5th April",
+    prelimsDate: "6th April",
+    finalsDate: "12th April",
     prizePool: "10,000",
     link: "/register/h42",
     driveLink:
