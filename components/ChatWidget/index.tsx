@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { Send, X, Maximize2, Minimize2, LogIn } from "lucide-react";
 import { Message, QUICK_QUESTIONS, BOT_AVATAR } from "./constants";
-import { sendMessageToBot } from "./api";
+import { sendMessageToBot } from "./actions";
 import { ChatMessages } from "./ChatMessages";
 
 function ChatHeader({
