@@ -12,9 +12,9 @@ const CODING_EVENTS: Event[] = [
     image: "/images/posters/epoch.webp",
     tags: ["Machine Learning", "Optimization", "Simulation"],
     format: "Hybrid",
-    teamSize: "3",
+    teamSize: "2-3",
     rules: [
-      "Teams must consist of **3 members**",
+      "Teams must consist of **2-3 members**",
       "Participants must connect their agent to the **live Master Server** for a one-shot evaluation against hidden test data",
       "Teams must submit their **complete source code, trained model weights, and a comprehensive technical report**",
       "Shortlisted teams will be chosen based purely on their **objective rank on the server-generated leaderboard**",
@@ -101,7 +101,7 @@ const CODING_EVENTS: Event[] = [
     format: "Hybrid",
     teamSize: "2-3",
     rules: [
-      "Teams must consist of **exactly 3 members**",
+      "Teams must consist of **2-3 members**",
       "The competition is open to **undergraduate and postgraduate students**",
       "Participants must follow **contest integrity guidelines at all times**",
       "Any form of **malpractice or unfair practices will lead to immediate disqualification**",
