@@ -1836,6 +1836,66 @@ const MISC_EVENTS: Event[] = [
       { name: "Anindya Biswas", contact: "9475994655" },
     ],
   },
+
+  {
+    id: "m12",
+    slug: "rap-competition",
+    title: "Rap Competition",
+    category: "Misc",
+    color: "#D21C2D",
+    description:
+      "An intense **rap battle competition** where emcees showcase their lyrical prowess, flow, and stage presence through original performances. Participants must deliver **creative bars, strong delivery, and crowd engagement** to stand out and claim the spotlight.",
+    image: "",
+    tags: ["Rap", "Showcase"],
+    format: "Offline",
+    teamSize: "1",
+    rules: [
+      "Participants must perform **original compositions only**",
+      "**Plagiarism is strictly prohibited** and will lead to disqualification",
+      "Use of **abusive or offensive language is not allowed**",
+      "Participants must **adhere to time limits for each round**",
+      "Participants must maintain **respectful conduct towards judges and competitors**",
+      "Any misconduct or rule violation may result in **disqualification**",
+      "The **decision of the judges will be final and binding**",
+    ],
+    scoring: [
+      "# Judging Criteria",
+      "**Originality & Creativity**",
+      "**Lyricism & Content**",
+      "**Flow & Delivery**",
+      "**Stage Presence & Crowd Engagement**",
+      "**Clarity & Confidence**",
+    ],
+    eventFormat: [
+      "# Round 1: Showcase Round",
+      "Each participant gets **90–120 seconds** to perform",
+      "Perform a **single original piece showcasing style and skill**",
+      "Top **3–5 participants** qualify for the final round",
+      "# Round 2: Final Round",
+      "Finalists get **2–2.5 minutes** to perform",
+      "Participants may present a **new piece or continuation of their style**",
+      "Final results are based on **combined performance across both rounds**",
+    ],
+    lastDate: "TBA",
+    prelimsDate: "10 April 2026",
+    prizePool: "₹ 6,000",
+    winnerPrize: "₹3,000",
+    runnersUpPrize: "₹2,000",
+    secondRunnersUpPrize: "₹1,000",
+    andMore: true,
+    prizeDetails: [
+      "# Additional Rewards",
+      "**Certificates and medals will be awarded to winners**",
+    ],
+    link: "/register/rpb",
+    driveLink:
+      "https://drive.google.com/drive/folders/19Z-MMw5bNZM5tmsyuplqXk3u2sKRg_dr",
+    coordinators: [
+      { name: "Biswadeep Nath", contact: "6033298814" },
+      { name: "Shreyansh Dutta", contact: "74882 29698" },
+    ],
+    status: "Open",
+  },
 ];
 
 export const EVENTS_DATA: Event[] = [
