@@ -26,10 +26,6 @@ function VerifyEmail({ user }: { user: User }) {
   }, [user.id, router]);
 
   const handleSubmit = () => {
-    if (code.length !== 8) {
-      toast.error("Invalid code");
-      return;
-    }
     toast.loading("Verifying code...");
     matchVerificationCode(email, code)
       .then((res) => {
