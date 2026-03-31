@@ -1770,7 +1770,7 @@ const MISC_EVENTS: Event[] = [
     prizePool: "₹ 6,000",
     link: "/register/jal",
     driveLink:
-      "https://drive.google.com/file/d/1qGnSBS5eID0jT-z9-1FuVTlkj0hkj2Ug/view?usp=drivesdk",
+      "https://drive.google.com/drive/folders/1YPE3mZ7nHZPSk-zcHDuifP0CHiRfX7yP?usp=drive_link",
     image: "/images/posters/jal.webp",
     tags: ["Aerospace", "Rockets"],
     status: "Open",
