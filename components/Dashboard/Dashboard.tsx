@@ -2,11 +2,21 @@
 
 import { signOut } from 'next-auth/react';
 import React from 'react';
-import Balls from '../Balls';
 import WavyGradient from '../WavyGradient';
 import { Clickable } from "@/components/Clickable";
 import { User } from '@/types/user';
 import Link from 'next/link';
+
+const SectionHeader = ({ title }: { title: string }) => (
+  <div className="w-full flex items-center gap-4 my-4">
+    <h2 className="text-xl font-elnath text-yellow whitespace-nowrap">{title}</h2>
+    <div className="h-px w-full bg-yellow/20"></div>
+  </div>
+);
+
+const EmptyState = ({ text }: { text: string }) => (
+  <p className="text-white/30 italic text-sm">{text}</p>
+);
 
 function Dashboard({ user }: { user: User }) {
   const handleLogout = () => {
@@ -15,19 +25,8 @@ function Dashboard({ user }: { user: User }) {
     });
   };
 
-  const SectionHeader = ({ title }: { title: string }) => (
-    <div className="w-full flex items-center gap-4 my-4">
-      <h2 className="text-xl font-elnath text-yellow whitespace-nowrap">{title}</h2>
-      <div className="h-px w-full bg-yellow/20"></div>
-    </div>
-  );
-
-  const EmptyState = ({ text }: { text: string }) => (
-    <p className="text-white/30 italic text-sm">{text}</p>
-  );
-
-  const completedItems = user.merchandise?.filter((item: any) => item.status === "completed") ?? [];
-  const pendingItems = user.merchandise?.filter((item: any) => item.status === "pending") ?? [];
+  const completedItems = user.merchandise?.filter((item) => item.status === "completed") ?? [];
+  const pendingItems = user.merchandise?.filter((item) => item.status === "pending") ?? [];
   const lastPendingItem = pendingItems.at(-1);
 
   const displayItems = completedItems.length > 0 ? completedItems : (lastPendingItem ? [lastPendingItem] : []);
@@ -128,7 +127,7 @@ function Dashboard({ user }: { user: User }) {
 
                   {item.data && item.data.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-2">
-                      {item.data.map((entry: any) => (
+                      {item.data.map((entry) => (
                         item.isTeam ? (
                           <Link
                             key={entry.id}
@@ -171,7 +170,7 @@ function Dashboard({ user }: { user: User }) {
 
             { displayItems.length === 0 ? (
               <div className="flex flex-col gap-3">
-                <p className="text-white/40 italic text-xs">You haven't ordered yet.</p>
+                <p className="text-white/40 italic text-xs">You haven&apos;t ordered yet.</p>
                 <Link href="/merchandise">
                   <button className="w-full py-2 border border-yellow/50 text-yellow text-xs uppercase hover:bg-yellow hover:text-black transition-all cursor-pointer">
                     Buy Now
@@ -180,7 +179,7 @@ function Dashboard({ user }: { user: User }) {
               </div>
             ) : (
               <div className="space-y-3">
-                {displayItems.map((item: any) => (
+                {displayItems.map((item) => (
                   <div key={item.id} className="border border-white/10 rounded-xl overflow-hidden bg-white/5">
                     <img
                       src={item.color === "BLACK" ? "/shirt0.png" : "/shirt2.png"}

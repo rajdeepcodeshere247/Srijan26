@@ -59,7 +59,7 @@ function SignUpForm() {
         setData((prev) => ({ ...prev, [field]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.MouseEvent) => {
         e.preventDefault();
 
         setErrors({ name: "", email: "", password: "", confirmPassword: "" });
