@@ -36,7 +36,7 @@ const CODING_EVENTS: Event[] = [
     link: "/register/epoch",
     driveLink:
       "https://drive.google.com/file/d/1z0xX5WVTDhK1wkC3i5FxChVbZXf2TRUC/view?usp=sharing",
-      whatsappLink: "https://chat.whatsapp.com/FfdrEV9n1aOECGJrj5QazV",
+    whatsappLink: "https://chat.whatsapp.com/FfdrEV9n1aOECGJrj5QazV",
     coordinators: [
       { name: "Atmik Goswami", contact: "8910425255" },
       { name: "Asmit Deb", contact: "6290050401" },
@@ -1839,13 +1839,13 @@ const MISC_EVENTS: Event[] = [
 
   {
     id: "m12",
-    slug: "rap-competition",
-    title: "Rap Competition",
+    slug: "rapb",
+    title: "Rap Battle",
     category: "Misc",
     color: "#D21C2D",
     description:
       "An intense **rap battle competition** where emcees showcase their lyrical prowess, flow, and stage presence through original performances. Participants must deliver **creative bars, strong delivery, and crowd engagement** to stand out and claim the spotlight.",
-    image: "",
+    image: "/images/posters/rapb.webp",
     tags: ["Rap", "Showcase"],
     format: "Offline",
     teamSize: "1",
@@ -1888,6 +1888,67 @@ const MISC_EVENTS: Event[] = [
       "**Certificates and medals will be awarded to winners**",
     ],
     link: "/register/rpb",
+    driveLink:
+      "https://drive.google.com/drive/folders/19Z-MMw5bNZM5tmsyuplqXk3u2sKRg_dr",
+    coordinators: [
+      { name: "Biswadeep Nath", contact: "6033298814" },
+      { name: "Shreyansh Dutta", contact: "74882 29698" },
+    ],
+    status: "Open",
+  },
+
+  {
+    id: "m13",
+    slug: "bbxc",
+    title: "Beatbox Competition",
+    category: "Misc",
+    color: "#D21C2D",
+    description:
+      "Step up to the mic and unleash the power of **raw vocal percussion** in this high-energy beatbox showdown. With no instruments and no backing tracks, it’s all about **rhythm, control, creativity, and stage presence** as participants battle head-to-head to dominate the stage.",
+    image: "/images/posters/bbxc.webp",
+    tags: ["Beatbox", "Live"],
+    format: "Offline",
+    teamSize: "1",
+    rules: [
+      "Participants must perform using **only vocal sounds (no instruments or backing tracks)**",
+      "**Original patterns and routines are encouraged**",
+      "Each performance must **adhere to time limits**",
+      "Participants must maintain **respectful conduct towards judges and competitors**",
+      "Any **damage to equipment (e.g., microphones)** may lead to penalties",
+      "Use of **offensive or inappropriate content is prohibited**",
+      "The **decision of judges will be final and binding**",
+    ],
+    scoring: [
+      "# Judging Criteria",
+      "**Musicality & Rhythm**",
+      "**Technical Skills & Control**",
+      "**Routine Complexity**",
+      "**Crowd Engagement**",
+      "**Stage Presence**",
+    ],
+    eventFormat: [
+      "# Round 1: Solo Showcase",
+      "Each participant gets **90 seconds** to perform",
+      "Only **live beatboxing (no backing tracks)** is allowed",
+      "Top **4 participants** qualify for the finals",
+      "# Final Round: 1v1 Battles",
+      "Qualified participants compete in **knockout-style battles**",
+      "Each battle consists of **2 rounds of 90 seconds per participant**",
+      "Finalists battle to determine **1st and 2nd place**",
+      "A separate battle determines the **3rd place winner**",
+    ],
+    lastDate: "TBA",
+    prelimsDate: "10 April 2026",
+    prizePool: "₹ 6,000",
+    winnerPrize: "₹3,000",
+    runnersUpPrize: "₹2,000",
+    secondRunnersUpPrize: "₹1,000",
+    andMore: true,
+    prizeDetails: [
+      "# Additional Rewards",
+      "**Certificates and medals will be awarded to winners**",
+    ],
+    link: "/register/bbx",
     driveLink:
       "https://drive.google.com/drive/folders/19Z-MMw5bNZM5tmsyuplqXk3u2sKRg_dr",
     coordinators: [
