@@ -942,7 +942,7 @@ const BUSINESS_EVENTS: Event[] = [
       "https://drive.google.com/file/d/1AKKhlGl-UrkmMKUisxbnghnFW9oET98d/view?usp=sharing",
     image: "/images/posters/biznez-plan.webp",
     tags: ["Startup", "Pitching"],
-    status: "Open",
+    status: "Closed",
     coordinators: [
       { name: "Pranjal Deb", contact: "6290622851" },
       { name: "Anshika Dutta", contact: "8617317676" },
