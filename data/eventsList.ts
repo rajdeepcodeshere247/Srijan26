@@ -1859,7 +1859,7 @@ const MISC_EVENTS: Event[] = [
       "The decision of the judges will be final and binding",
     ],
     scoring: [
-      "Judging Criteria"",
+      "Judging Criteria",
       "Originality & Creativity",
       "Lyricism & Content",
       "Flow & Delivery",
