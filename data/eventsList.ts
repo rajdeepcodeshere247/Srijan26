@@ -1392,7 +1392,7 @@ const ESPORTS_EVENTS: Event[] = [
     status: "Open",
   },
 
-  /*
+  
   {
     id: "e-sp6",
     slug: "uec-valorant",
@@ -1407,7 +1407,7 @@ const ESPORTS_EVENTS: Event[] = [
     prizePool: "TBA",
     link: "/register/uec-valorant",
     driveLink: "https://drive.google.com/file/d/1nFyvGOG25KzeVSQ-f-SzyO-DfxeGLPIw/view?usp=sharing",
-    image: "/images/posters/esports-default.webp",
+    image: "/images/posters/UECSrijan2026.webp",
     tags: ["Valorant", "UEC", "Competitive"],
     status: "Open",
     coordinators: [
@@ -1415,9 +1415,9 @@ const ESPORTS_EVENTS: Event[] = [
       { name: "RUDRANIL MONDAL", contact: "7003463402" }
     ]
   },
-  */
+  
 
-  /*
+  
   {
     id: "e-sp7",
     slug: "uec-bgmi",
@@ -1432,7 +1432,7 @@ const ESPORTS_EVENTS: Event[] = [
     prizePool: "TBA",
     link: "/register/uec-bgmi",
     driveLink: "https://drive.google.com/file/d/1IFOvV7hOMr1weXoOdkBEeIgcZOXIYrJV/view?usp=sharing",
-    image: "/images/posters/esports-default.webp",
+    image: "/images/posters/UECSrijan2026.webp",
     tags: ["BGMI", "UEC", "Survival"],
     status: "Open",
     coordinators: [
@@ -1440,9 +1440,9 @@ const ESPORTS_EVENTS: Event[] = [
       { name: "IMRAN AHAMED", contact: "7908389933" }
     ]
   },
-  */
+  
 
-  /*
+  
   {
     id: "e-sp8",
     slug: "uec-eafc",
@@ -1457,7 +1457,7 @@ const ESPORTS_EVENTS: Event[] = [
     prizePool: "TBA",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSetbC2bC5nPNuDaK6mGO1yXj8TwMQ5ae9ZpK6PzIt2BFB6QvA/viewform?usp=dialog",
     driveLink: "https://drive.google.com/file/d/1Pb8yKtAdiOj67iYgHNmn3vmwHVRgvRMt/view?usp=sharing",
-    image: "/images/posters/esports-default.webp",
+    image: "/images/posters/UECSrijan2026.webp",
     tags: ["EAFC", "UEC", "1v1"],
     status: "Open",
     coordinators: [
@@ -1465,9 +1465,9 @@ const ESPORTS_EVENTS: Event[] = [
       { name: "AMRIT TIWARI", contact: "7407007440" }
     ]
   },
-  */
+  
 
-  /*
+  
   {
     id: "e-sp9",
     slug: "uec-wtec",
@@ -1482,7 +1482,7 @@ const ESPORTS_EVENTS: Event[] = [
     prizePool: "TBA",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSfmsGYS92pkL7TeyOpvmOYh0QFSmzSodgg__HxLvSJPuA5foA/viewform?usp=dialog",
     driveLink: "https://drive.google.com/file/d/1SzuSxJ-fmE2KVDB6UEYaOrwHtx0a_E07/view?usp=sharing",
-    image: "/images/posters/esports-default.webp",
+    image: "/images/posters/UECSrijan2026.webp",
     tags: ["VR", "Tennis", "UEC"],
     status: "Open",
     coordinators: [
@@ -1490,7 +1490,7 @@ const ESPORTS_EVENTS: Event[] = [
       { name: "AYUSH BHAKTA", contact: "9903752006" }
     ]
   }
-  */
+  
 ];
 
 const MISC_EVENTS: Event[] = [
