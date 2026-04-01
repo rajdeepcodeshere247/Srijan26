@@ -431,7 +431,7 @@ const CODING_EVENTS: Event[] = [
       { name: "Arjeesh Palai", contact: "7044122399" },
       { name: "Sombrata Biswas", contact: "9051468777" },
     ],
-    status: "Open",
+    status: "Closed",
   },
   {
     id: "e11",
@@ -918,7 +918,7 @@ const BUSINESS_EVENTS: Event[] = [
       "https://drive.google.com/drive/folders/1IrQNz5vWwU1kHmqnHVfl6U_eWELPX_xP",
     image: "/images/posters/ace-the-case.webp",
     tags: ["Entrepreneurship", "Case Study"],
-    status: "Open",
+    status: "Closed",
     coordinators: [
       { name: "Neelavra Das", contact: "8100027187" },
       { name: "Debraj Chakraborty", contact: "6291580386" },
