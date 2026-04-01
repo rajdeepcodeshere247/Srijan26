@@ -16,10 +16,9 @@ import Tooltip from "../Tooltip";
 const RegistrationSchema = z.object({
     phone: z
         .string()
-        .min(8, "Invalid phone number")
         .regex(
-            /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/,
-            "Invalid phone number",
+            /\d{10}$/,
+            "Phone number must be exactly 10 digits",
         ),
     college: z.string().min(1, "College is required"),
     year: z.string().min(1, "Year of Study is required"),

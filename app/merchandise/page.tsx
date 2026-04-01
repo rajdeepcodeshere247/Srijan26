@@ -64,7 +64,7 @@ export default function MerchandisePage() {
       getUserPhone(session.user.id).then((res) => {
         if (res.success && res.phone) {
           setFormData((prev) => ({ ...prev, phone: res.phone }));
-          setIsPhoneDisabled(true);
+          // setIsPhoneDisabled(true);
         }
       });
     }
