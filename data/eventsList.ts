@@ -1610,7 +1610,7 @@ const MISC_EVENTS: Event[] = [
     ],
     prizePool: "₹ 6,000",
     lastDate: "10th April 2026",
-    link: "/register/clo",
+    link: "/register/climb-on",
     driveLink:
       "https://drive.google.com/file/d/16puhwNvBCQNYBOuygQZW6hHMppwHN2v7/view",
     image: "/images/posters/climb-on.webp",
