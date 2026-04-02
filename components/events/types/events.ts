@@ -11,9 +11,30 @@ export type Category =
 
 export type EventStatus = "All" | "Open" | "Closed";
 
+export type EventLinkIcon =
+  | "drive"
+  | "pdf"
+  | "whatsapp"
+  | "unstop"
+  | "form"
+  | "video"
+  | "github"
+  | "link";
+
 export interface Coordinator {
   name: string;
   contact: string;
+}
+
+export interface SubmissionLink {
+  label: string;
+  url: string;
+}
+
+export interface EventLink {
+  label: string;
+  url: string;
+  icon?: EventLinkIcon;
 }
 
 export interface Event {
@@ -49,12 +70,22 @@ export interface Event {
 
   // --- Links & Contacts ---
   link: string;
-  driveLink?: string;
-  pdfLink?: string;
   coordinators: Coordinator[];
-  
-  // post registration links
+
+  // General purpose links (drive, unstop, whatsapp, etc.)
+  eventLinks?: EventLink[];
+
+  // Structured submission section
+  submissionNote?: string;
+  submissionLinks?: SubmissionLink[];
+
+  /** @deprecated use eventLinks with icon: "drive" */
+  driveLink?: string;
+  /** @deprecated use eventLinks with icon: "pdf" */
+  pdfLink?: string;
+  /** @deprecated use eventLinks with icon: "unstop" */
   unstopLink?: string;
+  /** @deprecated use eventLinks with icon: "whatsapp" */
   whatsappLink?: string;
 
   // --- State ---

@@ -146,61 +146,91 @@ const CODING_EVENTS: Event[] = [
     status: "Open",
   },
   {
-    id: "e5",
-    slug: "ss3",
-    title: "Snap Syntax 3.0",
-    category: "Coding",
-    color: "#FF3429",
-    description:
-      "A **memory-based web development challenge** where teams must recreate a given website design using **HTML, CSS, and optionally React**. Participants get only brief glimpses of the original layout and must rely on **memory, design intuition, and coding efficiency** to build the closest possible replica.",
-    image: "/images/posters/snap-syntax.webp",
-    tags: ["Web Dev", "Design"],
-    format: "Offline",
-    teamSize: "2-4",
-    rules: [
-      "Teams must consist of **2–4 members**",
-      "Each participant may use **only one laptop per team member**",
-      "**External templates or outside help are not allowed**",
-      "Participants may **refer to documentation for syntax if required**",
-      "Taking **photos of the reference website is strictly prohibited**",
-      "Participants may **draw the website layout on paper for reference**",
-    ],
-    scoring: [
-      "# Evaluation Criteria",
-      "**Accuracy (25%)** — How closely the recreated page matches the original layout and elements",
-      "**Creativity (25%)** — Innovative approaches and design improvements",
-      "**Efficiency (25%)** — Ability to complete the challenge effectively within the time limit",
-      "**Code Quality (25%)** — Clean, structured HTML/CSS implementation following best practices",
-    ],
-    eventFormat: [
-      "# Round 1: Online Prelims",
-      "Teams must submit **two of their best website designs in a single PDF**",
-      "The PDF must include **team details and deployed website links**",
-      "Websites may be hosted on **Netlify, Vercel, or GitHub Pages**",
-      "Top **20 teams qualify for the final round**",
-      "# Round 2: Offline Finals",
-      "Participants are shown the **website design for 1 minute**",
-      "Teams must **recreate the design within 2 hours** using HTML/CSS (React optional)",
-      "Short glimpses of the original design may be shown during the challenge",
-      "Final rankings determine the winners",
-    ],
-    lastDate: "TBA",
-    prizePool: "₹ 10,000",
-    winnerPrize: "₹5,000",
-    runnersUpPrize: "₹3,000",
-    secondRunnersUpPrize: "₹2,000",
-    link: "/register/ss3",
-    driveLink:
-      "https://drive.google.com/file/d/1Py4J3qnGrU0SfUNiyPmlf8bXmlRw89vh/view?usp=drive_link",
-    unstopLink:
-      "https://unstop.com/competitions/snap-syntax-30-srijan-2026-jadavpur-university-kolkata-1658149",
-    coordinators: [
-      { name: "Ayan Ghosh", contact: "8167002490" },
-      { name: "Swapnaneel Ray", contact: "7980515334" },
-      { name: "Anuska Nath", contact: "9330129467" },
-    ],
-    status: "Open",
-  },
+  id: "e5",
+  slug: "ss3",
+  title: "Snap Syntax 3.0",
+  category: "Coding",
+  color: "#FF3429",
+  description:
+    "A **memory-based web development challenge** where teams must recreate a given website design using **HTML, CSS, and optionally React**. Participants get only brief glimpses of the original layout and must rely on **memory, design intuition, and coding efficiency** to build the closest possible replica.",
+  image: "/images/posters/snap-syntax.webp",
+  tags: ["Web Dev", "Design"],
+  format: "Offline",
+  teamSize: "2-4",
+
+  rules: [
+    "Each team member may use **only one laptop**",
+    "**External help, ready-made templates, or copying designs is not allowed**",
+    "Participants may **refer to documentation for syntax only**",
+    "Taking **photos of the design is strictly prohibited** — sketching on paper is allowed",
+    "**Inter-college and inter-specialization teams are allowed**",
+    "Any violation of rules will lead to **disqualification**",
+    "The decision of the organizers will be **final and binding**",
+  ],
+
+  scoring: [
+    "# Evaluation Criteria",
+    "**Accuracy (25%)** — Similarity with the original design",
+    "**Creativity (25%)** — Innovative design approach",
+    "**Efficiency (25%)** — Time management and completion",
+    "**Code Quality (25%)** — Clean and structured code",
+  ],
+
+  eventFormat: [
+    "# Round 1 — Prelims (Online)",
+    "**Registration Deadline:** 6 April",
+    "Teams must submit **two of their best website designs in a single PDF** containing:",
+    "Team name, team size, member names, and **deployed website links** (Netlify / Vercel / GitHub Pages)",
+    "Top **20 teams** will qualify for the final round",
+    "**Results will be announced on 8 April**",
+    "# Round 2 — Finals (Offline)",
+    "**Date:** 10 April | **Venue:** Jadavpur University Salt Lake Campus",
+    "Participants will be shown the **website design for 1 minute**",
+    "Teams must **recreate the design within 2 hours** using HTML/CSS (React optional)",
+    "Short glimpses of the original design **will be provided during the challenge**",
+  ],
+
+  lastDate: "6 Apr 2026",
+  prelimsDate: "Until 6 Apr 2026",
+  finalsDate: "10 Apr 2026",
+
+  prizePool: "₹ 10,000",
+  winnerPrize: "₹5,000",
+  runnersUpPrize: "₹3,000",
+  secondRunnersUpPrize: "₹2,000",
+
+  link: "/register/ss3",
+
+  eventLinks: [
+    {
+      label: "Problem Statement & Guidelines",
+      url: "https://drive.google.com/file/d/1Py4J3qnGrU0SfUNiyPmlf8bXmlRw89vh/view?usp=drive_link",
+      icon: "drive",
+    },
+    {
+      label: "Register on Unstop",
+      url: "https://unstop.com/competitions/snap-syntax-30-srijan-2026-jadavpur-university-kolkata-1658149",
+      icon: "unstop",
+    },
+  ],
+
+  submissionNote:
+    "Push your code to a **public GitHub repository** named `Srijan26_SnapSyntax_TeamName` and submit both the **GitHub repository link** and the **deployed website link** via the Google Form below. Submission must be completed before the deadline.",
+  submissionLinks: [
+    {
+      label: "Submit Prelims Entry",
+      url: "https://forms.gle/CC6BYJTTkvwy4mx69",
+    },
+  ],
+
+  coordinators: [
+    { name: "Ayan Ghosh", contact: "8167002490" },
+    { name: "Swapnaneel Ray", contact: "7980515334" },
+    { name: "Anuska Nath", contact: "9330129467" },
+  ],
+
+  status: "Open",
+},
 
   {
     id: "e6",
@@ -573,7 +603,7 @@ const ROBOTICS_EVENTS: Event[] = [
       { name: "Ruchir Saha", contact: "7047505834" },
     ],
   },
-/*
+  /*
   {
     id: "r6",
     slug: "control-craft",
@@ -611,7 +641,7 @@ const ROBOTICS_EVENTS: Event[] = [
     ],
   },
 */
-/*
+  /*
   {
     id: "r7",
     slug: "rope-runner",
@@ -1392,105 +1422,105 @@ const ESPORTS_EVENTS: Event[] = [
     status: "Open",
   },
 
-  
   {
     id: "e-sp6",
     slug: "uec-valorant",
     title: "NSG UEC x VALORANT",
     category: "Esports",
     color: "#FC422D",
-    description: "Kolkata Qualifiers for NSG UEC 3.0. Following online prelims, top teams battle on LAN for a spot in the UEC LAN Finals.",
+    description:
+      "Kolkata Qualifiers for NSG UEC 3.0. Following online prelims, top teams battle on LAN for a spot in the UEC LAN Finals.",
     format: "Offline",
     teamSize: "5",
     rules: ["Qualifiers", "LAN Finals spot", "Standard map pool"],
     lastDate: "TBA",
     prizePool: "TBA",
     link: "/register/uec-valorant",
-    driveLink: "https://drive.google.com/file/d/1nFyvGOG25KzeVSQ-f-SzyO-DfxeGLPIw/view?usp=sharing",
+    driveLink:
+      "https://drive.google.com/file/d/1nFyvGOG25KzeVSQ-f-SzyO-DfxeGLPIw/view?usp=sharing",
     image: "/images/posters/UECSrijan2026.webp",
     tags: ["Valorant", "UEC", "Competitive"],
     status: "Open",
     coordinators: [
       { name: "AYUSH BHAKTA", contact: "9903752006" },
-      { name: "RUDRANIL MONDAL", contact: "7003463402" }
-    ]
+      { name: "RUDRANIL MONDAL", contact: "7003463402" },
+    ],
   },
-  
 
-  
   {
     id: "e-sp7",
     slug: "uec-bgmi",
     title: "NSG UEC x BGMI",
     category: "Esports",
     color: "#FC422D",
-    description: "High-stakes LAN event. Surviving squads from online prelims face off for qualification for the UEC LAN Finals.",
+    description:
+      "High-stakes LAN event. Surviving squads from online prelims face off for qualification for the UEC LAN Finals.",
     format: "Offline",
     teamSize: "4",
     rules: ["Qualifiers", "Chicken Dinner", "Strategy"],
     lastDate: "TBA",
     prizePool: "TBA",
     link: "/register/uec-bgmi",
-    driveLink: "https://drive.google.com/file/d/1IFOvV7hOMr1weXoOdkBEeIgcZOXIYrJV/view?usp=sharing",
+    driveLink:
+      "https://drive.google.com/file/d/1IFOvV7hOMr1weXoOdkBEeIgcZOXIYrJV/view?usp=sharing",
     image: "/images/posters/UECSrijan2026.webp",
     tags: ["BGMI", "UEC", "Survival"],
     status: "Open",
     coordinators: [
       { name: "PRIYABRATA MONDAL", contact: "9163691520" },
-      { name: "IMRAN AHAMED", contact: "7908389933" }
-    ]
+      { name: "IMRAN AHAMED", contact: "7908389933" },
+    ],
   },
-  
 
-  
   {
     id: "e-sp8",
     slug: "uec-eafc",
     title: "NSG UEC x EAFC",
     category: "Esports",
     color: "#FC422D",
-    description: "Kick off your path to glory in the NSG UEC 3.0 Kolkata Qualifiers with our EAFC 1v1 tournament. Precision, tactics, and nerves of steel.",
+    description:
+      "Kick off your path to glory in the NSG UEC 3.0 Kolkata Qualifiers with our EAFC 1v1 tournament. Precision, tactics, and nerves of steel.",
     format: "Offline",
     teamSize: "Individual",
     rules: ["1v1 Qualifiers", "Football tactics", "One champion"],
     lastDate: "TBA",
     prizePool: "TBA",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSetbC2bC5nPNuDaK6mGO1yXj8TwMQ5ae9ZpK6PzIt2BFB6QvA/viewform?usp=dialog",
-    driveLink: "https://drive.google.com/file/d/1Pb8yKtAdiOj67iYgHNmn3vmwHVRgvRMt/view?usp=sharing",
+    driveLink:
+      "https://drive.google.com/file/d/1Pb8yKtAdiOj67iYgHNmn3vmwHVRgvRMt/view?usp=sharing",
     image: "/images/posters/UECSrijan2026.webp",
     tags: ["EAFC", "UEC", "1v1"],
     status: "Open",
     coordinators: [
       { name: "RONIT SARKAR", contact: "6297195058" },
-      { name: "AMRIT TIWARI", contact: "7407007440" }
-    ]
+      { name: "AMRIT TIWARI", contact: "7407007440" },
+    ],
   },
-  
 
-  
   {
     id: "e-sp9",
     slug: "uec-wtec",
     title: "NSG UEC x WTEC",
     category: "Esports",
     color: "#FC422D",
-    description: "World Tennis Esports Championship. Cutting-edge VR Tennis tournament where players climb a live leaderboard through skill-based tasks.",
+    description:
+      "World Tennis Esports Championship. Cutting-edge VR Tennis tournament where players climb a live leaderboard through skill-based tasks.",
     format: "Offline",
     teamSize: "Individual",
     rules: ["VR Tennis", "Leaderboard based", "Technique and Accuracy"],
     lastDate: "TBA",
     prizePool: "TBA",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSfmsGYS92pkL7TeyOpvmOYh0QFSmzSodgg__HxLvSJPuA5foA/viewform?usp=dialog",
-    driveLink: "https://drive.google.com/file/d/1SzuSxJ-fmE2KVDB6UEYaOrwHtx0a_E07/view?usp=sharing",
+    driveLink:
+      "https://drive.google.com/file/d/1SzuSxJ-fmE2KVDB6UEYaOrwHtx0a_E07/view?usp=sharing",
     image: "/images/posters/UECSrijan2026.webp",
     tags: ["VR", "Tennis", "UEC"],
     status: "Open",
     coordinators: [
       { name: "SAUHARDYA HAZRA", contact: "9433551065" },
-      { name: "AYUSH BHAKTA", contact: "9903752006" }
-    ]
-  }
-  
+      { name: "AYUSH BHAKTA", contact: "9903752006" },
+    ],
+  },
 ];
 
 const MISC_EVENTS: Event[] = [
