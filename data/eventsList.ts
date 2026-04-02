@@ -41,7 +41,7 @@ const CODING_EVENTS: Event[] = [
       { name: "Atmik Goswami", contact: "8910425255" },
       { name: "Asmit Deb", contact: "6290050401" },
     ],
-    status: "Closed",
+    status: "Open",
   },
   {
     id: "e2",
@@ -604,7 +604,7 @@ const ROBOTICS_EVENTS: Event[] = [
       "https://drive.google.com/drive/folders/10zfK0vRqXm0nqB5xAQvYmXyKkoTLlxNR",
     image: "/images/posters/control-craft.webp",
     tags: ["Manual Bot", "Mechatronics"],
-    status: "Closed",
+    status: "Open",
     coordinators: [
       { name: "Priyam Adhikary", contact: "8389916827" },
       { name: "Sarfaroz Gazi", contact: "9932225737" },
@@ -650,7 +650,7 @@ const ROBOTICS_EVENTS: Event[] = [
       "https://drive.google.com/drive/folders/1qxolD1GtNA98UhYNMXRCaaFjtsXnFTLc",
     image: "/images/posters/rope-runner.webp",
     tags: ["Mechatronics", "Innovation"],
-    status: "Closed",
+    status: "Open",
     coordinators: [
       { name: "Shreyash Ray", contact: "6291516600" },
       { name: "Rasoshree Ghosh", contact: "7439059081" },
@@ -921,7 +921,7 @@ const BUSINESS_EVENTS: Event[] = [
       "https://drive.google.com/drive/folders/1IrQNz5vWwU1kHmqnHVfl6U_eWELPX_xP",
     image: "/images/posters/ace-the-case.webp",
     tags: ["Entrepreneurship", "Case Study"],
-    status: "Closed",
+    status: "Open",
     coordinators: [
       { name: "Neelavra Das", contact: "8100027187" },
       { name: "Debraj Chakraborty", contact: "6291580386" },
@@ -947,7 +947,7 @@ const BUSINESS_EVENTS: Event[] = [
       "https://drive.google.com/file/d/1AKKhlGl-UrkmMKUisxbnghnFW9oET98d/view?usp=sharing",
     image: "/images/posters/biznez-plan.webp",
     tags: ["Startup", "Pitching"],
-    status: "Closed",
+    status: "Open",
     coordinators: [
       { name: "Pranjal Deb", contact: "6290622851" },
       { name: "Anshika Dutta", contact: "8617317676" },
