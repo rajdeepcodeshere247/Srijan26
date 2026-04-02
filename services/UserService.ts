@@ -72,7 +72,7 @@ const matchVerificationCode = withAuth(async (sessionUserId: string, email: stri
             where: { email },
             select: { id: true, verificationToken: true },
         });
-        const match = userToken?.verificationToken === code && userToken.id === sessionUserId;
+        const match = userToken?.verificationToken === code.trim() && userToken.id === sessionUserId;
 
         const verifiedAt = new Date();
         if (match)
@@ -89,7 +89,7 @@ const matchVerificationCode = withAuth(async (sessionUserId: string, email: stri
 
 const verifyEmail = withAuth(async (sessionUserId: string, email: string) => {
     try {
-        const token = crypto.randomUUID();
+        const token = Math.floor(100000 + Math.random() * 900000).toString();
         await prisma.user.update({
             where: { id: sessionUserId, email, emailVerified: null },
             data: { verificationToken: token },
