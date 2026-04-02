@@ -151,7 +151,7 @@ function Registered({
                     {isTeamLead ? (
                         <TeamControls team={team} event={event} />
                     ) : (
-                        <LeaveTeam teamId={team.id} id={user.id} />
+                        <LeaveTeam teamId={team.id} id={user.id} registrationOpen={event.registrationOpen} />
                     )}
                 </div>
             </div>

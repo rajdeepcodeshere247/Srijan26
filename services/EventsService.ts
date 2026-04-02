@@ -96,13 +96,15 @@ const getEventFromSlug = async (slug: string) => {
     const event = await prisma.event.findFirst({
         where: {
             slug,
-        },select: {
+        },
+        select: {
             id: true,
             name: true,
             slug: true,
             minMembers: true,
-            maxMembers: true
-        }
+            maxMembers: true,
+            registrationOpen: true,
+        },
     });
     return event;
 };
@@ -116,7 +118,10 @@ const createTeam = withAuth(
     ) => {
         try {
             if (!event) return { ok: false, message: "Invalid event" };
-            if(!teamName) return {ok: false, message: "Team Name cannot be empty"};
+            if (!event.registrationOpen)
+                return { ok: false, message: "Registrations closed" };
+            if (!teamName)
+                return { ok: false, message: "Team Name cannot be empty" };
             if (sessionUserId !== user.id)
                 throw new Error("Invalid session - id mismatch");
             const existingTeam = await prisma.team.findFirst({
@@ -159,6 +164,17 @@ const createTeam = withAuth(
                     };
             }
 
+            const eventData = await prisma.event.findUnique({
+                where: {
+                    id: event.id,
+                },
+                select: {
+                    registrationOpen: true,
+                },
+            });
+            if (!eventData?.registrationOpen)
+                return { ok: false, message: "Registrations closed" };
+
             const shortUid = new ShortUniqueId({ length: 6 }).rnd();
             const joiningCode = `${event.slug}_${shortUid}`;
 
@@ -197,6 +213,18 @@ const joinTeam = withAuth(
         try {
             if (sessionUserId !== user.id)
                 throw new Error("Invalid session - id mismatch");
+
+            if (!event.registrationOpen)
+                return { ok: false, message: "Registrations closed" };
+
+            // check db to make sure
+            const eventData = await prisma.event.findUnique({
+                where: { id: event.id },
+                select: { registrationOpen: true },
+            });
+            if (!eventData?.registrationOpen)
+                return { ok: false, message: "Registrations closed" };
+
             const existingTeam = await prisma.team.findFirst({
                 where: {
                     eventSlug: event.slug,
@@ -316,77 +344,79 @@ const removeMember = withAuth(
     },
 );
 
-const acceptPendingMember = withAuth(async (
-    sessionUserId: string,
-    teamId: string,
-    memberId: string,
-    event: Event,
-) => {
-    try {
-        const status = await prisma.$transaction(async (txn) => {
-            const team = await txn.team.findUnique({
-                where: {
-                    id: teamId,
-                    leader: sessionUserId
-                },
-                select: {
-                    memberIds: true,
-                    pendingMemberIds: true,
-                },
-            });
-
-            if (!team) return { ok: false, message: "Invalid team" };
-
-            if (!team.pendingMemberIds.includes(memberId))
-                return { ok: false, message: "Invalid invitation" };
-
-            const teamSize = team?.memberIds.length;
-            if (teamSize >= event.maxMembers)
-                return { ok: false, message: "Team is full" };
-
-            const existingTeam = await txn.team.findMany({
-                where: {
-                    eventSlug: event.slug,
-                    memberIds: {
-                        has: memberId,
+const acceptPendingMember = withAuth(
+    async (
+        sessionUserId: string,
+        teamId: string,
+        memberId: string,
+        event: Event,
+    ) => {
+        try {
+            const status = await prisma.$transaction(async (txn) => {
+                const team = await txn.team.findUnique({
+                    where: {
+                        id: teamId,
+                        leader: sessionUserId,
                     },
-                },
-            });
+                    select: {
+                        memberIds: true,
+                        pendingMemberIds: true,
+                    },
+                });
 
-            if (existingTeam && existingTeam.length > 0)
-                return {
-                    ok: false,
-                    message: "Member is already in a team for given event",
-                };
+                if (!team) return { ok: false, message: "Invalid team" };
 
-            await txn.team.update({
-                where: {
-                    id: teamId,
-                },
-                data: {
-                    members: {
-                        connect: {
-                            id: memberId,
+                if (!team.pendingMemberIds.includes(memberId))
+                    return { ok: false, message: "Invalid invitation" };
+
+                const teamSize = team?.memberIds.length;
+                if (teamSize >= event.maxMembers)
+                    return { ok: false, message: "Team is full" };
+
+                const existingTeam = await txn.team.findMany({
+                    where: {
+                        eventSlug: event.slug,
+                        memberIds: {
+                            has: memberId,
                         },
                     },
-                    pendingMembers: {
-                        disconnect: {
-                            id: memberId,
+                });
+
+                if (existingTeam && existingTeam.length > 0)
+                    return {
+                        ok: false,
+                        message: "Member is already in a team for given event",
+                    };
+
+                await txn.team.update({
+                    where: {
+                        id: teamId,
+                    },
+                    data: {
+                        members: {
+                            connect: {
+                                id: memberId,
+                            },
+                        },
+                        pendingMembers: {
+                            disconnect: {
+                                id: memberId,
+                            },
                         },
                     },
-                },
+                });
             });
-        });
-        if (status && !status.ok) return status;
-        return { ok: true, message: "Accepted member" };
-    } catch (err) {
-        console.error(`Error while accepting member: ${err}`);
-        return {
-            ok: false,
-            message: "Error occurred - failed to accept member",
-        };
-    }
-});
+            if (status && !status.ok) return status;
+            return { ok: true, message: "Accepted member" };
+        } catch (err) {
+            console.error(`Error while accepting member: ${err}`);
+            return {
+                ok: false,
+                message: "Error occurred - failed to accept member",
+            };
+        }
+    },
+);
 
 const rejectPendingMember = withAuth(
     async (sessionUserId: string, teamId: string, memberId: string) => {
@@ -517,27 +547,28 @@ const leavePendingTeam = withAuth(
     },
 );
 const editTeamName = withAuth(
-  async (sessionUserId: string, teamId: string, newName: string) => {
-    if(!newName) return {ok: false, message: "Team name cannot be empty"};
-    try {
-      await prisma.team.update({
-        where: {
-          id: teamId,
-          leader: sessionUserId,
-        },
-        data: {
-          name: newName,
-        },
-      });
-      return { ok: true, message: `Changed team name to ${newName}` };
-    } catch (err) {
-      console.error("Error while editing team name - ", err);
-      return {
-        ok: false,
-        message: "Error occurred - failed to edit team name",
-      };
-    }
-  },
+    async (sessionUserId: string, teamId: string, newName: string) => {
+        if (!newName)
+            return { ok: false, message: "Team name cannot be empty" };
+        try {
+            await prisma.team.update({
+                where: {
+                    id: teamId,
+                    leader: sessionUserId,
+                },
+                data: {
+                    name: newName,
+                },
+            });
+            return { ok: true, message: `Changed team name to ${newName}` };
+        } catch (err) {
+            console.error("Error while editing team name - ", err);
+            return {
+                ok: false,
+                message: "Error occurred - failed to edit team name",
+            };
+        }
+    },
 );
 
 export {
@@ -552,5 +583,5 @@ export {
     leavePendingTeam,
     acceptPendingMember,
     rejectPendingMember,
-    editTeamName
+    editTeamName,
 };

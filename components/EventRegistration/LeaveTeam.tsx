@@ -7,9 +7,11 @@ import React from "react";
 import toast from "react-hot-toast";
 import { Clickable } from "../Clickable";
 
-function LeaveTeam({ teamId, id }: { teamId: string; id: string }) {
+function LeaveTeam({ teamId, id, registrationOpen }: { teamId: string; id: string; registrationOpen: boolean | undefined; }) {
     const modalContext = useConfirmationDialogContext();
     const router = useRouter();
+    
+    if(!registrationOpen) return;
 
     const handleLeaveTeam = () => {
         modalContext.showDialog("Are you sure you want to leave this team?", () => {

@@ -21,11 +21,13 @@ type PendingTeamData = {
 function Pending({
     teamData,
     eventName,
-    userId
+    userId,
+    registrationOpen
 }: {
     teamData: PendingTeamData | null;
     eventName: string;
     userId: string;
+    registrationOpen: boolean;
 }) {
     const modalContext = useConfirmationDialogContext();
     const router = useRouter();
@@ -68,9 +70,11 @@ function Pending({
                 <p>Name: {teamData.leader.name}</p>
                 <p>Email: {teamData.leader.email}</p>
             </div>
-            <Clickable as="button" className="bg-red hover:bg-red/70 active:bg-red/40" onClick={() => handleLeaveTeam()}>
-                Leave Team
-            </Clickable>
+            {registrationOpen && 
+                <Clickable as="button" className="bg-red hover:bg-red/70 active:bg-red/40" onClick={() => handleLeaveTeam()}>
+                    Leave Team
+                </Clickable>
+            }
         </div>
     );
 }

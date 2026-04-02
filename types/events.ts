@@ -7,6 +7,7 @@ type Event = {
     name: string;
     minMembers: number;
     maxMembers: number;
+    registrationOpen?: boolean;
 };
 
 type Team = {
