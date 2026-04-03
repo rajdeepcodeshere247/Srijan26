@@ -188,7 +188,7 @@ const EventCard: React.FC<EventCardProps> = memo(({ event }) => {
         </div>
 
         {/* 2. STATUS BADGE */}
-        <div
+        {/* <div
           className={`font-euclid absolute top-3 right-3 z-20 text-[10px] font-semibold px-2 py-1 rounded uppercase tracking-wider ${
             event.status === "Open"
               ? "bg-green-500 text-white"
@@ -198,7 +198,7 @@ const EventCard: React.FC<EventCardProps> = memo(({ event }) => {
           }`}
         >
           {event.status}
-        </div>
+        </div> */}
 
         {/* 3. CONTENT CONTAINER */}
         <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col justify-end z-10 pointer-events-none">

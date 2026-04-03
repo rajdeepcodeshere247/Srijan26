@@ -11,8 +11,8 @@ interface Props {
 export default function FloatingActionBar({ event }: Props) {
   return (
     <div className="fixed bottom-0 left-0 w-full bg-[#121212] p-4 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        <p className="text-gray-400 text-left text-sm font-bold uppercase tracking-wider">
+      <div className="max-w-7xl mx-auto flex items-center justify-center gap-4">
+        {/* <p className="text-gray-400 text-left text-sm font-bold uppercase tracking-wider">
           Status:{" "}
           <span
             className={
@@ -25,7 +25,7 @@ export default function FloatingActionBar({ event }: Props) {
           >
             {event.status}
           </span>
-        </p>
+        </p> */}
 
         <div className="flex gap-2 sm:gap-4 w-fit">
           <DocButton docUrl={event.driveLink ?? event.pdfLink ?? ""} label="Details" />
